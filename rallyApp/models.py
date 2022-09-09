@@ -60,7 +60,6 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.name}"
 
 
-
 class Contact(models.Model):
 
     """ A class that handles the contact information fields

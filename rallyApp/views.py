@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from . import models
 
-# Create your views here.
+
+def homePage(request):
+    Post = models.Post.objects.all()
+
+    context = {
+        "Post": Post
+    }
+    return render(request, 'pages/index.html', context)

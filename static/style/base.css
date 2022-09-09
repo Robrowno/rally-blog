@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,400;1,500&family=Rubik+Dirt&display=swap');
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand-name,
+.developer-name h2 {
+    font-family: 'Rubik Dirt', cursive;
+}
+
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* footer {
+    position: fixed;
+    bottom: 0%;
+    display: block;
+    width: 100%;
+} */
+
+.border-top {
+    border-top: 2px solid black !important;
+}
+
+.border-bottom {
+    border-bottom: 2px solid black !important;
+}
+
+@media all and (max-width:992px) {
+    /* //Tablet and mobile Screen Layout Code here */
+    .developer-name {
+        display: none;
+    }
+    .social-icons {
+        width: 80% !important;
+    }
+}
+
+.fa-facebook-square,
+.fa-github-square,
+.fa-instagram,
+.fa-linkedin-square {
+    transition: all .2s ease-in-out;
+}
+
+.fa-facebook-square:hover,
+.fa-github-square:hover,
+.fa-instagram:hover,
+.fa-linkedin-square:hover {
+    transform: scale(1.2);
+}
+
+.noselect {
+    user-select: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
+}
