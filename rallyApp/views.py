@@ -13,3 +13,7 @@ def homePage(request):
 
 def followPage(request):
     return render(request, 'pages/follow-me.html')
+
+
+def contactPage(request):
+    return render(request, 'pages/contact.html')
