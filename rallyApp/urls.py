@@ -9,6 +9,7 @@ admin.site.site_title = "RallyBlog Admin Dashboard"
 
 urlpatterns = [
     path('', views.homePage),
+    path('follow', views.followPage),
 
 
 

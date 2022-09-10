@@ -9,3 +9,7 @@ def homePage(request):
         "Post": Post
     }
     return render(request, 'pages/index.html', context)
+
+
+def followPage(request):
+    return render(request, 'pages/follow-me.html')
