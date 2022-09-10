@@ -13,3 +13,4 @@ admin.site.register(Comment)
 
 
 admin.site.register(Contact)
+
