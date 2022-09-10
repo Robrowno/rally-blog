@@ -17,3 +17,15 @@ def followPage(request):
 
 def contactPage(request):
     return render(request, 'pages/contact.html')
+
+
+def loginPage(request):
+    return render(request, 'pages/login.html')
+
+
+def registerPage(request):
+    return render(request, 'pages/register.html')
+
+
+def resetPasswordPage(request):
+    return render(request, 'pages/reset-password.html')

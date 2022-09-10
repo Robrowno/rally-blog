@@ -11,8 +11,9 @@ urlpatterns = [
     path('', views.homePage),
     path('contact', views.contactPage),
     path('follow', views.followPage),
-
-
+    path('login', views.loginPage),
+    path('register', views.registerPage),
+    path('reset-password', views.resetPasswordPage),
 
 
 ]

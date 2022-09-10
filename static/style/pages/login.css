@@ -1,0 +1,16 @@
+/* Login css file */
+
+.outer-container {
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3em;
+}
+
+.login-form,
+.register-form,
+.reset-form {
+    width: 22em;
+}
