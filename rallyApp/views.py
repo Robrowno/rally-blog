@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from . import models
+from .forms import ContactForm
+from django.http import HttpResponseRedirect
 
 
 def homePage(request):
@@ -16,7 +18,20 @@ def followPage(request):
 
 
 def contactPage(request):
-    return render(request, 'pages/contact.html')
+
+    submitted = False
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/contact?submitted=True')
+    else:
+        form = ContactForm()
+        if 'submitted' in request.GET:
+            submitted = True
+
+
+    return render(request, 'pages/contact.html', {'form': form, 'submitted': submitted})
 
 
 def loginPage(request):

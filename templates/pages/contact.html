@@ -7,16 +7,27 @@
 <h3 class="text-center h3-contact">Have a query?<br> Get in touch with the contact form below!</h3>
 
 
+{% block form %}
+
+{% if submitted %}
+<p class="success"> Your quote was successfully sent. Thanks again for getting in touch!</p>
+
+{% else %}
+
+<form action="" enctype="multipart/form-data" method="post" novalidate>
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="submit"></td>
+        </tr>
+    </table>
+</form>
+{% endif %}
 
 
 
 
-
-
-
-
-
-
-
-
+{% endblock form %}
 {% endblock %}

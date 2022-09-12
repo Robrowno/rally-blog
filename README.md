@@ -207,6 +207,9 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 - I got inspiration for my follow-me page based on this code example from Bootsnipp: [Bootsnipp](https://bootsnipp.com/snippets/or33d)
 
+- This superb page helped me to clear my migrations during development when I made too many migrations: [simpleisbetterthancomplex](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html)
+
+- This fantastic tutorial structurally assisted me in developing a contact form in the way I imagined it: [djangotutorials](https://www.youtube.com/watch?v=-qAf_Qx6Ygg)
 ---
 
 [Return to Top of Page](#rally-blog)
