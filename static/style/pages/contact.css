@@ -3,3 +3,8 @@
 .h3-contact {
     padding-bottom: 10px;
 }
+
+.contact-message {
+    max-width: 50%;
+    margin: auto
+}

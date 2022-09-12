@@ -1,7 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from . import models
 from .forms import ContactForm
-from django.http import HttpResponseRedirect
 
 
 def homePage(request):
@@ -18,6 +18,12 @@ def followPage(request):
 
 
 def contactPage(request):
+
+    """
+    This functio for the contact page checks to see if a form has been posted 
+    and if all fields in the form have been inputted correctly, it saves it 
+    and redirects to provide post-submission message.
+    """
 
     submitted = False
     if request.method == 'POST':
