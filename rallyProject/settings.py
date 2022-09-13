@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'django_extensions',
     'cloudinary',
     'django_summernote',
     'rallyApp'

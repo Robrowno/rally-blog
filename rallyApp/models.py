@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from cloudinary.models import CloudinaryField
+from django_extensions.db.fields import AutoSlugField
 
 POST_STATUS = ((0, "Draft"), (1, "Published"))
 FINISH = ((0, "DNF"), (1, "Finished"))
@@ -13,6 +14,7 @@ class Post(models.Model):
     variable names with field types for my blog posts.
     """
     title = models.CharField(max_length=150)
+    slug = AutoSlugField(max_length=150, populate_from='title',)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

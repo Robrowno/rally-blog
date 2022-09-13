@@ -20,8 +20,8 @@ def followPage(request):
 def contactPage(request):
 
     """
-    This functio for the contact page checks to see if a form has been posted 
-    and if all fields in the form have been inputted correctly, it saves it 
+    This functio for the contact page checks to see if a form has been posted
+    and if all fields in the form have been inputted correctly, it saves it
     and redirects to provide post-submission message.
     """
 
@@ -35,7 +35,6 @@ def contactPage(request):
         form = ContactForm()
         if 'submitted' in request.GET:
             submitted = True
-
 
     return render(request, 'pages/contact.html', {'form': form, 'submitted': submitted})
 
