@@ -210,6 +210,12 @@ My Rally Blog website consists of many features, that allow the user to interact
 - This superb page helped me to clear my migrations during development when I made too many migrations: [simpleisbetterthancomplex](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html)
 
 - This fantastic tutorial structurally assisted me in developing a contact form in the way I imagined it: [djangotutorials](https://www.youtube.com/watch?v=-qAf_Qx6Ygg)
+
+- Colour codes:
+    - Instagram purple: [Instagram colour](https://www.designpieces.com/palette/instagram-new-logo-2016-color-palette/)
+    - Facebook: [Facebook colour](https://usbrandcolors.com/facebook-colors/)
+    - Linkedin: [Linkedin colour](https://encycolorpedia.com/0e76a8#:~:text=The%20hexadecimal%20color%20code%20%230e76a8,%25%20green%20and%2065.88%25%20blue.)
+    - Github: [Github colour](https://encycolorpedia.com/171515)
 ---
 
 [Return to Top of Page](#rally-blog)

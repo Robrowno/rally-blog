@@ -1,1 +1,18 @@
 /* Follow Me css file */
+
+.bg-instagram {
+    background-color: #8a3ab9;
+}
+
+.bg-facebook {
+    background-color: #4267B2;
+}
+
+.bg-linkedin {
+    background-color: #0e76a8;
+}
+
+.bg-github {
+    background-color: #171515;
+    color: #fff;
+}
