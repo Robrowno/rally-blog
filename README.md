@@ -216,6 +216,11 @@ My Rally Blog website consists of many features, that allow the user to interact
     - Facebook: [Facebook colour](https://usbrandcolors.com/facebook-colors/)
     - Linkedin: [Linkedin colour](https://encycolorpedia.com/0e76a8#:~:text=The%20hexadecimal%20color%20code%20%230e76a8,%25%20green%20and%2065.88%25%20blue.)
     - Github: [Github colour](https://encycolorpedia.com/171515)
+
+- Instructions on how to install Django Extensions: 
+    - [Installation](https://django-extensions.readthedocs.io/en/latest/installation_instructions.html)
+    - [Using AutoSlugField](https://django-extensions.readthedocs.io/en/latest/field_extensions.html)
+
 ---
 
 [Return to Top of Page](#rally-blog)

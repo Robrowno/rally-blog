@@ -80,11 +80,12 @@ class Contact(models.Model):
     def __str__(self):
         return f"{self.first_name} {self.last_name} contacted you."
 
-    class Profile(models.Model):
 
-        user = models.OneToOneField(User, on_delete=models.CASCADE)
-        forget_password_token = models.CharField(max_length=100)
-        created_on = models.DateTimeField(auto_now_add=True)
+class Profile(models.Model):
 
-        def __str__(self):
-            return self.user.username
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    forget_password_token = models.CharField(max_length=100)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.user.username
