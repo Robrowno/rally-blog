@@ -1,5 +1,4 @@
 /* Follow Me css file */
-
 .bg-instagram {
     background-color: #8a3ab9;
 }
@@ -15,4 +14,7 @@
 .bg-github {
     background-color: #171515;
     color: #fff;
+}
+footer{
+    position: relative !important;
 }
