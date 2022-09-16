@@ -167,22 +167,36 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 # Features to implement
 
+- 
+- 
+- 
+- 
+- 
+
 
 # Testing and Validation
 
+- 
 
 
 # Bugs and Issues
+
+- I had an issue/bug where Posts were not displaying on the home page and the debug page that rendered was giving me mixed messages about there the issue was stemming from. After trying to clear the database using `python3 manage.py flush`, and being puzzled by the issue and tryign to find issues in my code for days, I decided to delete my database and and create a new one. I simply then added the new database url to my env.py file and mademigrations and migrated and it worked perfectly again. 
+
+- There were one or two other occasions where it became necessary to delete my database to avoid bugs/issues during development. 
+
+- I had an issue/bug where when developing the functionality of posting a form to the database through the contact page, option 3 (Other) in the select tag dropdown was throwing an error, whereas the other two options were posting to my database just fine. I asked about this on Slack and it was suggested to me by Dave Horrocks and Daisy McGirr that I should try using a CharField instead of a BooleanField, as this was likely causing the issue (as it's looking for values of just 0:False and 1:True) - I deleted any old records in my admin page and went about adjusting the Contact model in question and it worked as expected after making this change.
 
 
 
 # Peer Reviews 
 
-
+- 
 
 
 # Deployment
 
+- 
 
 
 # Credits
@@ -211,6 +225,8 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 - Some great tutorials/sources used for inspiration for my contact form/page:
     - [A designer who codes](https://www.youtube.com/watch?v=aeNDvQi6O94)
+    - [djangotutorials](https://www.youtube.com/watch?v=-qAf_Qx6Ygg)
+    - [learningaboutelectronics](http://www.learningaboutelectronics.com/Articles/How-to-insert-data-into-a-database-from-an-HTML-form-in-Django.php)
 
 - Colour codes:
     - Instagram purple: [Instagram colour](https://www.designpieces.com/palette/instagram-new-logo-2016-color-palette/)
