@@ -209,7 +209,8 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 - This superb page helped me to clear my migrations during development when I made too many migrations: [simpleisbetterthancomplex](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html)
 
-- This fantastic tutorial structurally assisted me in developing a contact form in the way I imagined it: [djangotutorials](https://www.youtube.com/watch?v=-qAf_Qx6Ygg)
+- Some great tutorials/sources used for inspiration for my contact form/page:
+    - [A designer who codes](https://www.youtube.com/watch?v=aeNDvQi6O94)
 
 - Colour codes:
     - Instagram purple: [Instagram colour](https://www.designpieces.com/palette/instagram-new-logo-2016-color-palette/)

@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'cloudinary',
     'django_summernote',
-    'rallyApp'
+    'rallyApp',
 ]
 
 MIDDLEWARE = [

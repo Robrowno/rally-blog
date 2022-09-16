@@ -13,20 +13,117 @@
 <div class="contact-message alert alert-success"> Your message was successfully sent. Thanks again for getting in touch!</div>
 
 {% else %}
-<div class="row g-3">
-    <div class="col-md-8 offset-md-4">
-<form action="" enctype="multipart/form-data" method="post" novalidate>
+
+
+<div class="container mt-3 bg-light">
+
+    <form action="" method="post" class="row g-3">
+        {% csrf_token %}
+        <div class="col-md-6">
+            <label for="fname" class="form-label contact-form-labels">First Name :</label>
+            <input type="text" class="form-control" id="fname" name="fname" required>
+        </div>
+        <div class="col-md-6">
+            <label for="lname" class="form-label contact-form-labels">Last Name :</label>
+            <input type="text" class="form-control" id="lname" name="lname" required>
+        </div>
+        <div class="col-md-8">
+            <label class="contact-form-labels" for="validationDefaultEmail" class="form-label">Email Address</label>
+            <input type="text" class="form-control" id="validationDefaultEmail" name="validationDefaultEmail" aria-describedby="inputGroupPrepend2"
+                required>
+        </div>
+        <div class="col-md-4">
+            <select class="form-select" aria-label="Query contact subject" id="select-query" name="select-query" required>
+                <option value="" disabled selected>Query Type:</option>
+                <option value="0">Question</option>
+                <option value="1">Sponsorship</option>
+                <option value="2">Other</option>
+              </select>
+        </div>
+        <div class="col-md-12">
+            <label class="contact-form-labels" for="contact-textbox" class="form-label">Message</label>
+            <textarea rows="5" class="form-control" id="contact-textbox" name="contact-textbox" placeholder="Enter your message here."
+          required></textarea>
+
+        </div>
+        <div class="col-md-12">
+            <button class="btn btn-primary contact-submit" type="submit" value="submit">Submit form</button>
+        </div>
+
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<form class="row g-3" method="post">
     {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-        <tr>
-            <td>&nbsp;</td>
-            <td><input class="btn btn-primary btn-block mb-4" type="submit" value="submit"></td>
-        </tr>
-    </table>
-</form>
-</div>
-</div>
+    <div class="col-md-5 offset-md-4">
+      <label for="fname" class="form-label contact-form-labels">First Name</label>
+      <input type="text" class="form-control" id="fname" name="fname" required>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-5 offset-md-4">
+        <label for="lname" class="form-label contact-form-labels">Last Name</label>
+        <input type="text" class="form-control" id="lname" name="lname" required>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-5 offset-md-4">
+        <label class="contact-form-labels" for="validationDefaultEmail" class="form-label">Email Address</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="validationDefaultEmail" name="validationDefaultEmail" aria-describedby="inputGroupPrepend2"
+            required>
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-5 offset-md-4">
+        <select class="form-select" aria-label="Query contact subject" id="select-query" name="select-query" required>
+          <option value="" disabled selected>Query Type:</option>
+          <option value="1">Question</option>
+          <option value="2">Sponsorship</option>
+          <option value="3">Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-5 offset-md-4">
+        <label class="contact-form-labels" for="contact-textbox" class="form-label">Message</label>
+        <textarea rows="5" class="form-control" id="contact-textbox" name="contact-textbox" placeholder="Enter your message here."
+          required></textarea>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-12 offset-md-4">
+        <button class="btn btn-primary contact-submit" type="submit" value="submit">Submit form</button>
+      </div>
+    </div>
+  </form>
+   -->
+
+
+
 {% endif %}
 
 

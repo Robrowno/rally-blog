@@ -70,7 +70,7 @@ class Contact(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email_address = models.EmailField()
-    query_type = models.BooleanField(choices=QUERY_TYPE, default=0)
+    query_type = models.CharField(max_length=11, choices=QUERY_TYPE, default=0)
     textbox = models.TextField()
     contacted_on = models.DateTimeField(auto_now_add=True)
 

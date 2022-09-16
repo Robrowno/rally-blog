@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from . import models
-from .forms import ContactForm
+
+from .models import Contact
 
 
 def homePage(request):
@@ -24,19 +25,24 @@ def contactPage(request):
     and if all fields in the form have been inputted correctly, it saves it
     and redirects to provide post-submission message.
     """
-
     submitted = False
     if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/contact?submitted=True')
+
+        contact = Contact()
+        contact.first_name = request.POST.get('fname')
+        contact.last_name = request.POST.get('lname')
+        contact.email_address = request.POST.get('validationDefaultEmail')
+        contact.query_type = request.POST.get('select-query')
+        contact.textbox = request.POST.get('contact-textbox')
+        contact.save()
+        return HttpResponseRedirect('/contact?submitted=True')
     else:
-        form = ContactForm()
+        contact = Contact()
         if 'submitted' in request.GET:
             submitted = True
 
-    return render(request, 'pages/contact.html', {'form': form, 'submitted': submitted})
+
+    return render(request, 'pages/contact.html', {'contact': contact, 'submitted': submitted})
 
 
 def loginPage(request):
