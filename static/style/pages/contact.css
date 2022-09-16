@@ -8,3 +8,7 @@
     max-width: 50%;
     margin: auto
 }
+
+input, select {
+    width: 100%;
+}
