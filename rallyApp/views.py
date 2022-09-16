@@ -5,7 +5,7 @@ from . import models
 from .models import Contact
 
 
-def homePage(request):
+def home_page(request):
     Post = models.Post.objects.all()
 
     context = {
@@ -14,11 +14,11 @@ def homePage(request):
     return render(request, 'pages/index.html', context)
 
 
-def followPage(request):
+def follow_page(request):
     return render(request, 'pages/follow-me.html')
 
 
-def contactPage(request):
+def contact_page(request):
 
     """
     This function for the contact page checks to see if a form has been posted
@@ -45,13 +45,13 @@ def contactPage(request):
     return render(request, 'pages/contact.html', {'contact': contact, 'submitted': submitted})
 
 
-def loginPage(request):
+def login_page(request):
     return render(request, 'pages/login.html')
 
 
-def registerPage(request):
+def register_page(request):
     return render(request, 'pages/register.html')
 
 
-def resetPasswordPage(request):
+def reset_password_page(request):
     return render(request, 'pages/reset-password.html')

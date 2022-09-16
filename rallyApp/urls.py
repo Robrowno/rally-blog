@@ -8,12 +8,12 @@ admin.site.site_header = "RallyBlog Admin Panel"
 admin.site.site_title = "RallyBlog Admin Dashboard"
 
 urlpatterns = [
-    path('', views.homePage),
-    path('contact', views.contactPage),
-    path('follow', views.followPage),
-    path('login', views.loginPage),
-    path('register', views.registerPage),
-    path('reset-password', views.resetPasswordPage),
+    path('', views.home_page),
+    path('contact', views.contact_page),
+    path('follow', views.follow_page),
+    path('login', views.login_page),
+    path('register', views.register_page),
+    path('reset-password', views.reset_password_page),
 
 
 ]
