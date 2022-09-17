@@ -13,6 +13,9 @@ def home_page(request):
     }
     return render(request, 'pages/index.html', context)
 
+def post_detail(request):
+    return render(request, 'pages/post-detail.html')
+
 
 def follow_page(request):
     return render(request, 'pages/follow-me.html')

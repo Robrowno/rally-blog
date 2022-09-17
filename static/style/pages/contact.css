@@ -8,17 +8,21 @@
     max-width: 50%;
     margin: auto
 }
-form{
+
+form {
     padding: 2em;
 }
+
 input, select {
     width: 100%;
 }
-.submit-button{
+
+.submit-button {
 display: flex;
 justify-content: center;
 }
-footer{
+
+footer {
     margin-top:2rem ;
     position: relative !important;
 }
