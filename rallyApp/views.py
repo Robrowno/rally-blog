@@ -6,7 +6,7 @@ from .models import Contact
 
 
 def home_page(request):
-    Post = models.Post.objects.all()
+    Post = models.Post.objects.filter(post_status=1).order_by('-created_on')
 
     context = {
         "Post": Post

@@ -217,6 +217,8 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 - All images are sourced from me or given to me with full permission to use. All the blog content is written by myself. 
 
+- All icons used came from Font Awesome: [Fontawesome](https://fontawesome.com/)
+
 - Favicons used were sourced from favicon.io: [Racing car Favicons](https://favicon.io/emoji-favicons/racing-car)
 
 - I got inspiration for my follow-me page based on this code example from Bootsnipp: [Bootsnipp](https://bootsnipp.com/snippets/or33d)
