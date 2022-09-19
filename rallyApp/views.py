@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from . import models
 
@@ -13,8 +13,18 @@ def home_page(request):
     }
     return render(request, 'pages/index.html', context)
 
-def post_detail(request):
-    return render(request, 'pages/post-detail.html')
+
+def post_detail(request, slug):
+
+    Post = models.Post.objects.all()
+    context = {
+        "Post": Post
+    }
+
+    post_view = get_object_or_404(Post, slug=slug)
+    context['post_view'] = post_view
+
+    return render(request, 'pages/post-detail.html', context)
 
 
 def follow_page(request):
@@ -43,7 +53,6 @@ def contact_page(request):
         contact = Contact()
         if 'submitted' in request.GET:
             submitted = True
-
 
     return render(request, 'pages/contact.html', {'contact': contact, 'submitted': submitted})
 

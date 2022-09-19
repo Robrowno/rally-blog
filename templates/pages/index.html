@@ -6,7 +6,7 @@
 <div class="container-fluid my-5 d-flex flex-wrap justify-content-center">
     {% for item in Post %}
     <div class="card m-3" style="width:24rem;">
-        <a href="#">
+        <a href="{% url 'post_detail' item.slug %}">
             <div class="img-container">
                 <img src="{{item.featured_image.url}}" class="card-img-top" alt="">
             </div>

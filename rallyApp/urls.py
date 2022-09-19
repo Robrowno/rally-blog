@@ -9,7 +9,7 @@ admin.site.site_title = "RallyBlog Admin Dashboard"
 
 urlpatterns = [
     path('', views.home_page),
-    path('post-detail', views.post_detail),
+    path('<slug>/', views.post_detail, name='post_detail'),
     path('contact', views.contact_page),
     path('follow', views.follow_page),
     path('login', views.login_page),
