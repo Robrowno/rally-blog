@@ -17,8 +17,10 @@ def home_page(request):
 def post_detail(request, slug):
 
     Post = models.Post.objects.all()
+    Comment = models.Comment.objects.order_by('-posted_on')
     context = {
-        "Post": Post
+        "Post": Post,
+
     }
 
     post_view = get_object_or_404(Post, slug=slug)

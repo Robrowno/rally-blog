@@ -242,6 +242,8 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 - This site helped me to fix the footer to the bottom of the page no matter the height of the content in the block content: [radu](https://radu.link/make-footer-stay-bottom-page-bootstrap/)
 
+- This site helped inspire my post detail view [Djangocentral](https://djangocentral.com/building-a-blog-application-with-django/)
+
 ---
 
 [Return to Top of Page](#rally-blog)
