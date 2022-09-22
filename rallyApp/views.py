@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from . import models
 
-from .models import Contact
+from .models import Contact, Comment, Post
 
 
 def home_page(request):
@@ -16,17 +16,23 @@ def home_page(request):
 
 def post_detail(request, slug):
 
-    Post = models.Post.objects.all()
-    Comment = models.Comment.objects.order_by('-posted_on')
+    post_view = get_object_or_404(Post, slug=slug)
+    comments = Comment.objects.filter(post=post_view)
+
+    if request.method == 'POST':
+
+        name = request.user
+        body = request.POST.get('comments')
+        post = post_view
+        Comment.objects.create(name=name, body=body, post=post)
+
     context = {
-        "Post": Post,
+        "post": post_view,
 
     }
 
-    post_view = get_object_or_404(Post, slug=slug)
-    context['post_view'] = post_view
-
     return render(request, 'pages/post-detail.html', context)
+
 
 
 def follow_page(request):

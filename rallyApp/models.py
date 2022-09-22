@@ -50,7 +50,7 @@ class Comment(models.Model):
     """
 
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments_section")
-    name = models.CharField(max_length=70, null=True, blank=True)
+    name = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     email = models.EmailField(blank=True, null=True)
     body = models.TextField(blank=False, null=True)
     posted_on = models.DateTimeField(auto_now_add=True)

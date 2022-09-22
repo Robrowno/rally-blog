@@ -11,7 +11,7 @@ class PostAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'post', 'posted_on')
+    list_display = ('name', 'post', 'posted_on')
 
 
 @admin.register(Contact)
