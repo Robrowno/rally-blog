@@ -28,6 +28,7 @@ def post_detail(request, slug):
 
     context = {
         "post": post_view,
+        "comments": comments
 
     }
 
