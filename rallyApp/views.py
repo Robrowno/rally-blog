@@ -31,7 +31,6 @@ def post_detail(request, slug):
         "Username":name
 
     }
-    print(context)
     return render(request, 'pages/post-detail.html', context)
 
 
