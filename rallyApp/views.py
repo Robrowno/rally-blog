@@ -18,9 +18,8 @@ def post_detail(request, slug):
 
     post_view = get_object_or_404(Post, slug=slug)
     comments = Comment.objects.filter(post=post_view)
-
+    name=""
     if request.method == 'POST':
-
         name = request.user
         body = request.POST.get('comments')
         post = post_view
@@ -28,10 +27,11 @@ def post_detail(request, slug):
 
     context = {
         "post": post_view,
-        "comments": comments
+        "comments": comments,
+        "Username":name
 
     }
-
+    print(context)
     return render(request, 'pages/post-detail.html', context)
 
 
