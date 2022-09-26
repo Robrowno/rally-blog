@@ -7,11 +7,11 @@
         <div class="col-lg-8 mx-auto card">
             <h1 class="card-title text-center"> My User Profile </h1>
 
-            <div class="card-body">Name: {{ user.name }}</div>
-            <div class="card-body">Username: {{ user.username }}</div>
-            <div class="card-body">Email: {{ user.email_address }}</div>
-            <div class="card-body">Number of Comments: {{ user.number_of_comments }}</div>
-            <div class="card-body">Number of Likes: {{ user.number_of_comments }}</div>
+            <div class="card-body"> <strong>Name:</strong> {{ user.first_name }} {{ user.last_name }}</div>
+            <div class="card-body"> <strong>Username:</strong> {{ user.username }}</div>
+            <div class="card-body"> <strong>Email:</strong> {{ user.email }}</div>
+            <div class="card-body"> <strong>Number of Comments:</strong> {{ user.number_of_comments }}</div>
+            <div class="card-body"> <strong>Number of Likes:</strong> {{ user.number_of_comments }}</div>
 
             <button class="col-md-4 submit-button mt-3"><a href="/edit-profile">Edit my Profile</a></button>
 

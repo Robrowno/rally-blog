@@ -1,5 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
+
+{% if user.is_authenticated %}
 <div class="container-fluid mt-3 bg-light">
     <div class="row">
         <div class="col-lg-8 mx-auto card">
@@ -7,16 +9,14 @@
 
             <form action="" method="post">
 
-                <label class="form-label" for="">Name: </label>
-                <input class="form-control" type="text">
-                <label class="form-label" for="">Username: </label>
-                <input class="form-control" type="text">
-                <label class="form-label" for="">Email: </label>
-                <input class="form-control" type="text">
-
-
-
-
+                <label class="form-label" for="edit-fname">First Name: </label>
+                <input class="form-control" id="edit-fname" name="edit-fname" type="text">
+                <label class="form-label" for="edit-lname">Surname: </label>
+                <input class="form-control" id="edit-lname" name="edit-lname" type="text">
+                <label class="form-label" for="edit-username">Username: </label>
+                <input class="form-control" id="edit-username" name="edit-username" type="text">
+                <label class="form-label" for="edit-email">Email: </label>
+                <input class="form-control" id="edit-email" name="edit-email" type="text">
 
 
             </form>
@@ -37,22 +37,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </div>
 </div>
@@ -61,21 +45,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% endif %}
 
 
 
