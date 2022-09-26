@@ -12,6 +12,8 @@ urlpatterns = [
     path('<slug:slug>/', views.post_detail, name='post_detail'),
     path('contact', views.contact_page),
     path('follow', views.follow_page),
+    path('profile', views.profile_page),
+    path('edit-profile', views.edit_profile),
     path('login', views.login_page),
     path('register', views.register_page),
     path('reset-password', views.reset_password_page),

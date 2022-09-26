@@ -49,7 +49,7 @@ I used Balsamiq to construct my wireframes, as it's a trustworthy way of mapping
 
 ## Open Post
 
-![Open Post Wireframe](./static/images/readme-images/wireframe-openpost.png)
+![Open Post Wireframe](./static/images/readme-images/wireframe-open-post.png)
 
 ## Different Devices
 
@@ -62,6 +62,14 @@ I used Balsamiq to construct my wireframes, as it's a trustworthy way of mapping
 ## Login
 
 ![Log in Page](./static/images/readme-images/wireframe-login.png)
+
+## User Profile Page
+
+![Profile Page](./static/images/readme-images/wireframe-profile-info.png)
+
+## Edit Profile Page 
+
+![Edit Profile](./static/images/readme-images/wireframe-profile-edit.png)
 
 ## Forgot Password
 

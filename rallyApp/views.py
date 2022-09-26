@@ -18,7 +18,7 @@ def post_detail(request, slug):
 
     post_view = get_object_or_404(Post, slug=slug)
     comments = Comment.objects.filter(post=post_view)
-    name=""
+    name = ""
     if request.method == 'POST':
         name = request.user
         body = request.POST.get('comments')
@@ -28,7 +28,7 @@ def post_detail(request, slug):
     context = {
         "post": post_view,
         "comments": comments,
-        "Username":name
+        "Username": name
 
     }
     return render(request, 'pages/post-detail.html', context)
@@ -64,6 +64,12 @@ def contact_page(request):
 
     return render(request, 'pages/contact.html', {'contact': contact, 'submitted': submitted})
 
+
+def profile_page(request):
+    return render(request, 'pages/my-profile.html')
+
+def edit_profile(request):
+    return render(request, 'pages/edit-profile.html')
 
 def login_page(request):
     return render(request, 'pages/login.html')

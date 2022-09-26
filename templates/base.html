@@ -41,6 +41,12 @@
                                 <a class="nav-link" href="/login">
                                     Register/Login</a>
                             </li>
+                            {% if user.is_authenticated %}
+                            <li class="nav-item ms-2">
+                                <a class="nav-link" href="/profile">
+                                    Profile</a>
+                            </li>
+                            {% endif %}
                             <li class="nav-item ms-2">
                                 <a class="nav-link" href="/follow">Follow Me</a>
                             </li>
