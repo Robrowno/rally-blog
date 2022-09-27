@@ -252,6 +252,10 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 - This site helped inspire my post detail view [Djangocentral](https://djangocentral.com/building-a-blog-application-with-django/)
 
+- The Logic and Code for the Pagination in the index.html template came from this website: [Python in Plain English](https://python.plainenglish.io/how-to-implement-pagination-in-django-with-function-based-views-8f6462554930)
+
+- Left and Right HTML arrows for Paginator: [Left Arrow](https://www.toptal.com/designers/htmlarrows/arrows/left-arrow/), [Right Arrow](https://www.toptal.com/designers/htmlarrows/arrows/right-arrow/)
+
 ---
 
 [Return to Top of Page](#rally-blog)

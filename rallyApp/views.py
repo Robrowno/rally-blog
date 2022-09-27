@@ -1,20 +1,34 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from . import models
+from django.core.paginator import Paginator
 
 from .models import Contact, Comment, Post
 
 
 def home_page(request):
-    Post = models.Post.objects.filter(post_status=1).order_by('-created_on')
+    """
+    Returns a list of posts sorted by post status (Published only) and ascending order of when
+    they were created. Posts limited to 6 per page, at which point the website paginates.
+    """
+    post = models.Post.objects.filter(post_status=1).order_by('-created_on')
+    paginator = Paginator(post, 6)
+
+    page_number = request.GET.get('page')
+    posts = paginator.get_page(page_number)
 
     context = {
-        "Post": Post
+        "posts": posts
     }
     return render(request, 'pages/index.html', context)
 
 
 def post_detail(request, slug):
+    """
+     Fetches a post's content by it's unique slug that is made when a post is made thanks
+     to the AutoSlugField in the the Post Model. Also returns a list of comments posted by retrieving
+     the input of a user from the comments section when they click the submit button.
+    """
 
     post_view = get_object_or_404(Post, slug=slug)
     comments = Comment.objects.filter(post=post_view)
@@ -34,8 +48,10 @@ def post_detail(request, slug):
     return render(request, 'pages/post-detail.html', context)
 
 
-
 def follow_page(request):
+    """
+    Renders the Follow-Me page.
+    """
     return render(request, 'pages/follow-me.html')
 
 
@@ -66,18 +82,36 @@ def contact_page(request):
 
 
 def profile_page(request):
+
+    """
+    Renders the Profile Page
+    """
     return render(request, 'pages/my-profile.html')
 
+
 def edit_profile(request):
+    """
+    Renders the Edit Profile Page
+    """
     return render(request, 'pages/edit-profile.html')
 
+
 def login_page(request):
+    """
+    Renders the Login Page
+    """
     return render(request, 'pages/login.html')
 
 
 def register_page(request):
+    """
+    Renders the Register Page
+    """
     return render(request, 'pages/register.html')
 
 
 def reset_password_page(request):
+    """
+    Renders the Reset/Forget Password Page
+    """
     return render(request, 'pages/reset-password.html')
