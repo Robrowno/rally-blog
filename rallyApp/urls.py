@@ -11,12 +11,13 @@ urlpatterns = [
     path('', views.home_page),
     path('<slug:slug>/', views.post_detail, name='post_detail'),
     path('contact', views.contact_page),
-    path('follow', views.follow_page),
+    path('follow', views.followPage),
     path('profile', views.profile_page),
     path('edit-profile', views.edit_profile),
-    path('login', views.login_page),
-    path('register', views.register_page),
-    path('reset-password', views.reset_password_page),
-
+    path('register', views.register,name="register"),
+    path('login', views.Login,name="login"),
+    path('logout', views.Logout,name="logout"),
+    path('forget-password' , views.ForgetPassword , name="forget_password"),
+    path('change-password/<token>/' , views.ChangePassword , name="change_password")
 
 ]

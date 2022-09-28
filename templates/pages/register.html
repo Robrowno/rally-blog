@@ -1,26 +1,32 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<link rel="stylesheet" href="{% static 'style/pages/register.css' %}">
-
-
+<link rel="stylesheet" href="{% static 'style/pages/login.css' %}">
+<div class="container">
+    {% if messages %} {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %} {% endif %}
+</div>
 <div class="container outer-container ">
-    <h1 class="my-3">Register an Account</h1>
-    <form class="m-4 register-form">
+    <h1 class="my-3">Register Page</h1>
+    <form class="m-4 register-form" action="register" method="POST">
         {% csrf_token %}
         <!-- Name input -->
         <div class="form-outline mb-4">
             <label class="form-label" for="form3Example3">Name</label>
-            <input type="text" id="form3Example3" class="form-control" />
+            <input required type="text" id="form3Example3" name="username" class="form-control" />
         </div>
 
         <!-- Email input -->
         <div class="form-outline mb-4">
             <label class="form-label" for="form2Example1">Email address</label>
-            <input type="email" id="form2Example1" class="form-control" />
+            <input required type="email" name="email" id="form2Example1" class="form-control" />
         </div>
         <!-- Password input -->
         <div class="form-outline mb-4">
             <label class="form-label" for="form2Example2">Password</label>
-            <input type="password" id="form2Example2" class="form-control" />
+            <input required type="password" name="password" id="form2Example2" class="form-control" />
         </div>
 
         <!-- 2 column grid layout for inline styling -->
@@ -34,32 +40,18 @@
             </div>
 
             <div class="col">
-                <!-- Simple link to reset password -->
-                <a class="text-decoration-underline link-primary" href="/reset-password">Forgot password?</a>
+                <!-- Simple link -->
+                <a href="/forget-password">Forgot password?</a>
             </div>
         </div>
 
         <!-- Submit button -->
-        <button type="button" class=" w-100 btn btn-primary btn-block mb-4">Register</button>
+        <button type="submit" class=" w-100 btn btn-primary btn-block mb-4">Register</button>
 
-        <!-- Registration button -->
+        <!-- Register buttons -->
         <div class="text-center">
-            <p>Already a member? <a class="text-decoration-underline link-primary" href="/login">Login</a></p>
+            <p>Already a member? <a href="/login">Login</a></p>
         </div>
     </form>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {% endblock %}

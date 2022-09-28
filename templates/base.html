@@ -34,18 +34,25 @@
                     </button>
                     <div class="collapse navbar-collapse" id="toggle-mobile-menu">
                         <ul class="navbar-nav text-center ms-auto">
+                            {% if user.is_superuser %}
+                            <li class="nav-item ms-2">
+                                <a class="nav-link active" href="/" style="color:blue">Manage</a>
+                            </li>
+                            {% endif %}
                             <li class="nav-item ms-2">
                                 <a class="nav-link active" href="/">Home</a>
                             </li>
+                            {% if user.is_authenticated %}
                             <li class="nav-item ms-2">
-                                {% if user.is_active %}
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="/logout">
                                     Logout</a>
-                                {% else %}
-                                <a class="nav-link" href="/login">
-                                    Regsiter/Login</a>
-                                {% endif %}
                             </li>
+                            {% else %}
+                            <li class="nav-item ms-2">
+                                <a class="nav-link" href="/login">
+                                    Register/Login</a>
+                            </li>
+                            {% endif %}
                             {% if user.is_authenticated %}
                             <li class="nav-item ms-2">
                                 <a class="nav-link" href="/profile">
@@ -56,7 +63,7 @@
                                 <a class="nav-link" href="/follow">Follow Me</a>
                             </li>
                             <li class="nav-item ms-2 d-md-inline">
-                                <a class="nav-link" href="/contact">Contact</a>
+                                <a href="/contact" class="nav-link">Contact</a>
                             </li>
                         </ul>
                     </div>
