@@ -8,8 +8,9 @@ from .models import Contact, Comment, Post
 
 def home_page(request):
     """
-    Returns a list of posts sorted by post status (Published only) and ascending order of when
-    they were created. Posts limited to 6 per page, at which point the website paginates.
+    Returns a list of posts sorted by post status (Published only)
+    and ascending order of when they were created.
+    Posts limited to 6 per page, at which point the website paginates.
     """
     post = models.Post.objects.filter(post_status=1).order_by('-created_on')
     paginator = Paginator(post, 6)
@@ -25,9 +26,10 @@ def home_page(request):
 
 def post_detail(request, slug):
     """
-     Fetches a post's content by it's unique slug that is made when a post is made thanks
-     to the AutoSlugField in the the Post Model. Also returns a list of comments posted by retrieving
-     the input of a user from the comments section when they click the submit button.
+    Fetches a post's content by it's unique slug that is made
+    when a post is made thanks to the AutoSlugField in the the Post Model.
+    Also returns a list of comments posted by retrieving the input of a user
+    from the comments section when they click the submit button.
     """
 
     post_view = get_object_or_404(Post, slug=slug)

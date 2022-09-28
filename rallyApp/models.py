@@ -28,7 +28,7 @@ class Post(models.Model):
     finish = models.BooleanField(choices=FINISH, default=0)
     class_result = models.PositiveIntegerField()
     overall_result = models.PositiveIntegerField()
-    championship_result = models.PositiveIntegerField()
+    championship_result = models.PositiveIntegerField(null=True, blank=True)
     likes = models.ManyToManyField(User, related_name="post_likes", blank=True)
     comments = models.ManyToManyField(User, related_name="post_comments", blank=True)
     shares = models.ManyToManyField(User, related_name="post_shares", blank=True)
