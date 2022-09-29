@@ -97,6 +97,12 @@ Here is an early example of my Follow-Me page, which I imagined as a 4 box grid 
 
 ![Early Development Follow Me Page](./static/images/readme-images/followme-page-rendering.png)
 
+Here is the very early stages of the Profile and Edit Profile pages - This is before any real fucntionality was in place for visiting different pages through the links or being able to retreive from or send data to the database: 
+
+![Early Development Profile Page](./static/images/readme-images/early-profile-page-rendering.png)
+
+![Early Development Edit Profile Page](./static/images/readme-images/early-edit-profile-rendering.png)
+
 
 ---
 
@@ -113,6 +119,16 @@ Here is an early example of my Follow-Me page, which I imagined as a 4 box grid 
 - 
 - 
 - 
+
+## Epics:
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 
 
 
@@ -147,9 +163,12 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 1. A Nav bar that contains links to:
     - A link that returns the user to the home page
-    - A register/login page
+    - A register/login page (This changes to Logout if the User is signed in)
     - A social media links page
-    - and a contact page with a form to fill out to get in touch
+    - A contact page with a form to fill out to get in touch
+    - If the user has an account, they will also have access to a Profile page in the nav
+    - Superusers/Admins will have a Manage link, which is exclusive to Superusers/Admins
+
 
 2. A footer that contains font awesome icons with links to:
     - Facebook
@@ -163,13 +182,17 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 5. A Register Page, where users can create an account.
 
-6. A Forgot-Password Page, where users can retreive or reset their password. Also gives you options to go back to the Login or Registration pages.
+6. A Reset-Password Page, where users can reset their password. Also gives you options to go back to the Login or Registration pages.
 
 7. A Follow Me page, with cards displaying social media links for the site user to visit and follow me on different social media platforms.
 
 8. A Contact form page, where the site user can fill out a form to get in touch with a particular query they have in mind. The form asks for a name & surname, email, query-type and displays a text area to type out your message.
 
-9. Being a Django site, there is also an admin page just for the site Admin/Author, where the admin can edit, create, delete and draft/publish content. The Admin page allows me to see more than just the content, I can view comments, user registration and contact forms sent to me from the admin panel.
+9. A User Profile Page, where Users can view stats about their likes and comments, or their info such as name and username on file.
+
+10. An Edit Profile Page, where users can alter their Name, Username, Email. 
+
+11. Being a Django site, there is also an admin page just for the site Admin/Author, where the admin can edit, create, delete and draft/publish content. The Admin page allows me to see more than just the content, I can view comments, user registration and contact forms sent to me from the admin panel.
 
 
 
@@ -204,7 +227,18 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 # Deployment
 
+## Forking a Github Repository:
+
 - 
+
+## Locally Cloning a Github Repository:
+
+- 
+
+## Deployment through Heroku:
+
+- 
+
 
 
 # Credits
@@ -214,6 +248,16 @@ My Rally Blog website consists of many features, that allow the user to interact
 - Similarly, the idea for a Rally Blog was inspired by a walkthrough called "I think, therefore I blog" by Code Insitute.
 
 - I consolidated and learned much of how to use Python/Django with the Udemy course here, as a significant supplement to the C.I course: [Udemy Django course](https://www.udemy.com/course/django-and-python-full-stack-developer-masterclass/)
+
+- There have been several sites that I have continuously returned to for help learning about or how to implement new concepts in Django. And whislt I will include specifics from sites below regarding exact pages I have learned from, I will detail the home pages of key sites here:
+    - [W3Schools for Django](https://www.w3schools.com/django/index.php) 
+    - [W3Schools for Bootstrap 5](https://www.w3schools.com/bootstrap5/index.php)
+    - [GeeksforGeeks](https://www.geeksforgeeks.org/)
+    - [Django Central](https://djangocentral.com/building-a-blog-application-with-django/)
+    - [Bootstrap 5 Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+    - [Django 3.2 Documentation](https://docs.djangoproject.com/en/3.2/)
+    - [MDN Web Docs (Mozilla)](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django)
+
 
 - I used Bootstrap's fantastic documentation to help me to create the main sections of my home page, and features on other pages such as the contact form:
     - [Bootstrap Navbars](https://getbootstrap.com/docs/4.1/components/navbar/)
@@ -254,7 +298,37 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 - The Logic and Code for the Pagination in the index.html template came from this website: [Python in Plain English](https://python.plainenglish.io/how-to-implement-pagination-in-django-with-function-based-views-8f6462554930)
 
+- This video by Codemy also helped me to understand how to implement pagination: [Codemy Pagination Youtube](https://www.youtube.com/watch?v=N-PB-HMFmdo&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy&index=19)
+
+- Django docs were reviewed for pagination requirements in the views.py file: [Django Pagination Docs](https://docs.djangoproject.com/en/4.1/topics/pagination/)
+
 - Left and Right HTML arrows for Paginator: [Left Arrow](https://www.toptal.com/designers/htmlarrows/arrows/left-arrow/), [Right Arrow](https://www.toptal.com/designers/htmlarrows/arrows/right-arrow/)
+
+- This youtube video helped guide me and give inspiration for the comments section: [Great Adib Youtuve vid](https://www.youtube.com/watch?v=MmLRE2fCcec)
+
+- This is where I found the User model objects I needed for my Profile sections: [Django User model Docs](https://docs.djangoproject.com/en/4.1/ref/contrib/auth/#django.contrib.auth.models.User)
+
+
+
+
+
+
+
+## Personal Credits
+
+There are a few people who have personally helped me through and guided me through this project, be it bugs and issues I was stuck on, to teaching me core concepts or explaining/running through why/how something works in Django. 
+
+A special thanks to: 
+
+- Daisy McGirr: My Code Institute Mentor, Daisy has guided me through Project 4 through mentor call sessions, advising me on my wireframes and scope at the start of the project, to helping me understand why code wasn't working as expected if I got stuck on a problem in 'In it together' slack group calls. Daisy has also been so kind and helpful with pep-talks when I was feeling down with issues regarding Django.
+
+- Matt Bodden: Helped me learn how to delete a database and re-instate a new one if my database got corrupted or had conflicting issues. This has been an invaluable tool to know as I've had to delete and reinstate my database in order to make new migrations many times over the course of this project! Like Daisy, Matt has encouraged me when I felt low when struggling with Django and it has definitely got me back on my feet once or twice!
+
+- Ian Meigh: Helped me to understand why there were url issues in my urls.py file in my rallyApp, and different ways I could go about resolving the issue. 
+
+- Abubakar Shafique: Abubakar has been an incredible teacher of Django concepts to me. Through his lessons, I have picked up a much better confidence using the Django framework, and when I'm stuck he always sends me resources to look at that could help with a particular issue I'm stuck on.
+
+
 
 ---
 
