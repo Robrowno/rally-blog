@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,400;1,500&family=Rubik+Dirt&display=swap');
+/* Base CSS Page */
 * {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
+/* Links */
 a,
 a:hover,
 a:visited,
@@ -14,6 +15,7 @@ a:active {
     color: inherit;
 }
 
+/* Fonts for key titles/headings */
 .brand-name,
 .developer-name h2 {
     font-family: 'Rubik Dirt', cursive;
@@ -32,16 +34,7 @@ a:active {
     border-bottom: 2px solid black !important;
 }
 
-@media all and (max-width:992px) {
-    /* //Tablet and mobile Screen Layout Code here */
-    .developer-name {
-        display: none;
-    }
-    .social-icons {
-        width: 80% !important;
-    }
-}
-
+/* Font Awesome Icons in footer */
 .fa-facebook-square,
 .fa-github-square,
 .fa-instagram,
@@ -59,7 +52,7 @@ a:active {
 .noselect {
     user-select: none;
 }
-
+/* Adjustments for body and content class */
 html,
 body {
     height: 100%;
@@ -74,10 +67,22 @@ body {
     flex: 1 0 auto;
 }
 
+/* Adjustments for the footer  */
 .footer {
     flex-shrink: 0;
     width: 100%;
     position: fixed;
     bottom: 0;
     
+}
+
+/* Media Queries */
+@media all and (max-width:992px) {
+    /* Tablet and mobile Screen Layout Code here */
+    .developer-name {
+        display: none;
+    }
+    .social-icons {
+        width: 80% !important;
+    }
 }

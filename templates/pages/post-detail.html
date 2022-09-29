@@ -5,109 +5,102 @@
 <div class="container-fluid mt-3 bg-light">
     <div class="row">
         <div class="col-lg-8 mx-auto card">
-            
-            <!-- <div class="container">
-                <div class="row d-flex align-items-center">
-                  <div class="col">
-                    <button class="btn btn-primary submit-button"><a href="/">Go Back</a></button>
-                  </div>
-                  <div class="col-6">
-                    <h1 class="text-center card-title">{{ post_view.title }}</h1>
-                  </div>
-                  <div class="col">
-                    <i class="px-2 fs-2 fas fa-thumbs-up"></i>
-                    <i class="px-2 fs-2 fas fa-comments"></i>
-                    <i class="px-2 fs-2 fas fa-share"></i>
-                  </div> -->
-
+            <!-- Blog Title -->
             <h1 class="text-center card-title">{{ post.title }}</h1>
             <div class="col-lg-3 d-flex"><button class="btn btn-primary submit-button">
                     <a href="/">Go Back</a></button>
             </div>
-
+            <!-- Blog Like/Comment/Share Fontawesome Icons -->
             <div class="col-lg-3 offset-9 d-flex">
                 <div><i class="px-2 fs-2 fas fa-thumbs-up p-2"></i></div>
                 <div><i class="px-2 fs-2 fas fa-comments p-2"></i></div>
                 <div><i class="px-2 fs-2 fas fa-share p-2"></i></div>
             </div>
 
-
+            <!-- Featured image -->
             <img class="image-fluid card-img" src="{{ post.featured_image.url }}" alt="" width="100%" height="75%">
-
+            <!-- Stats display taken from database -->
             <div id="details" class="d-inline p-2 bg-primary text-white">Car: {{ post.car }}</div>
             <div class="d-inline p-2 bg-dark text-white">Event: {{ post.eventName }}</div>
             <div class="d-inline p-2 bg-primary text-white">Location: {{ post.location }}</div>
             <div class="d-inline p-2 bg-dark text-white">Class Result: {{ post.class_result }}</div>
             <div class="d-inline p-2 bg-primary text-white">Overall Result: {{ post.overall_result }}</div>
 
-
+            <!-- Blog Text Content goes here -->
             <p class="text-center card-text">{{ post.content|safe }}</p>
 
-
-            </div>
-            </div>
-<!-- End of Blog post section -->
-<div class="container-fluid mt-3 bg-light">
-    <div class="row">
-        <div class="col-lg-8 mx-auto card mb-5 p-2">
-            {% if not user.is_authenticated %}
-
-            <h4 class="flex justify-center text-center column"> To leave a comment, sign in with the link below:</h4>
-            <a class="link-primary text-decoration-underline" href="/register">Sign In</a>
-            {% endif%}
-
-            {% for comment in comments %}
-
-            <div>
-
-                <br>
-                <p>
-                    <strong>{{ comment.name }} </strong><span> - <small
-                            class="mark">{{ comment.posted_on }}</small></span>
-                </p>
-                <p class="px-1"> > {{ comment.body }}</p>
-                {% if user.is_authenticated %}
-                {% if comment.name == user.username%}
-                <button type="button" class="btn btn-success btn-sm float-sm-end">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm float-sm-end">Delete</button>
-                {% endif %}
-                {% endif %}
-
-                {% empty %}
-                <div class="col-lg-8">
-                    <h5> No comments have been posted yet</h5>
-
-
-                    {% endfor %}
-                </div>
-
-                {% if user.is_authenticated %}
-
-                <form method="post" class="mt-3">
-                    {% csrf_token %}
-
-                    <div>
-                        <label class="form-label" for="comments"><strong>Comments:</strong></label>
-                        <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
-                    </div>
-
-                    <div class="col-md-12 submit-button mt-3">
-                        <button class="btn btn-primary contact-submit" type="submit" value="submit">Submit form</button>
-                    </div>
-
-
-                </form>
-            </div>
-            {% endif %}
         </div>
     </div>
+    <!-- End of Blog post section -->
 
-</div>
-<script>
-    $(document).ready(function () {
-    $('html, body').animate({
-        scrollTop: $('#details').offset().top
-    }, 'slow');
-});
-</script>
-{% endblock %}
+    <!-- Beginning of Comments Section for Open Posts -->
+    <div class="container-fluid mt-3 bg-light">
+        <div class="row">
+            <div class="col-lg-8 mx-auto card mb-5 p-2">
+                {% if not user.is_authenticated %}
+
+                <h4 class="flex justify-center text-center column"> To leave a comment, sign in with the link below:
+                </h4>
+                <a class="link-primary text-decoration-underline" href="/register">Sign In</a>
+                {% endif%}
+                <!-- Comments made displayed here -->
+                {% for comment in comments %}
+
+                <div>
+
+                    <br>
+                    <p>
+                        <strong>{{ comment.name }} </strong><span> - <small
+                                class="mark">{{ comment.posted_on }}</small></span>
+                    </p>
+                    <p class="px-1"> > {{ comment.body }}</p>
+                    <!-- User is able to edit or delete their own comments -->
+                    {% if user.is_authenticated %}
+                    {% if comment.name == user.username%}
+                    <button type="button" class="btn btn-success btn-sm float-sm-end">Edit</button>
+                    <button type="button" class="btn btn-danger btn-sm float-sm-end">Delete</button>
+                    {% endif %}
+                    {% endif %}
+                    <!-- If there are no comments on a Blog Post -->
+                    {% empty %}
+                    <div class="col-lg-8">
+                        <h5> No comments have been posted yet</h5>
+
+                        {% endfor %}
+                    </div>
+
+                    {% if user.is_authenticated %}
+                    <!-- Form for posting a comment -->
+                    <form method="post" class="mt-3">
+                        {% csrf_token %}
+
+                        <div>
+                            <label class="form-label" for="comments"><strong>Comments:</strong></label>
+                            <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+                        </div>
+
+                        <div class="col-md-12 submit-button mt-3">
+                            <button class="btn btn-primary contact-submit" type="submit" value="submit">Submit
+                                form</button>
+                        </div>
+
+
+                    </form>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <!-- End of Comments seciton -->
+    </div>
+
+
+    <!-- JS/JQuery Auto scroll functionality to post content -->
+    <script>
+        $(document).ready(function () {
+            $('html, body').animate({
+                scrollTop: $('#details').offset().top
+            }, 'slow');
+        });
+    </script>
+    {% endblock %}
+    <!-- End of Post Detail section -->

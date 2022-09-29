@@ -14,10 +14,10 @@ urlpatterns = [
     path('follow', views.followPage),
     path('profile', views.profile_page),
     path('edit-profile', views.edit_profile),
-    path('register', views.register,name="register"),
-    path('login', views.Login,name="login"),
-    path('logout', views.Logout,name="logout"),
-    path('forget-password' , views.ForgetPassword , name="forget_password"),
-    path('change-password/<token>/' , views.ChangePassword , name="change_password")
+    path('register', views.register, name="register"),
+    path('login', views.Login, name="login"),
+    path('logout', views.Logout, name="logout"),
+    path('forget-password', views.ForgetPassword, name="forget_password"),
+    path('change-password/<token>/', views.ChangePassword, name="change_password"),
 
 ]
