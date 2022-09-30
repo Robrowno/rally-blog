@@ -18,7 +18,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    eventName = models.CharField(max_length=150)
+    event_name = models.CharField(max_length=150)
     associated_club = models.CharField(max_length=200)
     entry_fee = models.FloatField(blank=True)
     location = models.CharField(max_length=220, blank=True)

@@ -61,6 +61,8 @@ I used Balsamiq to construct my wireframes, as it's a trustworthy way of mapping
 
 ## Login
 
+NOTE: During the designing of the Login page functionality, I decided to change to using the Username instead of the 
+email address for Logging in to the website.
 ![Log in Page](./static/images/readme-images/wireframe-login.png)
 
 ## User Profile Page
@@ -69,14 +71,21 @@ I used Balsamiq to construct my wireframes, as it's a trustworthy way of mapping
 
 ## Edit Profile Page 
 
+NOTE: Changed to having seperate inputs for First Name and Last Name.
+
 ![Edit Profile](./static/images/readme-images/wireframe-profile-edit.png)
 
 ## Forgot Password
+
+NOTE: Title changed to reset and username is used to recover the password rather than the email address 
+as originally planned here.
 
 ![Forgot Password Page](./static/images/readme-images/wireframe-forgot-password.png)
 
 ## Follow Me 
 
+NOTE: Original Plan was to have large icons as links, seperated by a dividing cross, ended up going with Cards as I was happy with 
+how the cards looked in the Index.html page and wanted to replicate something similar using Cards.
 ![Follow Me on Socials page](./static/images/readme-images/wireframe-followme.png)
 
 ## Contact Page
@@ -136,22 +145,23 @@ Here is the very early stages of the Profile and Edit Profile pages - This is be
 
 Technologies and Frameworks used to make this website include the following:
 
-- HTML5 
-- CSS3
-- Javascript (Vanilla and JQuery)
-- Python
-- Django v3.2 Framework
-- Bootstrap v5.0
-- Git
-- Balsamiq
-- Heroku
-- Cloudinary
-- Github
-- Gitpod IDE
-- Summernote
-- VSCode IDE
-- Google Chrome Browser
-- PostgreSQL
+- HTML5 - a markup language used to structure the content on the site.
+- CSS3 - a cascading stylesheet language used to style the site where needed (beyond Bootstrap's classes).
+- Javascript - (Vanilla and JQuery) - a dynamic scripting language, used for applying logic, animating or updating content.
+- Python v3.8 - an object oriented, high level programming language, on which the Django framework is based on.
+- Django v3.2 Framework - a high level Python web framework, used for rapidly creating dynamic websites.
+- Bootstrap v5.0 - a css framework used for rapidly creating/styling mobile-first websites.
+- Git - a DevOps tool used for version control - used to add, commit and push my changes to the server.
+- Balsamiq - a free wireframe service, where ideas can be visually interpreted for planning a project.
+- Heroku - is a PaaS Cloud platform, used to host applications entirely in the cloud.
+- Cloudinary - a free SaaS Cloud platform, used to store images/media
+- Github - a cloud based service used for hosting repositories.
+- Gitpod IDE - an open-source developer tool for remote development. Used for version control.
+- Summernote - a free service for styling textareas in Django projects
+- VSCode IDE - a code editor by Microsoft, used for local development. Used this for testing complicated features, such as the authentication module I used in this project.
+- Google Chrome Browser - Used as my default browser for learning, working on github/gitpod and more.
+- PostgreSQL - an open source and object-relational database system, used as my database of choice on Heroku.
+- SendGrid API - a RESTful Application Programming Interface, used for sending emails and password resetting functionality.
 
 
 
@@ -308,6 +318,10 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 - This is where I found the User model objects I needed for my Profile sections: [Django User model Docs](https://docs.djangoproject.com/en/4.1/ref/contrib/auth/#django.contrib.auth.models.User)
 
+- All Images were hosted on Cloudinary: [Cloudinary](https://cloudinary.com/)
+
+- Summernote was used to style my Post text areas in the admin page: [Summernote](https://summernote.org/)
+
 
 
 
@@ -327,7 +341,6 @@ A special thanks to:
 - Ian Meigh: Helped me to understand why there were url issues in my urls.py file in my rallyApp, and different ways I could go about resolving the issue. 
 
 - Abubakar Shafique: Abubakar has been an incredible teacher of Django concepts to me. Through his lessons, I have picked up a much better confidence using the Django framework, and when I'm stuck he always sends me resources to look at that could help with a particular issue I'm stuck on.
-
 
 
 ---

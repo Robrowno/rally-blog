@@ -1,5 +1,4 @@
-import datetime
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from . import models
 from django.views.decorators.csrf import csrf_exempt
@@ -7,8 +6,6 @@ from .models import Contact, Comment, Post
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
-from django.urls import reverse
 from django.contrib import messages
 from .helpers import send_forget_password_mail
 import uuid
@@ -73,23 +70,6 @@ def contact_page(request):
 
 
 @csrf_exempt
-def profile_page(request):
-
-    """
-    Renders the Profile Page
-    """
-    return render(request, 'pages/my-profile.html')
-
-
-@csrf_exempt
-def edit_profile(request):
-    """
-    Renders the Edit Profile Page
-    """
-    return render(request, 'pages/edit-profile.html')
-
-
-@csrf_exempt
 def register(request):
     try:
         if request.method == "POST":
@@ -119,7 +99,7 @@ def register(request):
 
 
 @csrf_exempt
-def Login(request):
+def login_func(request):
 
     if request.method == "GET":
         return render(request, 'pages/login.html')
@@ -139,7 +119,8 @@ def Login(request):
             else:
                 messages.error(request, ("Email or Password is wrong, Try Again!"))
                 return redirect('login')
-        except:
+        except Exception as e:
+            print(e)
             messages.error(request, ("Server error, Please try Again!"))
             return redirect('login')
 
@@ -165,19 +146,18 @@ def edit_profile(request):
 
 @csrf_exempt
 @login_required(login_url='login')
-def Logout(request):
+def logout_func(request):
     logout(request)
     return redirect('/')
 
 
 @csrf_exempt
-def followPage(request):
-    if request.method == "GET":
-        return render(request, 'pages/follow-me.html')
+def follow_page(request):
+    return render(request, 'pages/follow-me.html')
 
 
 @csrf_exempt
-def ChangePassword(request, token):
+def change_password(request, token):
     context = {}
     try:
         profile_obj = models.Profile.objects.filter(forget_password_token=token).first()
@@ -192,7 +172,7 @@ def ChangePassword(request, token):
                 messages.error(request, 'No user id found.')
                 return redirect(f'/change-password/{token}/')
             if new_password != confirm_password:
-                messages.error(request, 'both should  be equal.')
+                messages.error(request, 'both should be equal.')
                 return redirect(f'/change-password/{token}/')
 
             user_obj = User.objects.get(id=user_id)
@@ -205,7 +185,7 @@ def ChangePassword(request, token):
 
 
 @csrf_exempt
-def ForgetPassword(request):
+def forget_password(request):
     try:
         if request.method == "POST":
             username = request.POST.get('username')
