@@ -7,14 +7,13 @@
         <div class="col-lg-8 mx-auto card">
             <!-- Blog Title -->
             <h1 class="text-center card-title">{{ post.title }}</h1>
-            <div class="col-lg-3 d-flex"><button class="btn btn-primary submit-button">
+            <div class="col-lg-3 col-sm-2 d-flex"><button class="btn btn-primary submit-button">
                     <a href="/">Go Back</a></button>
             </div>
             <!-- Blog Like/Comment/Share Fontawesome Icons -->
-            <div class="col-lg-3 offset-9 d-flex">
-                <div><i class="px-2 fs-2 fas fa-thumbs-up p-2"></i></div>
-                <div><i class="px-2 fs-2 fas fa-comments p-2"></i></div>
-                <!-- <div><i class="px-2 fs-2 fas fa-share p-2"></i></div> -->
+            <div class="col justify-content-end d-flex ">
+                <div><i class="px-4 fs-2 fas fa-thumbs-up p-2"></i></div>
+                <div><i class="px-4 fs-2 fas fa-comments p-2"></i></div>
             </div>
 
             <!-- Featured image -->
@@ -28,6 +27,12 @@
 
             <!-- Blog Text Content goes here -->
             <p class="text-center card-text">{{ post.content|safe }}</p>
+
+            <hr>
+            <div class="d-flex justify-content-evenly align-items-center">
+            <p>Hit the like button if you enjoyed this content!</p>
+            <button class="btn btn-primary mb-2"><i class="fas fa-thumbs-up"></i></button>
+            </div>
 
         </div>
     </div>
@@ -53,14 +58,15 @@
                         <strong>{{ comment.name }} </strong><span> - <small
                                 class="mark">{{ comment.posted_on }}</small></span>
                     </p>
-                    <p class="px-1"> > {{ comment.body }}</p>
                     <!-- User is able to edit or delete their own comments -->
                     {% if user.is_authenticated %}
-                    {% if comment.name == user.username%}
-                    <button type="button" class="btn btn-success btn-sm float-sm-end">Edit</button>
-                    <button type="button" class="btn btn-danger btn-sm float-sm-end">Delete</button>
+                    {% if comment.name.username == user.username%}
+                    <button type="button" class="btn btn-success btn-sm float-sm-end mb-2">Edit</button>
+                    <button type="button" class="btn btn-danger btn-sm float-sm-end mb-2">Delete</button>
                     {% endif %}
                     {% endif %}
+                    <p class="px-1"> > {{ comment.body }}</p>
+                    
                     <!-- If there are no comments on a Blog Post -->
                     {% empty %}
                     <div class="col-lg-8">
@@ -80,8 +86,7 @@
                         </div>
 
                         <div class="col-md-12 submit-button mt-3">
-                            <button class="btn btn-primary contact-submit" type="submit" value="submit">Submit
-                                form</button>
+                            <button class="btn btn-primary contact-submit" type="submit" value="submit">Submit</button>
                         </div>
 
 
@@ -93,14 +98,14 @@
         <!-- End of Comments seciton -->
     </div>
 
-
+</div>
     <!-- JS/JQuery Auto scroll functionality to post content -->
-    <script>
+    <!-- <script>
         $(document).ready(function () {
             $('html, body').animate({
                 scrollTop: $('#details').offset().top
             }, 'slow');
         });
     </script>
-    {% endblock %}
+    {% endblock %} -->
     <!-- End of Post Detail section -->
