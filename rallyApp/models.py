@@ -6,6 +6,7 @@ from django_extensions.db.fields import AutoSlugField
 POST_STATUS = ((0, "Draft"), (1, "Published"))
 FINISH = ((0, "DNF"), (1, "Finished"))
 QUERY_TYPE = ((0, "Question"), (1, "Sponsorship"), (2, "Other"))
+CHOICES = (("Like", "Like"), ("Unlike", "Unlike"))
 
 
 class Post(models.Model):
@@ -59,6 +60,22 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+
+class Like(models.Model):
+    """
+    A class to handle liking a post.
+    """
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    reaction = models.CharField(choices=CHOICES, default="Like", max_length=8)
+    reacted_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-reacted_on']
+
+    def __str__(self):
+        return f"{self.user} liked your post: {self.post}"
 
 
 class Contact(models.Model):

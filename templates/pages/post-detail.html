@@ -36,7 +36,10 @@
             <hr>
             <div class="d-flex justify-content-evenly align-items-center">
             <p>Hit the like button if you enjoyed this content!</p>
-            <button class="btn btn-primary mb-2"><i class="fas fa-thumbs-up"></i></button>
+            <form action="" method="">
+                {% csrf_token %}
+            <button value="{{ post.slug }}" name="like_post" type="submit" class="btn btn-primary mb-2"><i class="fas fa-thumbs-up"></i></button>
+            </form>
             </div>
 
         </div>
