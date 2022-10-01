@@ -141,6 +141,19 @@ def edit_profile(request):
     """
     Renders the Edit Profile Page
     """
+
+    if request.method == "POST":
+
+        user = request.user
+        user.first_name = request.POST.get('edit-fname')
+        user.last_name = request.POST.get('edit-lname')
+        user.username = request.POST.get('edit-username')
+        user.email = request.POST.get('edit-email')
+
+        user.save()
+
+        return redirect('profile')
+
     return render(request, 'pages/edit-profile.html')
 
 

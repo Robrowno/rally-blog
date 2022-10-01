@@ -1,6 +1,6 @@
+import os
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
-import os
 
 
 def send_forget_password_mail(email, token):
