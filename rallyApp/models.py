@@ -14,7 +14,7 @@ class Post(models.Model):
     variable names with field types for my blog posts.
     """
     title = models.CharField(max_length=150)
-    slug = AutoSlugField(max_length=150, populate_from='title',)
+    slug = AutoSlugField(max_length=150, populate_from='title', unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -31,7 +31,6 @@ class Post(models.Model):
     championship_result = models.PositiveIntegerField(null=True, blank=True)
     likes = models.ManyToManyField(User, related_name="post_likes", blank=True)
     comments = models.ManyToManyField(User, related_name="post_comments", blank=True)
-    shares = models.ManyToManyField(User, related_name="post_shares", blank=True)
     post_status = models.BooleanField(choices=POST_STATUS, default=0)
 
     class Meta:
