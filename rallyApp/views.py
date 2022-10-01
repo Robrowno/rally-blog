@@ -44,6 +44,7 @@ def post_detail(request, slug):
 
     post_view = get_object_or_404(Post, slug=slug)
     comments = Comment.objects.filter(post=post_view)
+    comment_counter = comments.count()
     name = ""
     if request.method == 'POST':
         name = request.user
@@ -54,6 +55,7 @@ def post_detail(request, slug):
     context = {
         "post": post_view,
         "comments": comments,
+        "comment_counter": comment_counter,
         "Username": name
 
     }

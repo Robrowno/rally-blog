@@ -316,6 +316,8 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 - This youtube video helped guide me and give inspiration for the comments section: [Great Adib Youtuve vid](https://www.youtube.com/watch?v=MmLRE2fCcec)
 
+- This youtube video showed me how to create a comments counter: [Selmi Tech](https://www.youtube.com/watch?v=QWNxscgCGfw)
+
 - This is where I found the User model objects I needed for my Profile sections: [Django User model Docs](https://docs.djangoproject.com/en/4.1/ref/contrib/auth/#django.contrib.auth.models.User)
 
 - All Images were hosted on Cloudinary: [Cloudinary](https://cloudinary.com/)
