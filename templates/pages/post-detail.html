@@ -66,13 +66,20 @@
                         <strong>{{ comment.name }} </strong><span> - <small
                                 class="mark">{{ comment.posted_on }}</small></span>
                     </p>
+                    
+
                     <!-- User is able to edit or delete their own comments -->
-                    {% if user.is_authenticated %}
-                    {% if comment.name.username == user.username%}
-                    <button type="button" class="btn btn-success btn-sm float-sm-end mb-2">Edit</button>
-                    <button type="button" class="btn btn-danger btn-sm float-sm-end mb-2">Delete</button>
+                    
+                    {% if comment.name == user %}
+                    <form action = "{% url 'delete_comment' %}" method = "POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="comment_id" value="{{ comment.id }}"/>
+                        <input type="hidden" name="post_id" value="{{ post.id }}"/>
+                        <button type="submit" class="btn btn-danger mx-1 btn-sm float-sm-end mb-2">Delete</button>
+                    </form>
+                    <button type="button" class="btn btn-success mx-1 btn-sm float-sm-end mb-2">Edit</button>
                     {% endif %}
-                    {% endif %}
+
                     <p class="px-1"> > {{ comment.body }}</p>
                     
                     <!-- If there are no comments on a Blog Post -->

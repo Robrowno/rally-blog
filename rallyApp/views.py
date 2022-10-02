@@ -258,3 +258,22 @@ def forget_password(request):
     except Exception as e:
         print(e)
     return render(request, 'pages/accounts/password_reset.html')
+
+@csrf_exempt
+def delete_comment(request):
+    id = request.POST['comment_id']
+    pk = request.POST['post_id']
+    if request.method == 'POST':
+        comment = get_object_or_404(Comment, id=id, pk=pk)
+        try:
+            comment.delete()
+            messages.success(request, 'You have successfully deleted the comment')
+
+        except:
+            messages.warning(request, 'The comment could not be deleted.')
+
+    return redirect('home')
+
+@csrf_exempt
+def update_comment(request):
+    pass
