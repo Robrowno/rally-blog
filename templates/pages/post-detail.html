@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<link rel="stylesheet" href="{% static 'style/pages/post-detail' %}">
+<link rel="stylesheet" href="{% static 'style/pages/post-detail.css' %}">
 <!-- Beginning of blog post section-->
 <div class="container-fluid mt-3 bg-light">
     <div class="row">
@@ -12,8 +12,8 @@
             </div>
             <!-- Like and Comment 'Counter'-->
             <div class="col justify-content-end d-flex ">
-                <div class="px-4 fs-2 p-2" style="background-color: red;">0</div>
-                <div class="px-4 fs-2 p-2" style="background-color: greenyellow;">{{ comment_counter }}</div>
+                <div id="like-counter" class="px-4 fs-2 p-2" >0</div>
+                <div id="comment-counter" class="px-4 fs-2 p-2">{{ comment_counter }}</div>
             </div>
             <!-- Blog Like/Comment Fontawesome Icons -->
             <div class="col justify-content-end d-flex ">
@@ -34,13 +34,27 @@
             <p class="text-center card-text">{{ post.content|safe }}</p>
 
             <hr>
+            <!-- Like Button to like/unlike post -->
             <div class="d-flex justify-content-evenly align-items-center">
             <p>Hit the like button if you enjoyed this content!</p>
             <form action="" method="">
                 {% csrf_token %}
-            <button value="{{ post.slug }}" name="like_post" type="submit" class="btn btn-primary mb-2"><i class="fas fa-thumbs-up"></i></button>
+                {% if post_is_liked %}
+                <button type="submit" name="like_id" value="" class="btn btn-primary mb-2"><i class="fas fa-thumbs-up"> Unlike</i></button>
+                {% else %}
+                <button type="submit" name="like_id" value="" class="btn btn-primary mb-2"><i class="fas fa-thumbs-up"> Like</i></button>
+                {% endif %}
+
+                <!-- <input type="hidden" name="" value=""/>
+                {% if user not in post.likes %}
+                <button name="" type="submit" class="btn btn-primary mb-2"><i class="fas fa-thumbs-up"> Like</i></button>
+                {% else %}
+                <button name="" type="submit" class="btn btn-warning mb-2"><i class="fas fa-thumbs-up"> Unlike</i></button>
+                {% endif %} -->
+            
             </form>
             </div>
+            <!-- End of Like Button section -->
 
         </div>
     </div>
@@ -58,9 +72,7 @@
                 {% endif%}
                 <!-- Comments made displayed here -->
                 {% for comment in comments %}
-
                 <div>
-
                     <br>
                     <p>
                         <strong>{{ comment.name }} </strong><span> - <small

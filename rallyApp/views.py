@@ -47,6 +47,7 @@ def post_detail(request, slug):
     comments = Comment.objects.filter(post=post_view)
     comment_counter = comments.count()
     name = ""
+
     if request.method == 'POST':
         name = request.user
         body = request.POST.get('comments')
@@ -273,6 +274,7 @@ def delete_comment(request):
             messages.warning(request, 'The comment could not be deleted.')
 
     return redirect('home')
+
 
 @csrf_exempt
 def update_comment(request):

@@ -1,2 +1,13 @@
 /* Post detail css file*/
 
+#like-counter {
+
+    background-color: red;
+    border-radius: 50%;
+
+}
+
+#comment-counter {
+    background-color: greenyellow;
+    border-radius: 50%;
+}

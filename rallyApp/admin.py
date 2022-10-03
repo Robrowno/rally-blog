@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Contact
+from .models import Post, Comment, Contact, Like
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -12,6 +12,11 @@ class PostAdmin(SummernoteModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'post', 'posted_on')
+
+
+@admin.register(Like)
+class LikeAdmin(admin.ModelAdmin):
+    list_display = ('user', 'post', 'reacted_on')
 
 
 @admin.register(Contact)

@@ -8,7 +8,7 @@ admin.site.site_header = "RallyBlog Admin Panel"
 admin.site.site_title = "RallyBlog Admin Dashboard"
 
 urlpatterns = [
-    path('', views.home_page,name='home'),
+    path('', views.home_page, name='home'),
     path('<slug:slug>/', views.post_detail, name='post_detail'),
     path('delete/comment/', views.delete_comment, name='delete_comment'),
     path('update/comment/', views.update_comment, name='update_comment'),
