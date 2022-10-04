@@ -1,8 +1,8 @@
 from django import forms
-from .models import Comment, User
+from .models import Comment
 
 
-class CommentForm(forms.ModelForm):
+class EditCommentForm(forms.ModelForm):
 
     body = forms.CharField(widget=forms.Textarea(attrs={
         'class': 'form-control',
@@ -11,11 +11,4 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ('name', 'body', 'posted_on')
-
-
-class EditProfileForm(forms.ModelForm):
-
-    class Meta:
-        model = User
-        fields = ('first_name', 'last_name', 'username', 'email')
+        fields = ('body',)

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import HttpResponseRedirect
 from . import models
 from django.views.decorators.csrf import csrf_exempt
@@ -10,6 +10,7 @@ from django.contrib import messages
 from .helpers import send_forget_password_mail
 from django.core.paginator import Paginator
 import uuid
+from .forms import EditCommentForm
 
 
 @csrf_exempt
@@ -62,6 +63,14 @@ def post_detail(request, slug):
 
     }
     return render(request, 'pages/post-detail.html', context)
+
+
+def like_post(request, slug):
+    user = request.user
+    post = get_object_or_404(Post, slug=request.POST.get('like_id'))
+    post.likes.add(user)
+
+    return HttpResponseRedirect(reverse('post_detail'), slug=slug)
 
 
 @csrf_exempt
@@ -260,6 +269,7 @@ def forget_password(request):
         print(e)
     return render(request, 'pages/accounts/password_reset.html')
 
+
 @csrf_exempt
 def delete_comment(request):
     id = request.POST['comment_id']
@@ -278,4 +288,17 @@ def delete_comment(request):
 
 @csrf_exempt
 def update_comment(request):
-    pass
+
+    id = request.POST['edit_comment_id']
+    pk = request.POST['edit_post_id']
+    comment = get_object_or_404(Comment, id=id, pk=pk)
+    edit = False
+    if request.method == 'POST':
+        form = EditCommentForm(request.POST)
+        if form.is_valid():
+            comment.body = form.cleaned_data('')
+            comment.save()
+        else:
+            form = EditCommentForm()
+            if 'edit' in request.GET:
+                edit = True
