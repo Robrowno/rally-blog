@@ -12,7 +12,7 @@ urlpatterns = [
     path('<slug:slug>/', views.post_detail, name='post_detail'),
     path('delete/comment/', views.delete_comment, name='delete_comment'),
     path('update/comment/', views.update_comment, name='update_comment'),
-    path('<slug>/like/', views.like_post, name='like_post'),
+    path('<slug:slug>/like/', views.like_post, name='like_post'),
     path('contact', views.contact_page),
     path('follow', views.follow_page),
     path('profile', views.profile_page, name="profile"),

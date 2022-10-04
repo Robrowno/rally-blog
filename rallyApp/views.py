@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from . import models
 from django.views.decorators.csrf import csrf_exempt
@@ -67,10 +67,13 @@ def post_detail(request, slug):
 
 def like_post(request, slug):
     user = request.user
-    post = get_object_or_404(Post, slug=request.POST.get('like_id'))
-    post.likes.add(user)
+    post = get_object_or_404(Post, slug=slug)
+    if request.method == 'POST':
 
-    return HttpResponseRedirect(reverse('post_detail'), slug=slug)
+        post.likes.add(user)
+    
+
+    return redirect('post_detail', slug=slug)
 
 
 @csrf_exempt
