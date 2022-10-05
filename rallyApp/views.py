@@ -47,6 +47,7 @@ def post_detail(request, slug):
     post_view = get_object_or_404(Post, slug=slug)
     comments = Comment.objects.filter(post=post_view)
     comment_counter = comments.count()
+
     name = ""
 
     if request.method == 'POST':
@@ -66,12 +67,14 @@ def post_detail(request, slug):
 
 
 def like_post(request, slug):
+    """
+    Function for liking a post.
+    """
     user = request.user
     post = get_object_or_404(Post, slug=slug)
-    if request.method == 'POST':
 
+    if request.method == 'POST':
         post.likes.add(user)
-    
 
     return redirect('post_detail', slug=slug)
 

@@ -12,7 +12,7 @@
             </div>
             <!-- Like and Comment 'Counter'-->
             <div class="col justify-content-end d-flex ">
-                <div id="like-counter" class="px-4 fs-2 p-2" >0</div>
+                <div id="like-counter" class="px-4 fs-2 p-2">0</div>
                 <div id="comment-counter" class="px-4 fs-2 p-2">{{ comment_counter }}</div>
             </div>
             <!-- Blog Like/Comment Fontawesome Icons -->
@@ -34,12 +34,13 @@
             <p class="text-center card-text">{{ post.content|safe }}</p>
 
             <hr>
+            {% if user.is_authenticated %}
             <!-- Like Button to like/unlike post -->
             <div class="d-flex justify-content-evenly align-items-center">
             <p>Hit the like button if you enjoyed this content!</p>
             <form action="{% url 'like_post' post.slug %}" method="post">
                 {% csrf_token %}
-                {% if post_is_liked %}
+                {% if user in post.likes %}
                 <button type="submit" name="like_id" value="{{ post.like }}" class="btn btn-primary mb-2"><i class="fas fa-thumbs-up"> Unlike</i></button>
                 {% else %}
                 <button type="submit" name="like_id" value="{{ post.like }}" class="btn btn-primary mb-2"><i class="fas fa-thumbs-up"> Like</i></button>
@@ -54,6 +55,7 @@
             
             </form>
             </div>
+            {% endif %}
             <!-- End of Like Button section -->
 
         </div>

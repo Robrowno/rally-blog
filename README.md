@@ -217,7 +217,9 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 # Testing and Validation
 
-- 
+- Manual Testing:
+
+- Automated Testing:
 
 
 # Bugs and Issues
@@ -228,26 +230,78 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 - I had an issue/bug where when developing the functionality of posting a form to the database through the contact page, option 3 (Other) in the select tag dropdown was throwing an error, whereas the other two options were posting to my database just fine. I asked about this on Slack and it was suggested to me by Dave Horrocks and Daisy McGirr that I should try using a CharField instead of a BooleanField, as this was likely causing the issue (as it's looking for values of just 0:False and 1:True) - I deleted any old records in my admin page and went about adjusting the Contact model in question and it worked as expected after making this change.
 
+- At one point I was unable to get my Post content and title to render on the post detail page, I found this was due to me trying Post.title and post_view.title instead of post.title, as I had defined it in my context as "post": post_view.
+
+- Styling the post detail page was another challenge, and one I found that actually had a very simple fix that I will always be checking for in future. In using bootstrap, and including many divs in my html structure, I often left out on or two closing div tags along the way, which would lead to unintended styling mistakes. This was particularly an issue with my comments section, where there was added complexity of the comments section being more dynamic. I was fixing the comments section styling when there were no comments, only to find that when a comment was made, the styling would go wrong again. And vice versa. When I went and double checked if there were any closing div tags missing after trying for ages and formatting the document, I noticed div tags missing.
+
+- I struggled to get the edit profile functionlity working to begin with, as I kept getting integrity errors where the logic I had written was causing conflicts as I realised that it was attempting to create users that already existed after the user had been called, instead of updating the user's information. The mistake came from asigning user to User(), and I found out through playing around with the code, that I should have been assigning user = request.user. This was the root cause of the integrity error due to trying to accidentally create an existing user, rather than update it.
+
+- 
+
 
 
 # Peer Reviews 
 
-- 
+- Peer Reviews from the C.I Slack Community:
+
+- Thoughts on the project from my mentor:
+
+- Peer Reviews from the C.I London Community:
 
 
 # Deployment
 
+## Version Control:
+
+- Version control was done through the Gitpod CLI, using the following key commands to push updated code to Github:
+    - `git add ,` - to add all new files or file changes in preparation to commit in next step.
+    - `git commit -m ""` - add your commit message inbetween the two quoatation marks, this explains the changes of your lastest version.
+    - `git push` - this is the command that pushed your code up to your github repository.
+
+
 ## Forking a Github Repository:
 
-- 
+- Instructions for forking a respositoty:
+    - To fork a chosen repository, look towards the top right of the page, between the watch/unwatch tab and the star tab, and select the "Fork" tab.
+    - By default, forks are named the same as the parent repository, however, you can change this as you see fit. You are also able to add an optional description.
+    - Choose which branch you want to copy if you need to. Only the default branch is copied by default setting.
+    - Click the green "Create Fork" button, and you will now have a forked repository to use.
 
 ## Locally Cloning a Github Repository:
 
-- 
+- Instructions for cloning a repository:
+    - To clone a repository, first you will need to select your chosen repository and look for the green "Code" button (located next to the "Go to file" and "Add file" buttons).
+    - Next, copy the URL for the repository. By default this is a HTTPS link, however, you can copy an SSH key or by using the Github CLI.
+    - After you have the URL, you are going to want to go to the terminal of your machine and cd (change directory) to the folder where you want to save your working directory to be.
+    - In the terminal, type `git clone` followed by the url link you copied earlier.
+    - Press enter and hopfully you will have successfully cloned the repository locally.
+    - You will also need to make sure you have installed all the required packaged of the project. To do this, paste this code in to the terminal once your workspace is set up: `pip install -r requirements.txt`
+    - You will also need to make an env.py file to run the project. Populate it with the required information, though make sure you include this file in the .gitignore file. The contents of the env.py file should NOT be made public.
+
+
+### Github docs:
+- For further reading, I would highly suggest the Github Docs: [Github Docs Link](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 
 ## Deployment through Heroku:
 
-- 
+- Make sure you have a Heroku account before beginning with these steps.
+- You should also have a Cloudinary account and means to send emails through an API such as SendGrid to use in production.
+
+- Once logged in to Heroku, navigate to the personal dashboard and look for the 'New' dropdown button at top right hand corner of the page.
+- In the drop down, select "Create new app - you will be taken to a page where you will be able to name the app and select a region. Once you have filled this information in, click the "Create app" button. Your app is now created.
+- Access your Resources tab in your app's page, and go to setup your database in the add-ons. You will do this by searching for "Heroku Postgres" and Hobby Dev in the search bar and clicking add. 
+- Next, you should navigate to the Settings tab to set up the config vars. Scroll down slightly to the button that reads "Reveal Config Vars" and click it to open it. We are going to need to add/remove the following information: 
+    - DATABASE_URL: this should have been automatically generated by Heroku for you, but make sure it is populated already. Click add.
+    - CLOUDINARY_URL: access this url from your cloudinary account and paste it in here. Click add.
+    - SECRET_KEY: This should be a secret password, do not publish this anywhere. Click add.
+    - PORT: add the number 8000 to this and click add.
+    - ALLOWED_HOSTS: Optional to add here or in the settings.py of your project. Basically the name of your project with `.herokuapp.com` appended to it: example-app.herokuapp.com.
+     - DISABLE_COLLECTSTATIC: Should have been set to 1 during development. You will REMOVE this for full deployment. Click the 'x' to remove it.
+
+- After this, head to the Deploy tab and scroll down to the Deployment Method section and select "Github"
+- Next, in the "App connected to GitHub" section, look up your account and repo to pair it to the heroku app (click connect).
+- Head to the bottom of the page where you will see a section called "Manual Deploy". Select the 'main' branch in the drop down and click the 'Deploy Branch' button.
+- Wait for the deployment to complete, and when prompted, click the "View/Open App" button to see the launched site.
 
 
 
@@ -344,6 +398,12 @@ A special thanks to:
 
 - Abubakar Shafique: Abubakar has been an incredible teacher of Django concepts to me. Through his lessons, I have picked up a much better confidence using the Django framework, and when I'm stuck he always sends me resources to look at that could help with a particular issue I'm stuck on.
 
+---
+## Final Thoughts:
+
+Portfolio Project 4 proved a real challenge for me. It required me to go out and learn so much information and ask for help from friends, mentors and tutors as I really struggled with the initial learning curve of the Django frame-work. One thing I will say is that the take-away for me is that I can really see that when you start to become more profficient with Django, you can get fully functioning websites up and running very quickly compared to other means. 
+
+On a more subjective level, seeing a website growing from the ground up to having full stack (front and back end) capabilities has been quite a satisfying experience, despite the struggles and issues. By no means do I feel that profficient with it yet, but it's safe to say I'm looking forward to using the Django frame-work again in future to see how things progress differently with the better understanding that I have now.
 
 ---
 
