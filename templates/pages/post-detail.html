@@ -10,15 +10,15 @@
             <div class="col-lg-3 col-sm-2 d-flex"><button class="btn btn-primary submit-button">
                     <a href="/">Go Back</a></button>
             </div>
-            <!-- Like and Comment 'Counter'-->
-            <div class="col justify-content-end d-flex ">
-                <div id="like-counter" class="px-4 fs-2 p-2">0</div>
-                <div id="comment-counter" class="px-4 fs-2 p-2">{{ comment_counter }}</div>
-            </div>
+            
             <!-- Blog Like/Comment Fontawesome Icons -->
             <div class="col justify-content-end d-flex ">
-                <div><i class="px-3 fs-2 fas fa-thumbs-up p-2"></i></div>
-                <div><i class="px-3 fs-2 fas fa-comments p-2"></i></div>
+                <div class="icon-container">
+                    <i class="px-3 fs-2 fas fa-thumbs-up p-2 icon-class"></i><span id="like-badge" class="px-3 fs-2 p-2 badge">{{ post.likes.count }}</span>
+                </div>
+                <div class="icon-container">
+                    <i class="px-4 fs-2 fas fa-comments p-2 icon-class"></i><span id="comment-badge" class="px-3 fs-2 p-2 badge">{{ comment_counter }}</span>
+                </div>
             </div>
 
             <!-- Featured image -->

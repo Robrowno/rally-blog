@@ -1,13 +1,70 @@
 /* Post detail css file*/
 
-#like-counter {
+/* CSS for styling icons and icon badges */
+.icon-container {
+    padding: 5px;
+}
 
+.icon-class {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    border: none;
+    border-radius: 30%;
+    outline: none;
+    background: blue;
+    color: white;
+
+}
+
+#comment-badge {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: red;
+    top: 80px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 5px;
+  }
 
-}
-
-#comment-counter {
-    background-color: greenyellow;
+  #like-badge {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    top: 80px;
+    right: 120px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
-}
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+/* Media Queries for badge icons above screensize 1010px */
+  @media all and (min-width:1010px) {
+    
+    #comment-badge {
+
+        top: 87px;
+    }
+
+    #like-badge {
+
+        top: 87px;
+
+    }
+  }
