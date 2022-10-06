@@ -10,14 +10,16 @@
             <div class="col-lg-3 col-sm-2 d-flex"><button class="btn btn-primary submit-button">
                     <a href="/">Go Back</a></button>
             </div>
-            
+
             <!-- Blog Like/Comment Fontawesome Icons -->
             <div class="col justify-content-end d-flex ">
                 <div class="icon-container">
-                    <i class="px-3 fs-2 fas fa-thumbs-up p-2 icon-class"></i><span id="like-badge" class="px-3 fs-2 p-2 badge">{{ post.likes.count }}</span>
+                    <i class="px-3 fs-2 fas fa-thumbs-up p-2 icon-class"></i><span id="like-badge"
+                        class="px-3 fs-2 p-2 badge">{{ post.likes.count }}</span>
                 </div>
                 <div class="icon-container">
-                    <i class="px-4 fs-2 fas fa-comments p-2 icon-class"></i><span id="comment-badge" class="px-3 fs-2 p-2 badge">{{ comment_counter }}</span>
+                    <i class="px-4 fs-2 fas fa-comments p-2 icon-class"></i><span id="comment-badge"
+                        class="px-3 fs-2 p-2 badge">{{ comment_counter }}</span>
                 </div>
             </div>
 
@@ -37,23 +39,25 @@
             {% if user.is_authenticated %}
             <!-- Like Button to like/unlike post -->
             <div class="d-flex justify-content-evenly align-items-center">
-            <p>Hit the like button if you enjoyed this content!</p>
-            <form action="{% url 'like_post' post.slug %}" method="post">
-                {% csrf_token %}
-                {% if user in post.likes %}
-                <button type="submit" name="like_id" value="{{ post.like }}" class="btn btn-primary mb-2"><i class="fas fa-thumbs-up"> Unlike</i></button>
-                {% else %}
-                <button type="submit" name="like_id" value="{{ post.like }}" class="btn btn-primary mb-2"><i class="fas fa-thumbs-up"> Like</i></button>
-                {% endif %}
+                <p>Hit the like button if you enjoyed this content!</p>
+                <form action="{% url 'like_post' post.slug %}" method="post">
+                    {% csrf_token %}
+                    {% if user in post.likes %}
+                    <button type="submit" name="like_id" value="{{ post.like }}" class="btn btn-primary mb-2"><i
+                            class="fas fa-thumbs-up"> Unlike</i></button>
+                    {% else %}
+                    <button type="submit" name="like_id" value="{{ post.like }}" class="btn btn-primary mb-2"><i
+                            class="fas fa-thumbs-up"> Like</i></button>
+                    {% endif %}
 
-                <!-- <input type="hidden" name="" value=""/>
+                    <!-- <input type="hidden" name="" value=""/>
                 {% if user not in post.likes %}
                 <button name="" type="submit" class="btn btn-primary mb-2"><i class="fas fa-thumbs-up"> Like</i></button>
                 {% else %}
                 <button name="" type="submit" class="btn btn-warning mb-2"><i class="fas fa-thumbs-up"> Unlike</i></button>
                 {% endif %} -->
-            
-            </form>
+
+                </form>
             </div>
             {% endif %}
             <!-- End of Like Button section -->
@@ -80,27 +84,27 @@
                         <strong>{{ comment.name }} </strong><span> - <small
                                 class="mark">{{ comment.posted_on }}</small></span>
                     </p>
-                    
+
                     <!-- User is able to edit or delete their own comments -->
                     <!-- Delete Button-->
                     {% if comment.name == user %}
-                    <form action = "{% url 'delete_comment' %}" method = "POST">
+                    <form action="{% url 'delete_comment' %}" method="POST">
                         {% csrf_token %}
-                        <input type="hidden" name="comment_id" value="{{ comment.id }}"/>
-                        <input type="hidden" name="post_id" value="{{ post.id }}"/>
+                        <input type="hidden" name="comment_id" value="{{ comment.id }}" />
+                        <input type="hidden" name="post_id" value="{{ post.id }}" />
                         <button type="submit" class="btn btn-danger mx-1 btn-sm float-sm-end mb-2">Delete</button>
                     </form>
                     <!-- Edit Button-->
                     <form action="" method="POST">
                         {% csrf_token %}
-                        <input type="hidden" name="edit_comment_id" value="{{ edit_comment.id }}"/>
-                        <input type="hidden" name="edit_post_id" value="{{ edit_post.id }}"/>
-                    <button type="button" class="btn btn-success mx-1 btn-sm float-sm-end mb-2">Edit</button>
+                        <input type="hidden" name="edit_comment_id" value="{{ edit_comment.id }}" />
+                        <input type="hidden" name="edit_post_id" value="{{ edit_post.id }}" />
+                        <button type="button" class="btn btn-success mx-1 btn-sm float-sm-end mb-2">Edit</button>
                     </form>
                     {% endif %}
 
                     <p class="px-1"> > {{ comment.body }}</p>
-                    
+
                     <!-- If there are no comments on a Blog Post -->
                     {% empty %}
                     <div class="col-lg-8">
@@ -108,6 +112,51 @@
 
                         {% endfor %}
                     </div>
+                    <div>
+                    <!-- Comments Section Pagination -->
+                    <!-- Credit: The majority of the logic and structure in this code comes from 
+                        this website ( Python in Plain English ) https://python.plainenglish.io/how-to-implement-pagination-in-django-with-function-based-views-8f6462554930
+                        Also see README.md file for acknowledgement in the Credits -->
+                        {% if comments.has_other_pages %}
+                        <nav>
+                            <ul class="pagination justify-content-center mt-5">
+                                {% if comments.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ comments.previous_page_number }}"
+                                        aria-label="Previous">
+                                        <span aria-hidden="true">&#8592;</span>
+                                    </a>
+                                </li>
+                                {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link" aria-hidden="true">&#8592;</span>
+                                </li>
+                                {% endif %}
+
+                                {% for x in comments.paginator.page_range %}
+                                {% if comments.number == x %}
+                                <li class="page-item"><a id="paginator-red" class="page-link" href="#">{{ x }}</a></li>
+                                {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{ x }}">{{ x }}</a></li>
+                                {% endif %}
+                                {% endfor %}
+
+                                {% if comments.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ comments.next_page_number }}" aria-label="Next">
+                                        <span aria-hidden="true">&#8594;</span>
+                                    </a>
+                                </li>
+                                {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link" aria-hidden="true">&#8594;</span>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        {% endif %}
+                    </div>
+                    <!-- End of Pagination -->
 
                     {% if user.is_authenticated %}
                     <!-- Form for posting a comment -->
@@ -133,8 +182,8 @@
     </div>
 
 </div>
-    <!-- JS/JQuery Auto scroll functionality to post content -->
-    <!-- <script>
+<!-- JS/JQuery Auto scroll functionality to post content -->
+<!-- <script>
         $(document).ready(function () {
             $('html, body').animate({
                 scrollTop: $('#details').offset().top
@@ -142,4 +191,4 @@
         });
     </script>
     {% endblock %} -->
-    <!-- End of Post Detail section -->
+<!-- End of Post Detail section -->

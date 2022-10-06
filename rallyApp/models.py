@@ -6,7 +6,7 @@ from django_extensions.db.fields import AutoSlugField
 POST_STATUS = ((0, "Draft"), (1, "Published"))
 FINISH = ((0, "DNF"), (1, "Finished"))
 QUERY_TYPE = ((0, "Question"), (1, "Sponsorship"), (2, "Other"))
-CHOICES = (("Like", "Like"), ("Unlike", "Unlike"))
+CHOICES = ((0, "Like"), (1, "Unlike"))
 
 
 class Post(models.Model):
@@ -27,8 +27,8 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', default='placeholder')
     car = models.CharField(max_length=150)
     finish = models.BooleanField(choices=FINISH, default=0)
-    class_result = models.PositiveIntegerField()
-    overall_result = models.PositiveIntegerField()
+    class_result = models.PositiveIntegerField(null=True, blank=True)
+    overall_result = models.PositiveIntegerField(null=True, blank=True)
     championship_result = models.PositiveIntegerField(null=True, blank=True)
     likes = models.ManyToManyField(User, related_name="post_likes", blank=True)
     comments = models.ManyToManyField(User, related_name="post_comments", blank=True)
@@ -68,7 +68,7 @@ class Like(models.Model):
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    reaction = models.CharField(choices=CHOICES, default="Like", max_length=8)
+    reaction = models.BooleanField(choices=CHOICES, default=0)
     reacted_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:

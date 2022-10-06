@@ -236,7 +236,8 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 - I struggled to get the edit profile functionlity working to begin with, as I kept getting integrity errors where the logic I had written was causing conflicts as I realised that it was attempting to create users that already existed after the user had been called, instead of updating the user's information. The mistake came from asigning user to User(), and I found out through playing around with the code, that I should have been assigning user = request.user. This was the root cause of the integrity error due to trying to accidentally create an existing user, rather than update it.
 
-- 
+- I noticed an issue with how I originally did my comments in the post-detail template. I realised that in theory, you could keep adding comments and the page would keep scrolling down for an indefinite length in theory. Whilst I don't anticipate that large a quantity of comments, this would be a poor user experience in principle to have to scroll down a long way to read the comments. 
+I decided to paginate the comments section to keep the comments section shorter. This prevents unesessary scrolling and keeps pages at a predictable height.
 
 
 

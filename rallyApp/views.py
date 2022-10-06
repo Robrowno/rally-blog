@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from . import models
 from django.views.decorators.csrf import csrf_exempt
-from .models import Contact, Comment, Post
+from .models import Contact, Comment, Post, Like
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -47,6 +47,10 @@ def post_detail(request, slug):
     post_view = get_object_or_404(Post, slug=slug)
     comments = Comment.objects.filter(post=post_view)
     comment_counter = comments.count()
+    # Increase paginator for production version
+    paginator = Paginator(comments, 3)
+    comment_page_number = request.GET.get('page')
+    comments = paginator.get_page(comment_page_number)
 
     name = ""
 
@@ -72,9 +76,13 @@ def like_post(request, slug):
     """
     user = request.user
     post = get_object_or_404(Post, slug=slug)
+    # reaction = request.POST.get('like_id')
 
     if request.method == 'POST':
-        post.likes.add(user)
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(user)
+        else:
+            post.likes.add(user)
 
     return redirect('post_detail', slug=slug)
 
