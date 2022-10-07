@@ -1,6 +1,39 @@
 /* Index css file */
 
 /* Makes the Paginator current number go red */
+
+
 #paginator-red {
     color: red;
 }
+
+
+#comment-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    margin-top: 1px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+  }
+
+  #like-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red; 
+    margin-top: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+  }
+
+

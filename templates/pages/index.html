@@ -17,10 +17,12 @@
           <h5 class="card-title" id="title">{{item.title}}</h5>
         </div>
         <div class="thumbs-up">
-          <i class="fal fa-thumbs-up"></i>
+          <i class="fal fa-thumbs-up"></i><span id="like-badge"
+          class="px-2 fs-5 p-2 badge">{{ item.likes.count }}</span>
         </div>
         <div class="comment">
-          <i class="fal fa-comment-dots"></i>
+          <i class="fal fa-comment-dots"></i><span id="comment-badge"
+          class="px-2 fs-5 p-2 badge">{{ item.comments.count }}</span>
         </div>
       </div>
     </a>

@@ -332,7 +332,7 @@ I decided to paginate the comments section to keep the comments section shorter.
 
 -  I learned about field validations for my app models from Geeksforgeeks: [geeksforgeeks](https://www.geeksforgeeks.org/default-django-built-in-field-validation/)
 
-- All images are sourced from me or given to me with full permission to use. All the blog content is written by myself. 
+- All images are sourced from me or given to me with full permission to use, unless speficied otherwise See Image/Media credits below for details. All the blog content is written by myself. 
 
 - All icons used came from Font Awesome: [Fontawesome](https://fontawesome.com/)
 
@@ -379,10 +379,15 @@ I decided to paginate the comments section to keep the comments section shorter.
 
 - Summernote was used to style my Post text areas in the admin page: [Summernote](https://summernote.org/)
 
+- I watched this tutorial to see how to go about making badges for icons: [dcode](https://www.youtube.com/watch?v=nzxtEotE0YM)
 
 
 
+## Media/Images:
 
+- Martini Stripes image sources:
+    - [Martini-background 1](http://graphiclanguageblog.blogspot.com/2015/07/martini-racing-is-best-racing-livery.html)
+    - [Martini-background 2](https://pin.it/2kLSuxy)
 
 
 ## Personal Credits
