@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from . import models
 from django.views.decorators.csrf import csrf_exempt
-from .models import Contact, Comment, Post
+from .models import Contact, Comment, Post, Like
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -80,8 +80,10 @@ def like_post(request, slug):
     if request.method == 'POST':
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(user)
+            Like.objects.filter(post=post, user=user).reaction = 0
         else:
             post.likes.add(user)
+            Like.objects.create(user=user, post=post, reaction=1)
 
     return redirect('post_detail', slug=slug)
 
@@ -109,7 +111,10 @@ def contact_page(request):
         if 'submitted' in request.GET:
             submitted = True
 
-    return render(request, 'pages/contact.html', {'contact': contact, 'submitted': submitted})
+    return render(
+        request, 'pages/contact.html',
+        {'contact': contact, 'submitted': submitted}
+    )
 
 
 @csrf_exempt
@@ -285,11 +290,10 @@ def forget_password(request):
 
 
 @csrf_exempt
-def delete_comment(request):
-    id = request.POST['comment_id']
-    pk = request.POST['post_id']
+def delete_comment(request, pk):
+
     if request.method == 'POST':
-        comment = get_object_or_404(Comment, id=id, pk=pk)
+        comment = get_object_or_404(Comment, pk=pk)
         try:
             comment.delete()
             messages.success(request, 'You have successfully deleted the comment')

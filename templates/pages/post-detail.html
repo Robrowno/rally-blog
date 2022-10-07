@@ -42,7 +42,7 @@
                 <p>Hit the like button if you enjoyed this content!</p>
                 <form action="{% url 'like_post' post.slug %}" method="post">
                     {% csrf_token %}
-                    {% if user in post.likes %}
+                    {% if user in post.likes.all %}
                     <button type="submit" name="like_id" value="{{ post.likes }}" class="btn btn-primary mb-2"><i
                             class="fas fa-thumbs-up"> Unlike</i></button>
                     {% else %}
@@ -88,10 +88,10 @@
                     <!-- User is able to edit or delete their own comments -->
                     <!-- Delete Button-->
                     {% if comment.name == user %}
-                    <form action="{% url 'delete_comment' %}" method="POST">
+                    <form action="{% url 'delete_comment' comment.id %}" method="POST">
                         {% csrf_token %}
-                        <input type="hidden" name="comment_id" value="{{ comment.id }}" />
-                        <input type="hidden" name="post_id" value="{{ post.id }}" />
+                        <input type="hidden" name="comment_id" />
+                        <input type="hidden" name="post_id"/>
                         <button type="submit" class="btn btn-danger mx-1 btn-sm float-sm-end mb-2">Delete</button>
                     </form>
                     <!-- Edit Button-->
