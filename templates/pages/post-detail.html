@@ -43,7 +43,7 @@
                 <form action="{% url 'like_post' post.slug %}" method="post">
                     {% csrf_token %}
                     {% if user in post.likes.all %}
-                    <button type="submit" name="like_id" value="{{ post.likes }}" class="btn btn-primary mb-2"><i
+                    <button type="submit" name="like_id" value="{{ post.likes }}" class="btn btn-warning mb-2"><i
                             class="fas fa-thumbs-up"> Unlike</i></button>
                     {% else %}
                     <button type="submit" name="like_id" value="{{ post.likes }}" class="btn btn-primary mb-2"><i
