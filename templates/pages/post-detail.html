@@ -1,6 +1,9 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <link rel="stylesheet" href="{% static 'style/pages/post-detail.css' %}">
+<script>
+   
+</script>
 <!-- Beginning of blog post section-->
 <div class="container-fluid mt-3 bg-light">
     <div class="row">
@@ -78,7 +81,7 @@
                 {% endif%}
                 <!-- Comments made displayed here -->
                 {% for comment in comments %}
-                <div>
+                <div id="commentContainer">
                     <br>
                     <p>
                         <strong>{{ comment.name }} </strong><span> - <small
@@ -95,15 +98,16 @@
                         <button type="submit" class="btn btn-danger mx-1 btn-sm float-sm-end mb-2">Delete</button>
                     </form>
                     <!-- Edit Button-->
-                    <form action="" method="POST">
+                    <form action="{% url 'update_comment' comment.id %}" method="POST">
                         {% csrf_token %}
-                        <input type="hidden" name="edit_comment_id" value="{{ edit_comment.id }}" />
-                        <input type="hidden" name="edit_post_id" value="{{ edit_post.id }}" />
-                        <button type="button" class="btn btn-success mx-1 btn-sm float-sm-end mb-2">Edit</button>
+                        <input type="hidden" name="edit_comment_id" value="{{ comment.id }}" />
+                        <input type="hidden" name="edit_post_id" value="{{ post.id }}" />
+                        <button type="submit" class="btn btn-success mx-1 btn-sm float-sm-end mb-2">Edit</button>
                     </form>
                     {% endif %}
 
-                    <p class="px-1"> > {{ comment.body }}</p>
+                    <p class="px-1" id="commentBody"> > {{ comment.body }}</p>
+
 
                     <!-- If there are no comments on a Blog Post -->
                     {% empty %}
