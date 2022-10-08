@@ -6,13 +6,25 @@
 #paginator-red {
     color: red;
 }
+.heading{
+  margin-left: -20px;
+}
+.stats{
+  display: flex;
+  margin-right: -20px;
 
+}
+.thumbs-up,.comment{
+  padding-left: 8px;
+  padding-right: 8px;
+
+}
 
 #comment-badge {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    background-color: cornflowerblue;
     margin-top: 1px;
     width: 20px;
     height: 20px;
@@ -26,7 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red; 
+    background-color: cornflowerblue; 
     margin-top: 2px;
     width: 20px;
     height: 20px;

@@ -10,12 +10,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60px;
-    width: 60px;
     border: none;
-    border-radius: 30%;
+    border-radius: 80%;
     outline: none;
-    background: blue;
+    background: cornflowerblue;
     color: white;
 
 }
@@ -25,15 +23,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
     top: 80px;
-    right: 10px;
+    right: 21px;
     width: 25px;
     height: 25px;
-    color: white;
+    color: black;
     padding: 4px 8px;
     text-align: center;
     border-radius: 5px;
+    font-size: large;
+
   }
 
   #like-badge {
@@ -41,12 +40,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
     top: 80px;
-    right: 120px;
+    right: 64px;
     width: 25px;
     height: 25px;
-    color: white;
+    color: black;
+    font-size: large;
     padding: 4px 8px;
     text-align: center;
     border-radius: 5px;
@@ -57,12 +56,12 @@
     
     #comment-badge {
 
-        top: 87px;
+        top: 78px;
     }
 
     #like-badge {
 
-        top: 87px;
+        top: 76px;
 
     }
   }
