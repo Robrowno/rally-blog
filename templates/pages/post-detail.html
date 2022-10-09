@@ -5,7 +5,7 @@
    
 </script>
 <!-- Beginning of blog post section-->
-<div class="container-fluid mt-3 bg-light">
+<div class="container-fluid mt-3">
     <div class="row">
         <div class="col-lg-8 mx-auto card">
             <!-- Blog Title -->
@@ -53,13 +53,6 @@
                             class="fas fa-thumbs-up"> Like</i></button>
                     {% endif %}
 
-                    <!-- <input type="hidden" name="" value=""/>
-                {% if user not in post.likes %}
-                <button name="" type="submit" class="btn btn-primary mb-2"><i class="fas fa-thumbs-up"> Like</i></button>
-                {% else %}
-                <button name="" type="submit" class="btn btn-warning mb-2"><i class="fas fa-thumbs-up"> Unlike</i></button>
-                {% endif %} -->
-
                 </form>
             </div>
             {% endif %}
@@ -70,7 +63,7 @@
     <!-- End of Blog post section -->
 
     <!-- Beginning of Comments Section for Open Posts -->
-    <div class="container-fluid mt-3 bg-light">
+    <div class="container-fluid mt-3">
         <div class="row">
             <div class="col-lg-8 mx-auto card mb-5 p-2">
                 {% if not user.is_authenticated %}

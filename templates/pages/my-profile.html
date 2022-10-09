@@ -2,7 +2,7 @@
 
 {% if user.is_authenticated %}
 <!-- User Profile Page -->
-<div class="container-fluid mt-3 bg-light">
+<div class="container-fluid mt-3">
     <div class="row">
         <div class="col-lg-8 mx-auto card">
             <h1 class="card-title text-center"> My User Profile </h1>
@@ -12,9 +12,9 @@
             <div class="card-body d-inline p-2 bg-dark text-white"> <strong>Username:</strong> {{ user.username }}</div>
             <div class="card-body d-inline p-2 bg-primary text-white"> <strong>Email:</strong> {{ user.email }}</div>
             <div class="card-body d-inline p-2 bg-dark text-white"> <strong>Number of Comments:</strong>
-                {{ user.number_of_comments }}</div>
+                {{ count_total_comments }}</div>
             <div class="card-body d-inline p-2 bg-primary text-white"> <strong>Number of Likes:</strong>
-                {{ user.number_of_comments }}</div>
+                {{ count_total_likes }}</div>
             <!-- Link to edit Profile page -->
             <button class="col-md-4 submit-button mt-3 mx-auto"><a href="/edit-profile">Edit my Profile</a></button>
 

@@ -6,15 +6,15 @@
 #paginator-red {
     color: red;
 }
-.heading{
+.heading {
   margin-left: -20px;
 }
-.stats{
+.stats {
   display: flex;
   margin-right: -20px;
 
 }
-.thumbs-up,.comment{
+.thumbs-up, .comment {
   padding-left: 8px;
   padding-right: 8px;
 
@@ -25,7 +25,7 @@
     justify-content: center;
     align-items: center;
     background-color: cornflowerblue;
-    margin-top: 1px;
+    margin-top: 2px;
     width: 20px;
     height: 20px;
     border-radius: 50%;

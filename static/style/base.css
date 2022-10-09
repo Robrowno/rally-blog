@@ -21,6 +21,10 @@ a:active {
     font-family: 'Rubik Dirt', cursive;
 }
 
+.nav-colour {
+    background-color: #d2dac3;
+}
+
 .nav-link {
     font-family: 'Poppins', sans-serif;
 }
@@ -61,6 +65,7 @@ body {
 body {
     display: flex;
     flex-direction: column;
+    background-color: #c9dfec;
 }
 
 .content {
@@ -73,7 +78,10 @@ body {
     width: 100%;
     position: fixed;
     bottom: 0;
-    
+}
+
+.footer-colour {
+    background-color: #343f5c;
 }
 
 /* Media Queries */

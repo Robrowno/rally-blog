@@ -4,6 +4,11 @@ from sendgrid.helpers.mail import Mail
 
 
 def send_forget_password_mail(email, token):
+
+    """
+    Sends email with link to reset password.
+    Contains unique token based on user profile object.
+    """
     subject = 'Your forget password link'
     content = f'Hi there, click on the link to reset your password http://127.0.0.1:8000/change-password/{token}/'
     message = Mail(

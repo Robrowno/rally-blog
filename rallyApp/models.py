@@ -30,8 +30,12 @@ class Post(models.Model):
     class_result = models.PositiveIntegerField(null=True, blank=True)
     overall_result = models.PositiveIntegerField(null=True, blank=True)
     championship_result = models.PositiveIntegerField(null=True, blank=True)
-    likes = models.ManyToManyField(User, related_name="post_likes", blank=True)
-    comments = models.ManyToManyField(User, related_name="post_comments", blank=True)
+    likes = models.ManyToManyField(
+        User,  related_name="post_likes", blank=True
+        )
+    comments = models.ManyToManyField(
+        User, related_name="post_comments", blank=True
+        )
     post_status = models.BooleanField(choices=POST_STATUS, default=0)
 
     class Meta:
@@ -49,7 +53,9 @@ class Comment(models.Model):
     A class that handles the comments section within each post.
     """
 
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments_section")
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments_section"
+        )
     name = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     email = models.EmailField(blank=True, null=True)
     body = models.TextField(blank=False, null=True)
@@ -68,7 +74,7 @@ class Like(models.Model):
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    reaction = models.BooleanField(choices=CHOICES, default=0)
+    reaction = models.BooleanField(choices=CHOICES, default=None)
     reacted_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
