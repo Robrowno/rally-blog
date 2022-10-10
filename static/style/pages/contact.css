@@ -22,3 +22,14 @@ display: flex;
 justify-content: center;
 }
 
+.select-dropdown {
+    margin-top: 20px;
+}
+
+@media all and (min-width:768px) {
+
+.select-dropdown {
+    margin-top: 31px;
+}
+
+}

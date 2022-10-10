@@ -167,7 +167,7 @@ Technologies and Frameworks used to make this website include the following:
 
 ---
 
-# Features
+# Features and UX/UI:
 
 My Rally Blog website consists of many features, that allow the user to interact with my site in differnt ways.
 
@@ -206,6 +206,23 @@ My Rally Blog website consists of many features, that allow the user to interact
 
 
 
+## Colours:
+
+Colours used in the site are as follows:
+
+- Nav Bar is Appletree Green (Hex Code: d2dac3)
+- Body is Gulf Light Blue (Hex Code: c9dfec)
+- Footer is Gulf Dark Blue (Hex Code: 343f5c)
+- Icon colours range from White to Black
+- Like and Comment Buttons are Cornflower Blue
+- Paginators do make some use of the colour red
+- Stats on the Profile page and Post detail pages are standard Bootstrap Blue and Black
+- The delete comment buttons are Bootstrap (Danger) Red and Edit comment buttons are Bootstrap (Success) Green
+- The Like Button is Bootstrap (Primary) Blue and the Unlike is Bootstrap (Warning) Yellow
+
+
+
+
 # Features to implement
 
 - 
@@ -220,6 +237,16 @@ My Rally Blog website consists of many features, that allow the user to interact
 - Manual Testing:
 
 - Automated Testing:
+
+- HTML Code Validation:
+
+- CSS Code Validation:
+
+- JS Code Validation:
+
+- Python Code Validation:
+
+- Performance/Lighthouse:
 
 
 # Bugs and Issues
@@ -381,6 +408,10 @@ I decided to paginate the comments section to keep the comments section shorter.
 
 - I watched this tutorial to see how to go about making badges for icons: [dcode](https://www.youtube.com/watch?v=nzxtEotE0YM)
 
+- Colours:
+    - Appletree Green: https://encycolorpedia.com/d2dac3#:~:text=The%20hexadecimal%20color%20code%20%23d2dac3,%25%20saturation%20and%2081%25%20lightness.
+    - Gulf Light Blue: https://encycolorpedia.com/c9dfec
+    - Gulf DarK Blue: https://www.crispedge.com/faq/what-is-the-color-code-for-gulf-blue/
 
 
 ## Media/Images:
