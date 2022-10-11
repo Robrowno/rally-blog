@@ -45,10 +45,12 @@ I used Balsamiq to construct my wireframes, as it's a trustworthy way of mapping
 
 ## Home Page
 
+NOTE: Dropped Number of shares (indicated by the linked-dots icon) from the scope of the project due to time constraints.
 ![Home Page Wireframe](./static/images/readme-images/wireframe-home.png)
 
 ## Open Post
 
+NOTE: Changed layout of the stats in production version, and as above, removed number of shares each post has due to time constraints. Missing from the wireframe here is the comments section, which I left out of planning in the wireframe due to the size of the image required to house a scrolling page. The comments section was instead visualised by extension on pen and paper and actualised and adjusted during development.
 ![Open Post Wireframe](./static/images/readme-images/wireframe-open-post.png)
 
 ## Different Devices
@@ -117,29 +119,49 @@ Here is the very early stages of the Profile and Edit Profile pages - This is be
 
 # User Stories and Epics
 
+## Agile methodologies:
+
+As part of the project planning and development of this website, I made use of Github Projects to plan my development using a Kanban-style board to track issues as user stories, ideas and epics, and run through them with labels detailing in what sprints I would aim to tackle those issues and whether they would be, won't be or could be achieved in each sprint.
+
+Link to the board below:
+
+[Rally Blog Kanban Board](https://github.com/users/Robrowno/projects/3/views/1)
+
 ## User Stories:
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- [User Story: Create Content](https://github.com/Robrowno/rally-blog/issues/1)
+- [User Story: Create Drafts](https://github.com/Robrowno/rally-blog/issues/2)
+- [User Story: Post Replication](https://github.com/Robrowno/rally-blog/issues/3)
+- [User Story: Pagination](https://github.com/Robrowno/rally-blog/issues/4)
+- [User Story: Social Media](https://github.com/Robrowno/rally-blog/issues/5)
+- [User Story: Open Post](https://github.com/Robrowno/rally-blog/issues/6)
+- [User Story: Account Registration](https://github.com/Robrowno/rally-blog/issues/7)
+- [User Story: Login/Logout](https://github.com/Robrowno/rally-blog/issues/8)
+- [User Story: Reset Password](https://github.com/Robrowno/rally-blog/issues/9)
+- [User Story: Like](https://github.com/Robrowno/rally-blog/issues/11)
+- [User Story: Comment](https://github.com/Robrowno/rally-blog/issues/12)
+- [User Story: Contact Form](https://github.com/Robrowno/rally-blog/issues/13)
+- [User Story: Follow Page](https://github.com/Robrowno/rally-blog/issues/14)
+- [User Story: Profile Page](https://github.com/Robrowno/rally-blog/issues/24)
+- [User Story: Edit Comment](https://github.com/Robrowno/rally-blog/issues/25)
+- [User Story: Delete Comment](https://github.com/Robrowno/rally-blog/issues/26)
+- [User Story: Edit Profile Info](https://github.com/Robrowno/rally-blog/issues/27)
+- [User Story: Manage Panel](https://github.com/Robrowno/rally-blog/issues/28)
+- [User Story: Documentation](https://github.com/Robrowno/rally-blog/issues/30)
+
+
 
 ## Epics:
 
-- 
-- 
-- 
-- 
-- 
-- 
+- [EPIC: Install Django](https://github.com/Robrowno/rally-blog/issues/15)
+- [EPIC: Site Interaction](https://github.com/Robrowno/rally-blog/issues/16)
+- [EPIC: Login/Logout](https://github.com/Robrowno/rally-blog/issues/17)
+- [EPIC: Post Viewing](https://github.com/Robrowno/rally-blog/issues/18)
+- [EPIC: Site Owner Objectives](https://github.com/Robrowno/rally-blog/issues/19)
+- [EPIC: Testing](https://github.com/Robrowno/rally-blog/issues/20)
 
 
-
+---
 
 # Technologies Used
 
@@ -179,6 +201,7 @@ My Rally Blog website consists of many features, that allow the user to interact
     - If the user has an account, they will also have access to a Profile page in the nav
     - Superusers/Admins will have a Manage link, which is exclusive to Superusers/Admins
 
+Space for image here: #######################
 
 2. A footer that contains font awesome icons with links to:
     - Facebook
@@ -186,24 +209,43 @@ My Rally Blog website consists of many features, that allow the user to interact
     - LinkedIn
     - Github
 
+Space for image here: #######################
+
 3. A Home Page that displays Blog post content which can be individually clicked on to open posts. When opened they display unique content to that specific blog post/article.
+
+Space for image here: #######################
 
 4. A Login Page, where users can log into their account. It also gives options to create an account if you don't have one or if you forget your password you can follow a link to reset it.
 
+Space for image here: #######################
+
 5. A Register Page, where users can create an account.
+
+Space for image here: #######################
 
 6. A Reset-Password Page, where users can reset their password. Also gives you options to go back to the Login or Registration pages.
 
+Space for image here: #######################
+
 7. A Follow Me page, with cards displaying social media links for the site user to visit and follow me on different social media platforms.
+
+Space for image here: #######################
 
 8. A Contact form page, where the site user can fill out a form to get in touch with a particular query they have in mind. The form asks for a name & surname, email, query-type and displays a text area to type out your message.
 
+Space for image here: #######################
+
 9. A User Profile Page, where Users can view stats about their likes and comments, or their info such as name and username on file.
+
+Space for image here: #######################
 
 10. An Edit Profile Page, where users can alter their Name, Username, Email. 
 
+Space for image here: #######################
+
 11. Being a Django site, there is also an admin page just for the site Admin/Author, where the admin can edit, create, delete and draft/publish content. The Admin page allows me to see more than just the content, I can view comments, user registration and contact forms sent to me from the admin panel.
 
+Space for image here: #######################
 
 
 ## Colours:
@@ -216,10 +258,9 @@ Colours used in the site are as follows:
 - Icon colours range from White to Black
 - Like and Comment Buttons are Cornflower Blue
 - Paginators do make some use of the colour red
-- Stats on the Profile page and Post detail pages are standard Bootstrap Blue and Black
+- Stats on the Profile page and Post detail pages are standard Bootstrap (Primary) Blue and (Dark) Black
 - The delete comment buttons are Bootstrap (Danger) Red and Edit comment buttons are Bootstrap (Success) Green
 - The Like Button is Bootstrap (Primary) Blue and the Unlike is Bootstrap (Warning) Yellow
-
 
 
 
@@ -234,19 +275,10 @@ Colours used in the site are as follows:
 
 # Testing and Validation
 
-- Manual Testing:
+I've created a seperate testing-related file due to the amount of information I need to display.
+This covers automated and manual testing, html, css, js and python validation as well as lighthouse performance testing.
 
-- Automated Testing:
-
-- HTML Code Validation:
-
-- CSS Code Validation:
-
-- JS Code Validation:
-
-- Python Code Validation:
-
-- Performance/Lighthouse:
+Link to [TESTING.md](TESTING.md)
 
 
 # Bugs and Issues
@@ -415,6 +447,8 @@ I decided to paginate the comments section to keep the comments section shorter.
 
 
 ## Media/Images:
+
+!!! NOTE: If not used, remove before final deployment along with image files !!!
 
 - Martini Stripes image sources:
     - [Martini-background 1](http://graphiclanguageblog.blogspot.com/2015/07/martini-racing-is-best-racing-livery.html)

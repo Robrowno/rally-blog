@@ -1,14 +1,17 @@
 /* Contact form css file */
 
+/* H3 heading bottom padding */
 .h3-contact {
     padding-bottom: 10px;
 }
 
+/* Styling for successful contact message/modal */
 .contact-message {
     max-width: 50%;
     margin: auto
 }
 
+/* Forms and related inputs and buttons */
 form {
     padding: 2em;
 }
@@ -26,6 +29,9 @@ justify-content: center;
     margin-top: 20px;
 }
 
+/* Media Queries */
+
+/* Adjusts margin top for select drop down above 768px */
 @media all and (min-width:768px) {
 
 .select-dropdown {
