@@ -41,6 +41,7 @@ The website is deployed through Heroku, and the live link can be found here: ###
 
 # Wireframes
 
+ <details><summary>CLICK TO OPEN/HIDE WIREFRAMES</summary>
 I used Balsamiq to construct my wireframes, as it's a trustworthy way of mapping out my project ideas, which I have used on all of my prior projects as well.
 
 ## Home Page
@@ -94,7 +95,11 @@ how the cards looked in the Index.html page and wanted to replicate something si
 
 ![Contact Page](./static/images/readme-images/wireframe-contact.png)
 
+</details>
+
 ---
+
+<details><summary>CLICK TO OPEN/HIDE RENDERINGS</summary>
 
 ## Early Renderings
 
@@ -114,8 +119,18 @@ Here is the very early stages of the Profile and Edit Profile pages - This is be
 
 ![Early Development Edit Profile Page](./static/images/readme-images/early-edit-profile-rendering.png)
 
+My original ideas for colours included a fairly plain, uniform coloured site with Martini racing stripes, based on an old Rally car livery, to be in the main background. I found it to be a bit tedious finding background images to suit a range of screen sizes, and decided on going with a colour palette for the site instead. 
 
----
+I really wanted to go off of old racing liveries for inspiration, and wasn't too concerned about whether they were rally liveries specifically or from other motorsport disciplines.
+
+Here is an example of the home page, styled with Gulf Racing-like colours. 
+I actually stuck with the shades of Blue for the final version, ditching the orange for Appletree green.
+
+![Gulf Colours Testing](./static/images/readme-images/home-page-gulf.png)
+
+</details>
+
+--- 
 
 # User Stories and Epics
 
@@ -130,23 +145,41 @@ Link to the board below:
 ## User Stories:
 
 - [User Story: Create Content](https://github.com/Robrowno/rally-blog/issues/1)
+    - As a Site Admin I can open an admin page in order to write my own new content and publish them. 
 - [User Story: Create Drafts](https://github.com/Robrowno/rally-blog/issues/2)
+    - As a Site Admin I can save posts as drafts in order to continue editing or post content at a later date. 
 - [User Story: Post Replication](https://github.com/Robrowno/rally-blog/issues/3)
+    - As a Site Admin I have a post template in order to make new posts quickly under the same format.
 - [User Story: Pagination](https://github.com/Robrowno/rally-blog/issues/4)
+    - As a Site User I can view a selection of paginated posts so that I can decide which posts I want to read. 
 - [User Story: Social Media](https://github.com/Robrowno/rally-blog/issues/5)
+    - As a Site User I would like to see links to social media in order to follow the Site Owner on a desired Media platform. 
 - [User Story: Open Post](https://github.com/Robrowno/rally-blog/issues/6)
+    - As a Site User I can click on a post in order to read the content from the post I selected.
 - [User Story: Account Registration](https://github.com/Robrowno/rally-blog/issues/7)
+    - As a Site User I can create an account in order to have access to features that I wouldn't have otherwise. 
 - [User Story: Login/Logout](https://github.com/Robrowno/rally-blog/issues/8)
+    - As a Site User I can Log in or Log out in order to keep my account secure. 
 - [User Story: Reset Password](https://github.com/Robrowno/rally-blog/issues/9)
+    - As a Site User I can reset my password incase my account password us compromised.
 - [User Story: Like](https://github.com/Robrowno/rally-blog/issues/11)
+    - As a Site User I can like a post in order to show that I enjoyed the content.
 - [User Story: Comment](https://github.com/Robrowno/rally-blog/issues/12)
+    - As a Site User I can comment on blog posts in order to interact with other site users and the site owner. 
 - [User Story: Contact Form](https://github.com/Robrowno/rally-blog/issues/13)
+    - As a Site User I can Contact the Site owner directly in order to ask questions or discuss opportunities. 
 - [User Story: Follow Page](https://github.com/Robrowno/rally-blog/issues/14)
+    - As a Site User I can open a dedicated social media page in order to view social media links from one location. 
 - [User Story: Profile Page](https://github.com/Robrowno/rally-blog/issues/24)
+    - As a Site User I can Access a Profile Page in order to View/Update my information.
 - [User Story: Edit Comment](https://github.com/Robrowno/rally-blog/issues/25)
+    - As a Site User I can Click an edit button in order to Update/correct/edit comments that I've made.
 - [User Story: Delete Comment](https://github.com/Robrowno/rally-blog/issues/26)
+    - As a Site User I can click on a delete button in order to Remove comments I have made.
 - [User Story: Edit Profile Info](https://github.com/Robrowno/rally-blog/issues/27)
+    - As a Site User I can click an edit button on my profile in order to Edit/change information about me.
 - [User Story: Manage Panel](https://github.com/Robrowno/rally-blog/issues/28)
+    - As a Site Owner/Admin I can open a manage link in the navbar in order to create and edit posts on the front end. 
 - [User Story: Documentation](https://github.com/Robrowno/rally-blog/issues/30)
 - 
 
@@ -155,11 +188,17 @@ Link to the board below:
 ## Epics:
 
 - [EPIC: Install Django](https://github.com/Robrowno/rally-blog/issues/15)
+    - As a Software Developer I would like to Install Django and packages so that I can set up my work environment to begin my project. 
 - [EPIC: Site Interaction](https://github.com/Robrowno/rally-blog/issues/16)
+    - As a User I would like to comment and like posts so that I can interact with recent content and get involved.
 - [EPIC: Login/Logout](https://github.com/Robrowno/rally-blog/issues/17)
+    - As a User I would like to sign-in or log out of my account so that I can keep my profile secure.
 - [EPIC: Post Viewing](https://github.com/Robrowno/rally-blog/issues/18)
+    - As a User I would like to have a clean post layout so that I can I can clearly identify which posts I want to view. 
 - [EPIC: Site Owner Objectives](https://github.com/Robrowno/rally-blog/issues/19)
+    - As a Site Owner I would like to document my Rally journey so that I can attract interest in the form of new Rally competitors and potential sponsors, so that the sport benefits and I may be able to make a small income towards rallying.
 - [EPIC: Testing](https://github.com/Robrowno/rally-blog/issues/20)
+    - As a Developer I would like to write and perform manual or automated tests so that I can demonstrate that my code is working as expected.
 
 
 ---
@@ -263,6 +302,18 @@ Colours used in the site are as follows:
 - The delete comment buttons are Bootstrap (Danger) Red and Edit comment buttons are Bootstrap (Success) Green
 - The Like Button is Bootstrap (Primary) Blue and the Unlike is Bootstrap (Warning) Yellow
 
+## Design details:
+- The core design elements of the site revolve around 3 main sections: the navbar, the content section and the footer.
+- The Nav Bar is structured to have the heading on the left with all the nav links on the right.
+- The main content structure consists of cards, housing a related image of the blog post, a title and little icons of a thumbs up and speech bubble nested inside to represent likes and comments. These cards are limited to 6 per page to make sure the home pages isn't too cluttered with posts.
+- The Post detail pages follow the design pattern of a title, a back button and a likes and comment counter at the top op the article, followed by the image, statistics bars and content below that. The Black and Blue bars are a consitent theme with sharing statistics or key information on the site.
+- The comments section is kept as simple and clean as possible to fosuc on displaying the key information only, namely the comment, username and when each comment was posted. Similarly with the post list, the comments are limited via a similar pagination system, to keep the post detail page less cluttered and avoid unecessary scrolling.
+- The Social Media page was always going to be a streamlined section, and follows a similar card style to the post list. The colours are meant to mimic the key logo colours of each respective social media platform.
+- The Contact form is structed in rows to keep it as organised and clear as possible.
+- The profile page contains the familiar blue and black bars from the post detail page for displaying key information.
+- The footer is kept simple and contains social media icons as a quick means to follow me on the respective platforms. On large devices, my name is visible on the bottom right of the screen.
+
+
 
 
 # Features to implement
@@ -272,6 +323,20 @@ Colours used in the site are as follows:
 - 
 - 
 - 
+
+
+# Django Models:
+
+In this project, 5 main models were created to be used in conjunction with the database.
+These five models are:
+- Post 
+- Comment
+- Like
+- Contact
+- Profile
+
+All of these models were house within one app, the rallyApp. I could very well have seperated some of these out in to seperate apps but due to the relatively small scale of the site, I deemed it fine to keep them all within one app.
+
 
 
 # Testing and Validation
