@@ -86,6 +86,10 @@ body {
     background-color: #343f5c;
 }
 
+#delete-account {
+    margin-bottom: 5px;
+}
+
 /* Media Queries */
 @media all and (max-width:992px) {
     /* Tablet and mobile Screen Layout Code here */

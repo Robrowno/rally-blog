@@ -73,7 +73,7 @@ email address for Logging in to the website.
 
 ## Edit Profile Page 
 
-NOTE: Changed to having seperate inputs for First Name and Last Name.
+NOTE: Changed to having seperate inputs for First Name and Last Name. Also added a delete button should users wish to delete their account.
 
 ![Edit Profile](./static/images/readme-images/wireframe-profile-edit.png)
 
@@ -148,6 +148,7 @@ Link to the board below:
 - [User Story: Edit Profile Info](https://github.com/Robrowno/rally-blog/issues/27)
 - [User Story: Manage Panel](https://github.com/Robrowno/rally-blog/issues/28)
 - [User Story: Documentation](https://github.com/Robrowno/rally-blog/issues/30)
+- 
 
 
 
@@ -381,6 +382,7 @@ I decided to paginate the comments section to keep the comments section shorter.
     - [Bootstrap 5 Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
     - [Django 3.2 Documentation](https://docs.djangoproject.com/en/3.2/)
     - [MDN Web Docs (Mozilla)](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django)
+    - [AutoSlugField Documentation](https://django-autoslug.readthedocs.io/en/latest/index.html)
 
 
 - I used Bootstrap's fantastic documentation to help me to create the main sections of my home page, and features on other pages such as the contact form:
@@ -439,6 +441,8 @@ I decided to paginate the comments section to keep the comments section shorter.
 - Summernote was used to style my Post text areas in the admin page: [Summernote](https://summernote.org/)
 
 - I watched this tutorial to see how to go about making badges for icons: [dcode](https://www.youtube.com/watch?v=nzxtEotE0YM)
+
+- Watched this video by Codemy to gain an understanding of the logic for unliking: [Codemy Unlike button](https://www.youtube.com/watch?v=dwgIi8dspa4)
 
 - Colours:
     - Appletree Green: https://encycolorpedia.com/d2dac3#:~:text=The%20hexadecimal%20color%20code%20%23d2dac3,%25%20saturation%20and%2081%25%20lightness.

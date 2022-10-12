@@ -15,7 +15,7 @@
         {% csrf_token %}
         <!-- Name input -->
         <div class="form-outline mb-4">
-            <label class="form-label" for="form3Example3">Name</label>
+            <label class="form-label" for="form3Example3">Username</label>
             <input required type="text" id="form3Example3" name="username" class="form-control" />
         </div>
 
@@ -42,7 +42,7 @@
 
             <div class="col">
                 <!-- Simple link -->
-                <a href="/forget-password">Forgot password?</a>
+                <a class="link-primary" href="/forget-password">Forgot password?</a>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
 
         <!-- Register buttons -->
         <div class="text-center">
-            <p>Already a member? <a href="/login">Login</a></p>
+            <p>Already a member? <a class="link-primary" href="/login">Login</a></p>
         </div>
     </form>
 </div>

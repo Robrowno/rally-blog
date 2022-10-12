@@ -29,7 +29,18 @@
             <div class="mt-2">
                 <a class="link-primary text-decoration-underline" href="{% url 'forget_password' %}">Reset Password</a>
             </div>
+            
 
+            <div class="container" id="delete-account">
+                <div class="row">
+                    <div class="col-md-3 offset-md-10">
+                <form action="{% url 'delete_profile' %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-danger">Delete Account</button>
+                </form>
+                </div>
+            </div>
+        </div>
 
 
         </div>

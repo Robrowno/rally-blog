@@ -229,6 +229,27 @@ def edit_profile(request):
 
     return render(request, 'pages/edit-profile.html')
 
+# !!! Delete profile in progress !!!
+
+
+def delete_profile(request):
+    """
+    Function for deleting user account.
+    """
+    username = request.user
+
+    if request.method == 'POST':
+        try:
+            profile = User.objects.get(username=username)
+            # messages.warning(
+            #     request, 'Are you sure? This action cannot be undone.'
+            #     )
+            profile.delete()
+        except Exception as e:
+            return render(request, 'pages/edit-profile.html', {'error':e.message})
+
+    return redirect('home')
+
 
 @csrf_exempt
 @login_required(login_url='login')
@@ -294,7 +315,7 @@ def forget_password(request):
         if request.method == "POST":
             username = request.POST.get('username')
             if not User.objects.filter(username=username).first():
-                messages.error(request, 'Not user found with this username.')
+                messages.error(request, 'No user found with this username.')
                 return redirect('forget-password')
             user_obj = User.objects.get(username=username)
             token = str(uuid.uuid4())
@@ -302,7 +323,7 @@ def forget_password(request):
             profile_obj.forget_password_token = token
             profile_obj.save()
             send_forget_password_mail(user_obj.email, token)
-            messages.success(request, 'An email is sent.')
+            messages.success(request, 'An email has been sent.')
             return redirect('forget-password')
     except Exception as e:
         print(e)

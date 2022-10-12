@@ -17,6 +17,7 @@ urlpatterns = [
     path('follow', views.follow_page),
     path('profile', views.profile_page, name="profile"),
     path('edit-profile', views.edit_profile),
+    path('delete-profile', views.delete_profile, name='delete_profile'),
     path('register', views.register, name="register"),
     path('login', views.login_func, name="login"),
     path('logout', views.logout_func, name="logout"),
