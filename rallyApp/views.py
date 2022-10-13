@@ -353,24 +353,11 @@ def delete_comment(request, pk):
 
 @csrf_exempt
 def update_comment(request, pk):
-    pass
-    # id = request.POST['edit_comment_id']
-    # # pk = request.POST['edit_post_id']
-    # comment = get_object_or_404(Comment, pk=pk)
-    # edit = False
-    # print(comment.body)
-    # if request.method == 'POST':
-    #     form = EditCommentForm(request.POST)
-    #     if form.is_valid():
-    #         # comment.body = form.cleaned_data('')
-    #         comment.body=request.POST['comments']
-    #         comment.save()
-    #         messages.error(request, 'Comment updated  sucessfully')
-    #         return redirect('home')
-    #     else:
-    #         form = EditCommentForm()
-    #         if 'edit' in request.GET:
-    #             edit = True
-    #             messages.error(request, 'Failed to update the comment')
-    #             return redirect('home')
-    #         return render(request, "pages/post-detail.html")
+    
+    slug=request.POST['slug']
+    commentId=request.POST['edit_comment_id']
+    commentBody=request.POST[str(commentId)+'_comment_edit_content']
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.body=commentBody
+    comment.save(force_update=True)
+    return redirect('../'+slug+'/')
