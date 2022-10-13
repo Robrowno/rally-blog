@@ -1,5 +1,6 @@
 /* Login css file */
 
+/* Login, Register and password reset form styling*/
 .outer-container {
     width: max-content;
     display: flex;
@@ -15,3 +16,12 @@
     width: 22em;
 }
 
+/* Custom styling for Authentication-related links */
+.links, a.links {
+    color: blue;
+    
+}
+
+.links:hover {
+    color: green;
+}

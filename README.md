@@ -302,6 +302,15 @@ Colours used in the site are as follows:
 - The delete comment buttons are Bootstrap (Danger) Red and Edit comment buttons are Bootstrap (Success) Green
 - The Like Button is Bootstrap (Primary) Blue and the Unlike is Bootstrap (Warning) Yellow
 
+## Fonts:
+
+Fonts used in the project include the following:
+
+- `font-family: 'Poppins', sans-serif;` as the default font for the site
+- `font-family: 'Rubik Dirt', cursive;` for the main heading title and my name in the footer
+
+
+
 ## Design details:
 - The core design elements of the site revolve around 3 main sections: the navbar, the content section and the footer.
 - The Nav Bar is structured to have the heading on the left with all the nav links on the right.
@@ -335,7 +344,7 @@ These five models are:
 - Contact
 - Profile
 
-All of these models were house within one app, the rallyApp. I could very well have seperated some of these out in to seperate apps but due to the relatively small scale of the site, I deemed it fine to keep them all within one app.
+All of these models were housed within one app, the rallyApp. I could very well have seperated some of these out in to seperate apps but due to the relatively small scale of the site, I deemed it fine to keep them all within one app.
 
 
 

@@ -140,6 +140,7 @@ def register(request):
                 user.save()
                 profile_obj = models.Profile.objects.create(user=user)
                 profile_obj.save()
+                messages.success(request, 'Account registered! Please Login')
                 return redirect('login')
             except Exception as e:
                 messages.info(request, e)
