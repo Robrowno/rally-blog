@@ -7,10 +7,76 @@
         </div>
 
         <h1 class="text-center">Edit Post</h1>
-
     </div>
+
+    <!-- 
+        title
+        image
+        car
+        event
+        location
+        class result
+        overall result
+        content
+    -->
+    <div class="container">
+
+        <div class="row">
+            <form action="" method="">
+                {% csrf_token %}
+                <div class="col">
+                    <label class="form-label mt-2">Title</label>
+                    <input class="form-control">
+                
+                    <label for="imageFile" class="form-label mt-2">Upload Image</label>
+                    <input class="form-control" type="file" id="imageFile">
+                </div>
+
+                <div class="col">
+                    <label class="form-label mt-2">Car</label>
+                    <input class="form-control">
+                
+                    <label class="form-label mt-2">Event</label>
+                    <input class="form-control">
+                </div>
+
+                <div class="col">
+                    <label class="form-label mt-2">Location</label>
+                    <input class="form-control">
+                
+                    <!-- {% if post.class_result != None %} -->
+                    <label class="form-label mt-2">Class Result</label>
+                    <input class="form-control">
+                    <!-- {% endif %} -->
+                
+                    <!-- {% if post.overall_result != None %} -->
+                    <label class="form-label mt-2">Overall Result</label>
+                    <input class="form-control">
+                    <!-- {% endif %} -->
+                </div>
+                <div class="col-md-12 mt-2">
+                    <lable class="form-label">Content</lable>
+                    <textarea class="form-control" rows="7"></textarea>
+                </div>
+                
+
+            </div>
+            <div class="col-md-12 mb-3 mt-2">
+              <button class="btn btn-primary" type="submit" value="submit">Submit form</button>
+            </div>
+
+
+
+
+            </form>
+        </div>
+    </div>
+
+
+
+
 </div>
-        
+
 
 
 

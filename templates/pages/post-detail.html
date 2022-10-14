@@ -32,8 +32,12 @@
             <div id="details" class="d-inline p-2 bg-primary text-white">Car: {{ post.car }}</div>
             <div class="d-inline p-2 bg-dark text-white">Event: {{ post.event_name }}</div>
             <div class="d-inline p-2 bg-primary text-white">Location: {{ post.location }}</div>
+            {% if post.class_result != None %}
             <div class="d-inline p-2 bg-dark text-white">Class Result: {{ post.class_result }}</div>
+            {% endif %}
+            {% if post.overall_result != None %}
             <div class="d-inline p-2 bg-primary text-white">Overall Result: {{ post.overall_result }}</div>
+            {% endif %}
 
             <!-- Blog Text Content goes here -->
             <p class="text-center card-text">{{ post.content|safe }}</p>
