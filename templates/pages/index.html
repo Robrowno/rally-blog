@@ -10,8 +10,14 @@
     <a href="{% url 'post_detail' item.slug %}">
       <div class="img-container">
         <!-- Featured image -->
-        <img src="{{item.featured_image.url}}" class="card-img-top" alt="">
+        {% if "placeholder" in item.featured_image.url %}
+        <img class="card-img-top"
+        src="/static/images/mini-fast-pic.JPG">
+        {% else %}
+        <img src="{{ item.featured_image.url }}" class="card-img-top" alt="">
+        {% endif %}
       </div>
+      
       <div class="card-body d-flex justify-content-around">
         <div class="heading">
           <h5 class="card-title" id="title">{{item.title}}</h5>
