@@ -247,7 +247,9 @@ def delete_profile(request):
             #     )
             profile.delete()
         except Exception as e:
-            return render(request, 'pages/edit-profile.html', {'error':e.message})
+            return render(
+                request, 'pages/edit-profile.html', {'error': e.message}
+                )
 
     return redirect('home')
 
@@ -353,11 +355,11 @@ def delete_comment(request, pk):
 
 @csrf_exempt
 def update_comment(request, pk):
-    
-    slug=request.POST['slug']
-    commentId=request.POST['edit_comment_id']
-    commentBody=request.POST[str(commentId)+'_comment_edit_content']
+
+    slug = request.POST['slug']
+    commentId = request.POST['edit_comment_id']
+    commentBody = request.POST[str(commentId)+'_comment_edit_content']
     comment = get_object_or_404(Comment, pk=pk)
-    comment.body=commentBody
+    comment.body = commentBody
     comment.save(force_update=True)
     return redirect('../'+slug+'/')

@@ -54,10 +54,10 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
+| Form Submit | Attempt to submit empty form | Doesn't submit, points to first field not filled in | Pass |
+| Form Submit | Attempt to submit with some but not all fields filled in | Specific fields not filled in inform the user that they are required | Pass |
+| Form Submit | Submit a complete contact form | Form is sent and shows success message | Pass |
+| Email input | Try to enter an invalid email address or random numbers, words etc. | Email invalid message appears | Pass |
 
 &nbsp;
 ### Comment Form Submission
@@ -101,10 +101,10 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
+| Delete Comment | Try to delete comment when not signed in | Not possible as only delete button available when Logged in | Pass |
+| Delete Comment | Try to delete another user's comment | Not possible to delete another user's comment | Pass |
+| Delete Comment | Delete your own comment | User Comment is removed | Pass |
+| Comment counter (Delete) | Delete comment and view counter | Counter should subtract each time a comment is deleted | Pass |
 
 &nbsp;
 ---
@@ -114,16 +114,21 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
+| Add Post | Content | Content | Content |
+| Delete Post | Content | Content | Content |
+| Edit Post | Content | Content | Content |
+| Draft Post | Content | Content | Content |
+| Post Shows when set to "Published" | Content | Content | Content |
+| Post hidden when set to "Draft" | Content | Content | Content |
 
 &nbsp;
 ### Pagination
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
+| Pagination | Create 7 Blog Posts (Pagination number set to 6) | When number of Posts exceeds 6, pagination will occur | Pass |
+| Left-Right Buttons | Click Left and Right Buttons on Paginator | Left button will move back one page, where as right button will move forward one page | Pass |
+| Page Number Buttons | Click Page number buttons | Shows specific page number matching the number in the paginator | Pass |
 
 &nbsp;
 ### Post-Detail
@@ -133,6 +138,31 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Content | Content | Content | Content |
 | Content | Content | Content | Content |
 &nbsp;
+
+## Social Media Page and Footer Links:
+
+### Social Media Page
+
+| Test | Method | Expected Outcome | Result |
+| ---- | ------ | ---------------- | ------ |
+| Facebook Link/Icon | Click Link/Icon | Opens my Facebook Page in a new tab | Pass |
+| Instagram Link/Icon | Click Link/Icon | Opens my Instagram Page in a new tab  | Pass |
+| Github Link/Icon | Click Link/Icon | Opens my Github Page in a new tab  | Pass |
+| Linkedin Link/Icon | Click Link/Icon | Opens my Linkedin Page in a new tab  | Pass |
+
+&nbsp;
+
+### Footer Icons
+
+| Test | Method | Expected Outcome | Result |
+| ---- | ------ | ---------------- | ------ |
+| Facebook Link/Icon | Click Link/Icon | Opens my Facebook Page in a new tab  | Pass |
+| Instagram Link/Icon | Click Link/Icon | Opens my Instagram Page in a new tab  | Pass |
+| Github Link/Icon | Click Link/Icon | Opens my Github Page in a new tab  | Pass |
+| Linkedin Link/Icon | Click Link/Icon | Opens my Linkedin Page in a new tab  | Pass |
+
+&nbsp;
+
 ---
 ## HTML Validation:
 - 

@@ -373,6 +373,7 @@ Link to [TESTING.md](TESTING.md)
 - I noticed an issue with how I originally did my comments in the post-detail template. I realised that in theory, you could keep adding comments and the page would keep scrolling down for an indefinite length in theory. Whilst I don't anticipate that large a quantity of comments, this would be a poor user experience in principle to have to scroll down a long way to read the comments. 
 I decided to paginate the comments section to keep the comments section shorter. This prevents unesessary scrolling and keeps pages at a predictable height.
 
+- Whilst testing for the TESTING.md file, I realised that emails were being accepted in the form submission, even if the input value wasn't an email. When I went back to my Contact page html file to check what was going on, I realised I had put `type=text` in the input field rather than `type=email`. Once corrected this fixed the issue.
 
 
 # Peer Reviews 
