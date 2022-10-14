@@ -93,11 +93,11 @@
                     <!-- Edit Button-->
                      <form action="{% url 'update_comment' comment.id %}" method="POST">
                         {% csrf_token %}
-                        <input type="hidden" name="slug" value="{{post.slug}}" />
+                        <input type="hidden" name="slug" value="{{ post.slug }}" />
                         <input type="hidden" name="edit_comment_id" value="{{ comment.id }}" />
                         
                         <input type="hidden" id="comment_update_button" class="btn btn-warning mx-1 btn-sm  mb-2" value="Update">
-                        <input type="hidden" name="{{ comment.id }}_comment_edit_content" id="{{ comment.id }}_comment_edit_content" name="comment_edit_content" value="{{ comment.body }}" />
+                        <input class="edit-comment" type="hidden" name="{{ comment.id }}_comment_edit_content" id="{{ comment.id }}_comment_edit_content" name="comment_edit_content" value="{{ comment.body }}"/>
                         </form>
                         
                         <button onclick='showField("{{ comment.id }}")'class="btn btn-success mx-1 btn-sm float-sm-end mb-2">Edit</button>

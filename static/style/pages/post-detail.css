@@ -51,6 +51,14 @@
     border-radius: 5px;
   }
 
+/* Length adjustments for edit comment input*/
+  .edit-comment {
+
+    width: calc(100% - 300px);
+  }
+
+
+
 /* Media Queries for badge icons above screensize 1010px */
   @media all and (min-width:1010px) {
     
@@ -64,4 +72,15 @@
         top: 76px;
 
     }
+  }
+
+  @media all and (max-width:575px) {
+
+    .edit-comment {
+
+      width: calc(100% - 100px);
+    }
+  
+
+
   }

@@ -30,6 +30,10 @@ a:active {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Manage link */
+.manage {
+    color: blue;
+}
 
 .border-top {
     border-top: 2px solid black !important;

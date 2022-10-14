@@ -356,10 +356,51 @@ def delete_comment(request, pk):
 @csrf_exempt
 def update_comment(request, pk):
 
+    """
+    Function for editing post comments.
+    When comment is updated, redirects to same post page.
+    """
+
     slug = request.POST['slug']
-    commentId = request.POST['edit_comment_id']
-    commentBody = request.POST[str(commentId)+'_comment_edit_content']
+    comment_id = request.POST['edit_comment_id']
+    comment_body = request.POST[str(comment_id)+'_comment_edit_content']
     comment = get_object_or_404(Comment, pk=pk)
-    comment.body = commentBody
+    comment.body = comment_body
     comment.save(force_update=True)
     return redirect('../'+slug+'/')
+
+
+@csrf_exempt
+def manage_posts(request):
+    """
+    """
+    post_list = models.Post.objects.filter(post_status=1).order_by('-created_on')
+    paginator = Paginator(post_list, 6)
+
+    page_number = request.GET.get('page')
+    posts = paginator.get_page(page_number)
+
+    context = {
+
+        "posts": posts
+    }
+
+    return render(request, 'pages/manage-index.html', context)
+
+
+def add_post(request):
+
+    """
+    Function for adding a post from the management page.
+    """
+
+    return render(request, 'pages/add-post.html')
+
+
+def edit_post(request):
+
+    """
+    Function for editing a post from the management page.
+    """
+
+    return render(request, 'pages/manage-post.html')

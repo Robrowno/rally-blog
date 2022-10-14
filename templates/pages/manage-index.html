@@ -1,0 +1,95 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'style/pages/index.css' %}">
+
+<button class="btn btn-success"><a href="{% url 'add' %}">&plus; Add Post</a></button>
+
+
+<!-- Home Page Post Cards -->
+<div class="container-fluid my-5 d-flex flex-wrap justify-content-center">
+  {% for item in posts %}
+  <div class="card m-3" style="width:24rem;">
+    <div class="d-flex justify-content-between">
+     <form>
+        {% csrf_token %}
+        <button class="btn btn-success mx-2 btn-sm float-sm-end mb-2 mt-2"><a href="{% url 'edit' %}">Edit</a></button>
+    </form>
+    <form action="" method="">
+        {% csrf_token %}
+        <button class="btn btn-danger mx-2 btn-sm float-sm-end mb-2 mt-2">Delete</button>
+    </form>
+    </div>
+    <!-- Unique Post link -->
+      <div class="img-container">
+        <!-- Featured image -->
+        <img src="{{item.featured_image.url}}" class="card-img-top" alt="">
+      </div>
+      <div class="card-body d-flex justify-content-around">
+        <div class="heading">
+          <h5 class="card-title" id="title">{{item.title}}</h5>
+        </div>
+<div class="stats">
+  <div class="thumbs-up">
+    <i class="fal fa-thumbs-up"></i><span id="like-badge"
+    class="px-2 fs-5 p-2 badge">{{ item.likes.count }}</span>
+  </div>
+  <div class="comment">
+    <i class="fal fa-comment-dots"></i><span id="comment-badge"
+    class="px-2 fs-5 p-2 badge">{{ item.comments_section.count }}</span>
+  </div>
+</div>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Pagination Section -->
+
+<!-- Credit: The majority of the logic and structure in this code comes from 
+     this website ( Python in Plain English ) https://python.plainenglish.io/how-to-implement-pagination-in-django-with-function-based-views-8f6462554930
+     Also see README.md file for acknowledgement in the Credits -->
+{% if posts.has_other_pages %}
+<nav>
+  <ul class="pagination justify-content-center">
+    {% if posts.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ posts.previous_page_number }}" aria-label="Previous">
+        <span aria-hidden="true">&#8592;</span>
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <span class="page-link" aria-hidden="true">&#8592;</span>
+    </li>
+    {% endif %}
+
+    {% for x in posts.paginator.page_range %}
+    {% if posts.number == x %}
+    <li class="page-item"><a id="paginator-red" class="page-link" href="#">{{ x }}</a></li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="?page={{ x }}">{{ x }}</a></li>
+    {% endif %}
+    {% endfor %}
+
+    {% if posts.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ posts.next_page_number }}" aria-label="Next">
+        <span aria-hidden="true">&#8594;</span>
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <span class="page-link" aria-hidden="true">&#8594;</span>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+</div>
+<!-- End of Pagination -->
+
+<script src="{% static 'script/pages/index.js' %}"></script>
+
+{% endblock %}
+
+<!-- End of Home Page content section -->

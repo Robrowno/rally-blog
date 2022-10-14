@@ -375,6 +375,8 @@ I decided to paginate the comments section to keep the comments section shorter.
 
 - Whilst testing for the TESTING.md file, I realised that emails were being accepted in the form submission, even if the input value wasn't an email. When I went back to my Contact page html file to check what was going on, I realised I had put `type=text` in the input field rather than `type=email`. Once corrected this fixed the issue.
 
+- Found out while testing that there was a way for users already logged in, to be able to log in again through a link in the profile page. I fixed this by adding an if/endif statement like so: `{% if not user.is_authenticated %}.....{% endif %}`.
+
 
 # Peer Reviews 
 
