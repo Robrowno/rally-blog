@@ -27,7 +27,11 @@
             </div>
 
             <!-- Featured image -->
+            {% if "placeholder" in post.featured_image.url %}
+            <img class="image-fluid card-img" src="/static/images/mini-fast-pic.JPG" alt="" width="100%" height="75%">
+            {% else %}
             <img class="image-fluid card-img" src="{{ post.featured_image.url }}" alt="" width="100%" height="75%">
+            {% endif %}
             <!-- Stats display taken from database -->
             <div id="details" class="d-inline p-2 bg-primary text-white">Car: {{ post.car }}</div>
             <div class="d-inline p-2 bg-dark text-white">Event: {{ post.event_name }}</div>

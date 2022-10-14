@@ -470,7 +470,7 @@ I decided to paginate the comments section to keep the comments section shorter.
 
 -  I learned about field validations for my app models from Geeksforgeeks: [geeksforgeeks](https://www.geeksforgeeks.org/default-django-built-in-field-validation/)
 
-- All images are sourced from me or given to me with full permission to use, unless speficied otherwise See Image/Media credits below for details. All the blog content is written by myself. 
+- All images are sourced from me or given to me with full permission to use, unless speficied otherwise. All the blog content is written by myself. 
 
 - All icons used came from Font Awesome: [Fontawesome](https://fontawesome.com/)
 
@@ -526,14 +526,6 @@ I decided to paginate the comments section to keep the comments section shorter.
     - Gulf Light Blue: https://encycolorpedia.com/c9dfec
     - Gulf DarK Blue: https://www.crispedge.com/faq/what-is-the-color-code-for-gulf-blue/
 
-
-## Media/Images:
-
-!!! NOTE: If not used, remove before final deployment along with image files !!!
-
-- Martini Stripes image sources:
-    - [Martini-background 1](http://graphiclanguageblog.blogspot.com/2015/07/martini-racing-is-best-racing-livery.html)
-    - [Martini-background 2](https://pin.it/2kLSuxy)
 
 
 ## Personal Credits
