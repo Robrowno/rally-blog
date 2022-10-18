@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import HttpResponseRedirect
 from . import models
 from django.views.decorators.csrf import csrf_exempt
@@ -404,3 +404,18 @@ def edit_post(request):
     """
 
     return render(request, 'pages/manage-post.html')
+
+
+def delete_post(request, id):
+
+    """
+    Function for deleting a post from the management page.
+    """
+    if request.method == 'POST':
+        post = Post.objects.get(id=id)
+        post.delete()
+        messages.success(request, 'Post was successfully deleted!')
+    else:
+        messages.error(request, 'Unable to delete the post at this time. Try again later.')
+
+    return HttpResponseRedirect(reverse('home'))
