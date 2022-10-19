@@ -181,6 +181,9 @@ Link to the board below:
 - [User Story: Manage Panel](https://github.com/Robrowno/rally-blog/issues/28)
     - As a Site Owner/Admin I can open a manage link in the navbar in order to create and edit posts on the front end. 
 - [User Story: Documentation](https://github.com/Robrowno/rally-blog/issues/30)
+    - As a Developer I want to Document the development process in order to Show my design thinking, show how features work and show bugs and issues and whether they were resolved. 
+- [User Story: Delete Account](https://github.com/Robrowno/rally-blog/issues/31)
+    - As a Site User I can delete my account in order to remove myself from the website database if I no longer use the site.
 - 
 
 
@@ -527,6 +530,8 @@ I decided to paginate the comments section to keep the comments section shorter.
     - Gulf DarK Blue: https://www.crispedge.com/faq/what-is-the-color-code-for-gulf-blue/
 
 
+- I watched this Youtube tutorial on testing urls in Django to help my write my first automated tests: [The Dumbfounds Youtube](https://www.youtube.com/watch?v=0MrgsYswT1c)
+
 
 ## Personal Credits
 
@@ -540,7 +545,9 @@ A special thanks to:
 
 - Ian Meigh: Helped me to understand why there were url issues in my urls.py file in my rallyApp, and different ways I could go about resolving the issue. 
 
-- Abubakar Shafique: Abubakar has been an incredible teacher of Django concepts to me. Through his lessons, I have picked up a much better confidence using the Django framework, and when I'm stuck he always sends me resources to look at that could help with a particular issue I'm stuck on.
+- Abubakar Shafique: Abubakar has been an incredible teacher of Django concepts to me. Through his lessons, I have picked up a much better confidence using the Django framework, and when I'm stuck he always sends me resources to look at online that could help with a particular issue I'm stuck on, which has helped me nine times out of ten when trying to solve a problem. Abubakar also introduced me to the SendGrid API for handling emails and resetting passwords, and taught me how to use it in conjunction with a project. Without Django lessons with Abubakar, I simply would not have progressed and developed as well as I have.
+
+- C.I Tutor support, for their guidance in resolving bugs in development. I'd particularly like to extend my thanks to Ed from Tutor support for his kindness and patience!
 
 ---
 ## Final Thoughts:
