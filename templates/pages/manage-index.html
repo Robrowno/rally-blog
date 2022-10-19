@@ -11,7 +11,7 @@
     <div class="d-flex justify-content-between">
      <form>
         {% csrf_token %}
-        <button type="submit" class="btn btn-success mx-2 btn-sm float-sm-end mb-2 mt-2"><a href="{% url 'edit' %}">Edit</a></button>
+        <button type="submit" class="btn btn-success mx-2 btn-sm float-sm-end mb-2 mt-2"><a href="{% url 'edit' item.slug %}">Edit</a></button>
     </form>
     <form action="{% url 'delete_post' item.id %}" method="post">
         {% csrf_token %}

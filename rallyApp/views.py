@@ -373,8 +373,9 @@ def update_comment(request, pk):
 @csrf_exempt
 def manage_posts(request):
     """
+    Function returns a list of posts for the manage page.
     """
-    post_list = models.Post.objects.filter(post_status=1).order_by('-created_on')
+    post_list = Post.objects.filter(post_status=1).order_by('-created_on')
     paginator = Paginator(post_list, 6)
 
     page_number = request.GET.get('page')
@@ -397,13 +398,19 @@ def add_post(request):
     return render(request, 'pages/add-post.html')
 
 
-def edit_post(request):
+def edit_post(request, slug):
 
     """
     Function for editing a post from the management page.
     """
 
-    return render(request, 'pages/manage-post.html')
+    post_details = get_object_or_404(Post, slug=slug)
+
+    context = {
+        "post": post_details
+    }
+
+    return render(request, 'pages/manage-post.html', context)
 
 
 def delete_post(request, id):
@@ -416,6 +423,8 @@ def delete_post(request, id):
         post.delete()
         messages.success(request, 'Post was successfully deleted!')
     else:
-        messages.error(request, 'Unable to delete the post at this time. Try again later.')
+        messages.error(
+            request, 'Unable to delete the post at this time. Try again later.'
+            )
 
     return HttpResponseRedirect(reverse('home'))

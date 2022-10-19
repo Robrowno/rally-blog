@@ -25,44 +25,44 @@
             <form action="" method="">
                 {% csrf_token %}
                 <div class="col">
-                    <label class="form-label mt-2">Title</label>
-                    <input class="form-control">
+                    <label for="edit-title" class="form-label mt-2">Title</label>
+                    <input class="form-control" id="edit-title" value="{{ post.title }}">
                 
-                    <label for="imageFile" class="form-label mt-2">Upload Image</label>
-                    <input class="form-control" type="file" id="imageFile">
+                    <label for="image-file" class="form-label mt-2">Upload Image</label>
+                    <input class="form-control" type="file" id="image-file" value="{{ post.featured_image.url }}" >
                 </div>
 
                 <div class="col">
-                    <label class="form-label mt-2">Car</label>
-                    <input class="form-control">
+                    <label for="edit-car" class="form-label mt-2">Car</label>
+                    <input class="form-control" id="edit-car" value="{{ post.car }}">
                 
-                    <label class="form-label mt-2">Event</label>
-                    <input class="form-control">
+                    <label for="edit-event" class="form-label mt-2">Event</label>
+                    <input class="form-control" id="edit-event" value="{{ post.event_name }}">
                 </div>
 
                 <div class="col">
-                    <label class="form-label mt-2">Location</label>
-                    <input class="form-control">
+                    <label for="edit-location" class="form-label mt-2">Location</label>
+                    <input class="form-control" id="edit-location" value="{{ post.location }}">
                 
                     <!-- {% if post.class_result != None %} -->
-                    <label class="form-label mt-2">Class Result</label>
-                    <input class="form-control">
+                    <label for="edit-class-result" class="form-label mt-2">Class Result</label>
+                    <input class="form-control" id="edit-class-result" value="{{ post.class_result }}">
                     <!-- {% endif %} -->
                 
                     <!-- {% if post.overall_result != None %} -->
-                    <label class="form-label mt-2">Overall Result</label>
-                    <input class="form-control">
+                    <label for="edit-overall-result" class="form-label mt-2">Overall Result</label>
+                    <input class="form-control" id="edit-overall-result" value="{{ post.overall_result }}">
                     <!-- {% endif %} -->
                 </div>
                 <div class="col-md-12 mt-2">
-                    <lable class="form-label">Content</lable>
-                    <textarea class="form-control" rows="7"></textarea>
+                    <label for="edit-content" class="form-label">Content</label>
+                    <textarea class="form-control" rows="7" id="edit-content">{{ post.content }}</textarea>
                 </div>
                 
 
             </div>
             <div class="col-md-12 mb-3 mt-2">
-              <button class="btn btn-primary" type="submit" value="submit">Submit form</button>
+              <button class="btn btn-primary" type="submit" value="submit">Update Post</button>
             </div>
 
 
