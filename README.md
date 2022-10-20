@@ -244,15 +244,17 @@ My Rally Blog website consists of many features, that allow the user to interact
     - If the user has an account, they will also have access to a Profile page in the nav
     - Superusers/Admins will have a Manage link, which is exclusive to Superusers/Admins
 
-Space for image here: #######################
+For demonstration purposes I am using the Nav Bar that an admin would see. If not an admin, the blue manage button would not be there and if not logged in, the Logout link would become the link to the Register/Login page.
+![Navigation](/static/images/readme-images/navigation.png)
 
 2. A footer that contains font awesome icons with links to:
     - Facebook
     - Instagram
     - LinkedIn
     - Github
+    - My name on the bottom right (when viewed screens 992px wide and above)
 
-Space for image here: #######################
+![Footer](/static/images/readme-images/footer.png)
 
 3. A Home Page that displays Blog post content which can be individually clicked on to open posts. When opened they display unique content to that specific blog post/article.
 
@@ -260,33 +262,45 @@ Space for image here: #######################
 
 4. A Login Page, where users can log into their account. It also gives options to create an account if you don't have one or if you forget your password you can follow a link to reset it.
 
-Space for image here: #######################
+![Login Page](/static/images/readme-images/login-page.png)
 
 5. A Register Page, where users can create an account.
 
-Space for image here: #######################
+![Register Page](/static/images/readme-images/register-page.png)
 
 6. A Reset-Password Page, where users can reset their password. Also gives you options to go back to the Login or Registration pages.
 
-Space for image here: #######################
+![Reset Password Page](/static/images/readme-images/reset-password-page.png)
 
 7. A Follow Me page, with cards displaying social media links for the site user to visit and follow me on different social media platforms.
 
-Space for image here: #######################
+![Follow-Me Page](/static/images/readme-images/follow-me-page.png)
 
 8. A Contact form page, where the site user can fill out a form to get in touch with a particular query they have in mind. The form asks for a name & surname, email, query-type and displays a text area to type out your message.
 
-Space for image here: #######################
+![Contact Form Page](/static/images/readme-images/contact-page.png)
 
 9. A User Profile Page, where Users can view stats about their likes and comments, or their info such as name and username on file.
 
-Space for image here: #######################
+![User Profile Page](/static/images/readme-images/my-user-profile-page.png)
 
 10. An Edit Profile Page, where users can alter their Name, Username, Email. 
 
+![Edit Profile Page](/static/images/readme-images/edit-my-profile-page.png)
+
+11. Only accessible to the site admin/superuser, is the management home page, which is the same as the regular home page except it allows for CRUD functionality by the Admin on the front end for quick and easy changes/updates.
+
 Space for image here: #######################
 
-11. Being a Django site, there is also an admin page just for the site Admin/Author, where the admin can edit, create, delete and draft/publish content. The Admin page allows me to see more than just the content, I can view comments, user registration and contact forms sent to me from the admin panel.
+12. Within the management section, there is an edit post page where the admin can ammend each post and update it.
+
+Space for image here: #######################
+
+13. There is also an add post page, where the admin can publish a post from the front end.
+
+Space for image here: #######################
+
+14. Being a Django site, there is also an admin page just for the site Admin/Author, where the admin can edit, create, delete and draft/publish content. The Admin page allows me to see more than just the content, I can view comments, user registration and contact forms sent to me from the admin panel.
 
 Space for image here: #######################
 
@@ -304,6 +318,10 @@ Colours used in the site are as follows:
 - Stats on the Profile page and Post detail pages are standard Bootstrap (Primary) Blue and (Dark) Black
 - The delete comment buttons are Bootstrap (Danger) Red and Edit comment buttons are Bootstrap (Success) Green
 - The Like Button is Bootstrap (Primary) Blue and the Unlike is Bootstrap (Warning) Yellow
+
+### Main Colour Palette (Visualised):
+
+![Main Colour Palette](/static/images/readme-images/colour-palette.png)
 
 ## Fonts:
 
@@ -528,6 +546,7 @@ I decided to paginate the comments section to keep the comments section shorter.
     - Appletree Green: https://encycolorpedia.com/d2dac3#:~:text=The%20hexadecimal%20color%20code%20%23d2dac3,%25%20saturation%20and%2081%25%20lightness.
     - Gulf Light Blue: https://encycolorpedia.com/c9dfec
     - Gulf DarK Blue: https://www.crispedge.com/faq/what-is-the-color-code-for-gulf-blue/
+    - A colour palette generator I used for testing and combining colour combos: [coolors](https://coolors.co/d2dac3-c9dfec-343f5c-ffffff-000000)
 
 
 - I watched this Youtube tutorial on testing urls in Django to help my write my first automated tests: [The Dumbfounds Youtube](https://www.youtube.com/watch?v=0MrgsYswT1c)

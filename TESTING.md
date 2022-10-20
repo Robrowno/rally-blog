@@ -169,28 +169,45 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 ---
 ## HTML Validation:
-- 
-- 
+- HTML Validation by W3C was used to check my HTML code: [W3C Markup Validation Link](https://validator.w3.org/)
+- Testing conducted across all HTML Templates. Results below:
+
+
 
 ---
 ## CSS Validation:
-- 
-- 
+- CSS Validation by W3C was used to check my CSS: [W3C CSS Validation Link](https://jigsaw.w3.org/css-validator/)
+- Testing conducted across all CSS files. Results below:
+
+
 
 ---
 ## JS Validation:
-- 
-- 
+- JS validation by JSHint was used to check my Javascript code: [JSHint Validation Link](https://jshint.com/)
+- Results on Javascript code below:
+
+
 
 ---
 ## Python Validation:
-- 
-- 
+- At the time of writing/development of this project, the tried and tested PEP8 Python Validator was down. I mainly had to rely on the Linter that came with the Code Institute workspace that we use to start the portfolio projects.
+- Results across all pages with Python code below:
+
+
 
 ---
 ## Lighthouse Performance Testing:
 - 
 - 
+
+## Tests on mulitple devices and browsers:
+- Browsers tested:
+    - Google Chrome
+    - Safari
+
+- Devices Tested on:
+    - Apple Macbook Pro
+    - Apple iPhone 12 Pro
 
 
 ---
