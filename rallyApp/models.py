@@ -6,7 +6,6 @@ from django_extensions.db.fields import AutoSlugField
 POST_STATUS = ((0, "Draft"), (1, "Published"))
 FINISH = ((0, "DNF"), (1, "Finished"))
 QUERY_TYPE = ((0, "Question"), (1, "Sponsorship"), (2, "Other"))
-CHOICES = ((0, "Like"), (1, "Unlike"))
 
 
 class Post(models.Model):
@@ -74,7 +73,7 @@ class Like(models.Model):
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    reaction = models.BooleanField(choices=CHOICES, default=None)
+    reaction = models.CharField(default='Liked', max_length=10)
     reacted_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:

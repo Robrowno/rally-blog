@@ -18,6 +18,7 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(Like)
 class LikeAdmin(admin.ModelAdmin):
     list_display = ('user', 'post', 'reacted_on')
+    readonly_fields = ('reaction',)
 
 
 @admin.register(Contact)

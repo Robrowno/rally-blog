@@ -77,13 +77,12 @@ def like_post(request, slug):
     if request.method == 'POST':
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(user)
-            # Like.objects.filter(post=post, user=user).reaction = 0
             like = get_object_or_404(Like, post=post, user=user)
             like.delete()
 
         else:
             post.likes.add(user)
-            Like.objects.create(user=user, post=post, reaction=1)
+            Like.objects.create(user=user, post=post)
 
     return redirect('post_detail', slug=slug)
 
