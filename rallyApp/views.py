@@ -241,9 +241,6 @@ def delete_profile(request):
     if request.method == 'POST':
         try:
             profile = User.objects.get(username=username)
-            # messages.warning(
-            #     request, 'Are you sure? This action cannot be undone.'
-            #     )
             profile.delete()
         except Exception as e:
             return render(

@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'style/pages/login.css' %}">
 
 <!-- Edit Profile Page -->
 {% if user.is_authenticated %}
@@ -24,29 +25,59 @@
             <!-- Links to Logout or Reset password page-->
             <h4 class="mt-3">Useful Links:</h4>
             <div class="mt-2">
-                <a class="link-primary text-decoration-underline" href="/logout">Logout</a>
+                <a class="links text-decoration-underline" href="/logout">Logout</a>
             </div>
             <div class="mt-2">
-                <a class="link-primary text-decoration-underline" href="{% url 'forget_password' %}">Reset Password</a>
+                <a class="links text-decoration-underline" href="{% url 'contact' %}">Contact Me</a>
             </div>
-            
+
+
+            <!-- Credit: Modal code has come from Bootstrap v.5.0's documentation: https://getbootstrap.com/docs/5.0/components/modal/-->
 
             <div class="container" id="delete-account">
                 <div class="row">
                     <div class="col-md-3 offset-md-10">
-                <form action="{% url 'delete_profile' %}" method="post">
-                    {% csrf_token %}
-                    <button class="btn btn-danger">Delete Account</button>
-                </form>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            Delete Account
+                        </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
         </div>
     </div>
 </div>
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Delete Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your account? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <form action="{% url 'delete_profile' %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-danger">Delete Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End of Modal section -->
 
 {% endif %}
 

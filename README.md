@@ -282,11 +282,14 @@ Space for image here: #######################
 
 9. A User Profile Page, where Users can view stats about their likes and comments, or their info such as name and username on file.
 
-![User Profile Page](/static/images/readme-images/my-user-profile-page.png)
+![User Profile Page](/static/images/readme-images/user-profile-page.png)
 
 10. An Edit Profile Page, where users can alter their Name, Username, Email. 
 
-![Edit Profile Page](/static/images/readme-images/edit-my-profile-page.png)
+![Edit Profile Page](/static/images/readme-images/edit-my-profile.png)
+
+The Delete Account Modal:
+![Delete Account Modal](/static/images/readme-images/delete-account-modal.png)
 
 11. Only accessible to the site admin/superuser, is the management home page, which is the same as the regular home page except it allows for CRUD functionality by the Admin on the front end for quick and easy changes/updates.
 
@@ -550,6 +553,8 @@ I decided to paginate the comments section to keep the comments section shorter.
 
 
 - I watched this Youtube tutorial on testing urls in Django to help my write my first automated tests: [The Dumbfounds Youtube](https://www.youtube.com/watch?v=0MrgsYswT1c)
+
+- Modal Code came from Bootstrap's documentation: [Bootstrap Static modal](https://getbootstrap.com/docs/5.0/components/modal/)
 
 
 ## Personal Credits
