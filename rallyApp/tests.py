@@ -119,8 +119,9 @@ class TestRallyAppUrls(SimpleTestCase):
         """
         For testing the resolution of the password change url
         """
+        id_x = int()
 
-        url = reverse('change_password', args=[1])
+        url = reverse('change_password', args=[id_x])
         self.assertEquals(resolve(url).func, change_password)
 
     def test_forget_password_url_is_resolved(self):
@@ -138,7 +139,9 @@ class TestRallyAppUrls(SimpleTestCase):
         For testing the resolution of the delete comment url
         """
 
-        url = reverse('delete_comment', args=[2])
+        id_x = int()
+
+        url = reverse('delete_comment', args=[id_x])
         self.assertEquals(resolve(url).func, delete_comment)
 
     def test_update_comment_url_is_resolved(self):
@@ -147,7 +150,9 @@ class TestRallyAppUrls(SimpleTestCase):
         For testing the resolution of the update comment url
         """
 
-        url = reverse('update_comment', args=[2])
+        id_x = int()
+
+        url = reverse('update_comment', args=[id_x])
         self.assertEquals(resolve(url).func, update_comment)
 
     def test_manage_posts_url_is_resolved(self):
@@ -182,6 +187,7 @@ class TestRallyAppUrls(SimpleTestCase):
         """
         For testing the resolution of the delete post url
         """
+        id_x = int()
 
-        url = reverse('delete_post', args=[1])
+        url = reverse('delete_post', args=[id_x])
         self.assertEquals(resolve(url).func, delete_post)
