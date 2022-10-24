@@ -1,6 +1,16 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <link rel="stylesheet" href="{% static 'style/pages/login.css' %}">
 
+<div class="container">
+    {% if messages %} {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %} {% endif %}
+</div>
+
+
 <!-- Edit Profile Page -->
 {% if user.is_authenticated %}
 <div class="container-fluid mt-3">
@@ -11,13 +21,16 @@
             <form action="" method="post">
                 {% csrf_token %}
                 <label class="form-label" for="edit-fname">First Name: </label>
-                <input class="form-control" id="edit-fname" name="edit-fname" type="text" value="{{ user.first_name }}">
+                <input class="form-control mb-2" id="edit-fname" name="edit-fname" type="text"
+                    value="{{ user.first_name }}">
                 <label class="form-label" for="edit-lname">Surname: </label>
-                <input class="form-control" id="edit-lname" name="edit-lname" type="text" value="{{ user.last_name }}">
+                <input class="form-control mb-2" id="edit-lname" name="edit-lname" type="text"
+                    value="{{ user.last_name }}">
                 <label class="form-label" for="edit-username">Username: </label>
-                <input class="form-control" id="edit-username" name="edit-username" type="text" value="{{ user.username }}">
+                <input class="form-control mb-2" id="edit-username" name="edit-username" type="text"
+                    value="{{ user.username }}">
                 <label class="form-label" for="edit-email">Email: </label>
-                <input class="form-control" id="edit-email" name="edit-email" type="text" value="{{ user.email }}">
+                <input class="form-control" id="edit-email" name="edit-email" type="email" value="{{ user.email }}">
 
                 <button class="col-sm-4 offset-sm-4 submit-button mt-3" type="submit" value="submit">Save</button>
             </form>

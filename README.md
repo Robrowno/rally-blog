@@ -556,6 +556,8 @@ I decided to paginate the comments section to keep the comments section shorter.
 
 - Modal Code came from Bootstrap's documentation: [Bootstrap Static modal](https://getbootstrap.com/docs/5.0/components/modal/)
 
+- This site helped me to customise my messages on the front end, by walking through how to use the Django Messages framework in conjunction with Bootstrap: [Ordinary Coders](https://ordinarycoders.com/blog/article/django-messages-framework)
+
 
 ## Personal Credits
 

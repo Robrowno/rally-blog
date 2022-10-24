@@ -217,19 +217,32 @@ def edit_profile(request):
 
     if request.method == "POST":
 
+        # Data from the form
         user = request.user
         user.first_name = request.POST.get('edit-fname')
         user.last_name = request.POST.get('edit-lname')
         user.username = request.POST.get('edit-username')
         user.email = request.POST.get('edit-email')
 
-        user.save()
+        # If the username chosen is taken by another user
 
+        if User.objects.filter(username=user.username).exists():
+
+            messages.error(request, 'That Username is already taken.')
+            return redirect('edit_profile')
+        # If the email chosen is taken by abother user
+        if User.objects.filter(email=user.email).exists():
+
+            messages.error(request, 'That email is already taken.')
+            return redirect('edit_profile')
+
+        # If the username and/or the email was not changed and is the same:
+            ## Code here and user.save()
+
+        user.save()
         return redirect('profile')
 
     return render(request, 'pages/edit-profile.html')
-
-# !!! Delete profile in progress !!!
 
 
 def delete_profile(request):
@@ -363,6 +376,7 @@ def update_comment(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.body = comment_body
     comment.save(force_update=True)
+    messages.success(request, 'Comment updated!')
     return redirect('../'+slug+'/')
 
 

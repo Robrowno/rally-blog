@@ -7,7 +7,7 @@ from rallyApp.views import profile_page, edit_profile, delete_profile, logout_fu
 from rallyApp.views import change_password, forget_password, delete_comment, update_comment
 from rallyApp.views import manage_posts, add_post, edit_post, delete_post
 
-# Testing NOT complete - 5 URL Tests currently fail (14/19 Currently Pass)
+# Testing NOT complete - all URLs pass, continue refactoring where appropriate
 
 
 class TestRallyAppUrls(SimpleTestCase):

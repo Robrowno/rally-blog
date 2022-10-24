@@ -68,10 +68,10 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
+| Submit a Comment | Write a comment and click 'Submit' | When submit button is clicked, the post detail page reloads with new comment at the top of the comments section | Pass |
+| Comments render | Read comments in comment section when post is submitted | Comment content should display, along with the user who posted and the date the comment was posted. | Pass |
+| Comments Pagination | Create comment to test pagination number | When the pagination number is exceded, panigation will occur | Pass |
+| Pagination Buttons | Click on all pagination buttons | Can traverse between pages to follow along with the conversation history | Pass |
 
 &nbsp;
 ---
@@ -81,20 +81,22 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
+| Update any individual input and save | Content | Content | Content |
+| Attempt to enter an invalid email | Content | Content | Content |
+| Attempt to enter username that already exists | Content | Content | Content |
+| Attempt to enter an email that already exists | Content | Content | Content |
+| Check updated fields in the database | Content | Content | Content |
+
 
 &nbsp;
 ### Update Comment
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
+| Edit Button | Content | Content | Content |
+| Edit input display | Content | Content | Content |
+| Update Button | Content | Content | Content |
+| Read Editted comment | Content | Content | Content |
 
 
 &nbsp;
@@ -109,6 +111,17 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Delete Comment | Try to delete another user's comment | Not possible to delete another user's comment | Pass |
 | Delete Comment | Delete your own comment | User Comment is removed | Pass |
 | Comment counter (Delete) | Delete comment and view counter | Counter should subtract each time a comment is deleted | Pass |
+
+&nbsp;
+
+### Delete Account
+
+| Test | Method | Expected Outcome | Result |
+| ---- | ------ | ---------------- | ------ |
+| Click Delete Button | Content | Content | Content |
+| Confirm Delete Button | Content | Content | Content |
+| Close Modal | Content | Content | Content |
+| Database Check | Content | Content | Content |
 
 &nbsp;
 ---
