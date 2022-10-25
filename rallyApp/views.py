@@ -1,15 +1,15 @@
+import uuid
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import HttpResponseRedirect
-from . import models
 from django.views.decorators.csrf import csrf_exempt
-from .models import Contact, Comment, Post, Like
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .helpers import send_forget_password_mail
 from django.core.paginator import Paginator
-import uuid
+from . import models
+from .models import Contact, Comment, Post, Like
+from .helpers import send_forget_password_mail
 
 
 @csrf_exempt
@@ -145,7 +145,7 @@ def register(request):
                 messages.info(request, e)
                 return redirect('register')
     except Exception as e:
-        print(e)
+        pass
     return render(request, "pages/register.html")
 
 
@@ -179,7 +179,7 @@ def login_func(request):
                     )
                 return redirect('login')
         except Exception as e:
-            print(e)
+            pass
             messages.error(request, ("Server error, Please try Again!"))
             return redirect('login')
 
@@ -218,30 +218,39 @@ def edit_profile(request):
     if request.method == "POST":
 
         # Data from the form
+        username = request.POST.get('edit-username')
+        email = request.POST.get('edit-email')
+        user_id = request.POST.get('edit_user_id')
         user = request.user
-        user.first_name = request.POST.get('edit-fname')
-        user.last_name = request.POST.get('edit-lname')
-        user.username = request.POST.get('edit-username')
-        user.email = request.POST.get('edit-email')
+        id = 0
+        exist = False
+        if User.objects.filter(email=email).exists():
+            id = User.objects.filter(email=email).values_list('id', flat=True)[0]
+            exist = True
+        else:
+            id = None
+        user_id = int(user_id)
+        if User.objects.filter(username=username).exists():
+            if user_id == id:
+                messages.error(request, 'Please update atleast one field')
+                return redirect('edit_profile')
 
-        # If the username chosen is taken by another user
-
-        if User.objects.filter(username=user.username).exists():
-
-            messages.error(request, 'That Username is already taken.')
-            return redirect('edit_profile')
-        # If the email chosen is taken by abother user
-        if User.objects.filter(email=user.email).exists():
-
+            if not exist:
+                if User.objects.filter(username=username).exists() and user_id == id:
+                    messages.error(request, 'This Username already exists.')
+                    return redirect('edit_profile')
+            else:
+                if User.objects.filter(username=username).exists() and user_id != id:
+                    messages.error(request, 'This Email already exists.')
+                    return redirect('edit_profile')
+        if User.objects.filter(email=email).exists() and user_id != id:
             messages.error(request, 'That email is already taken.')
             return redirect('edit_profile')
 
-        # If the username and/or the email was not changed and is the same:
-            ## Code here and user.save()
-
+        user.email = email
         user.save()
-        return redirect('profile')
-
+        messages.success(request, 'Your profile was successfully updated')
+        return redirect('edit_profile')
     return render(request, 'pages/edit-profile.html')
 
 
@@ -299,7 +308,6 @@ def change_password(request, token):
             new_password = request.POST.get('new_password')
             confirm_password = request.POST.get('reconfirm_password')
             user_id = request.POST.get('user_id')
-            print("user_id=> "+str(user_id))
             if user_id is None:
                 messages.error(request, 'No user id found.')
                 return redirect(f'/change-password/{token}/')
@@ -312,7 +320,7 @@ def change_password(request, token):
             user_obj.save()
             return redirect('login')
     except Exception as e:
-        print(e)
+        pass
     return render(request, 'pages/accounts/password_change.html', context)
 
 
@@ -338,7 +346,7 @@ def forget_password(request):
             messages.success(request, 'An email has been sent.')
             return redirect('forget-password')
     except Exception as e:
-        print(e)
+        pass
     return render(request, 'pages/accounts/password_reset.html')
 
 

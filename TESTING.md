@@ -81,11 +81,12 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Update any individual input and save | Content | Content | Content |
+| Attempt to submit form without changing anything | Content | Content | Content |
 | Attempt to enter an invalid email | Content | Content | Content |
-| Attempt to enter username that already exists | Content | Content | Content |
 | Attempt to enter an email that already exists | Content | Content | Content |
-| Check updated fields in the database | Content | Content | Content |
+| Check updated field in the database | Content | Content | Content |
+| Go back button | Content | Content | Content |
+
 
 
 &nbsp;

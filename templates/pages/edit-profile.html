@@ -20,20 +20,18 @@
             <!-- Form to edit profile information from Profile page -->
             <form action="" method="post">
                 {% csrf_token %}
-                <label class="form-label" for="edit-fname">First Name: </label>
-                <input class="form-control mb-2" id="edit-fname" name="edit-fname" type="text"
-                    value="{{ user.first_name }}">
-                <label class="form-label" for="edit-lname">Surname: </label>
-                <input class="form-control mb-2" id="edit-lname" name="edit-lname" type="text"
-                    value="{{ user.last_name }}">
-                <label class="form-label" for="edit-username">Username: </label>
-                <input class="form-control mb-2" id="edit-username" name="edit-username" type="text"
+               <label class="form-label" for="edit-username">Username: </label>
+                <input disabled class="form-control mb-2" id="edit-username" name="edit-username" type="text"
                     value="{{ user.username }}">
                 <label class="form-label" for="edit-email">Email: </label>
                 <input class="form-control" id="edit-email" name="edit-email" type="email" value="{{ user.email }}">
-
-                <button class="col-sm-4 offset-sm-4 submit-button mt-3" type="submit" value="submit">Save</button>
+                <input type="hidden" name="edit_user_id" value="{{ user.id }}"/>
+                <button id="sub_butt" class="col-sm-4 offset-sm-4 submit-button mt-3" type="submit" value="submit">Save</button>
             </form>
+            <div class="col-sm-2">
+                <button class="btn btn-primary"><a href="{% url 'profile' %}">Go Back</a></button>
+            </div>
+            
 
             <!-- Links to Logout or Reset password page-->
             <h4 class="mt-3">Useful Links:</h4>
@@ -49,7 +47,7 @@
 
             <div class="container" id="delete-account">
                 <div class="row">
-                    <div class="col-md-3 offset-md-10">
+                    <div class=" col-sm-2 col-md-4 offset-sm-10 offset-md-9">
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                             data-bs-target="#staticBackdrop">
@@ -93,6 +91,5 @@
 <!-- End of Modal section -->
 
 {% endif %}
-
 {% endblock %}
 <!-- End of Edit Profile page -->

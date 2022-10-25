@@ -25,3 +25,12 @@
 .links:hover {
     color: green;
 }
+
+/* Adjust padding of delete-account button on smaller screens */
+
+@media all and (max-width:575px) {
+
+    #delete-account {
+        padding-left: 0;
+    }
+}
