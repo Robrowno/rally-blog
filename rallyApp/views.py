@@ -438,24 +438,18 @@ def edit_post(request, slug):
     """
 
     post_details = get_object_or_404(Post, slug=slug)
+    form = EditPostForm(instance=post_details)
 
-    published = False
     if request.method == 'POST':
 
-        form = EditPostForm(request.POST)
+        form = EditPostForm(request.POST, instance=post_details)
         if form.is_valid():
-            Post.post_status = 1
+            messages.success(request, "The post has successfully been added.")
             form.save()
-
-    else:
-        form = AddPostForm()
-        if 'published' in request.GET:
-            published = True
 
     context = {
         "post": post_details,
-        "form": form,
-        "published": published
+        "form": form
     }
     return render(request, 'pages/manage-post.html', context)
 

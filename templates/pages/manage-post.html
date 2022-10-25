@@ -15,7 +15,7 @@
 
 
         <div class="row">
-            <form action="{% url 'edit' post.slug %}" enctype="multipart/form-data" method="post">
+            <form action="{% url 'edit' post.slug %}" enctype="multipart/form-data" method="post" accept="images/*">
                 {% csrf_token %}
                 <div class="col">
                     {{ form|crispy}}
@@ -24,10 +24,6 @@
         <div class="col-md-12 mb-3 mt-2">
             <button class="btn btn-primary" type="submit" value="submit">Update Post</button>
         </div>
-
-
-
-
         </form>
     </div>
 </div>
