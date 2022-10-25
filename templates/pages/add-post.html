@@ -1,6 +1,15 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %} {% load crispy_forms_tags %}
 
 {% if user.is_superuser %}
+
+<div class="container">
+    {% if messages %} {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %} {% endif %}
+</div>
 
 <div class="container-fluid mt-3">
     <div class="row">
@@ -9,40 +18,33 @@
         </div>
 
         <h1 class="text-center">Add Post</h1>
+    </div class="container">
+
+
+    <div class="row">
+        <form action="{% url 'add' %}" enctype="multipart/form-data" method="post" accept="image/*">
+            {% csrf_token %}
+            <div class="col {{ field_class }}">
+                {{ form|crispy }}
+            </div>
+            <div class="col-md-12 mb-3 mt-2">
+                <button class="btn btn-primary" type="submit" value="submit">Upload Post</button>
+            </div>
+        </form>
     </div>
-
-    <!-- 
-
-        title
-        slug?
-        image
-        car
-        event
-        location
-        class result
-        overall result
-        content
-
-    -->
-
-
-
-
-
-
-
-
+</div>
 
 
 </div>
-        
+
 
 
 
 
 {% else %}
 
-<h1 class="text-center mt-5"> Sorry, you can't view this page! Click <a class="link-primary text-decoration-underline" href="/">Here</a> to go back!</h1>
+<h1 class="text-center mt-5"> Sorry, you can't view this page! Click <a class="link-primary text-decoration-underline"
+        href="/">Here</a> to go back!</h1>
 
 {% endif %}
 

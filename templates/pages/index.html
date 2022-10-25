@@ -1,6 +1,15 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <link rel="stylesheet" href="{% static 'style/pages/index.css' %}">
 
+<div class="container">
+  {% if messages %} {% for message in messages %}
+  <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+      {{message}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %} {% endif %}
+</div>
+
 
 <!-- Home Page Post Cards -->
 <div class="container-fluid my-5 d-flex flex-wrap justify-content-center">

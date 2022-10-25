@@ -10,6 +10,7 @@ from django.core.paginator import Paginator
 from . import models
 from .models import Contact, Comment, Post, Like
 from .helpers import send_forget_password_mail
+from .forms import AddPostForm, EditPostForm
 
 
 @csrf_exempt
@@ -413,7 +414,21 @@ def add_post(request):
     Function for adding a post from the management page.
     """
 
-    return render(request, 'pages/add-post.html')
+    if request.method == 'POST':
+
+        form = AddPostForm(request.POST)
+        if form.is_valid():
+            messages.success(request, "The post has successfully been added.")
+            form.save()
+
+    else:
+        form = AddPostForm()
+
+    context = {
+        "form": form
+    }
+
+    return render(request, 'pages/add-post.html', context)
 
 
 def edit_post(request, slug):
@@ -424,10 +439,24 @@ def edit_post(request, slug):
 
     post_details = get_object_or_404(Post, slug=slug)
 
-    context = {
-        "post": post_details
-    }
+    published = False
+    if request.method == 'POST':
 
+        form = EditPostForm(request.POST)
+        if form.is_valid():
+            Post.post_status = 1
+            form.save()
+
+    else:
+        form = AddPostForm()
+        if 'published' in request.GET:
+            published = True
+
+    context = {
+        "post": post_details,
+        "form": form,
+        "published": published
+    }
     return render(request, 'pages/manage-post.html', context)
 
 
@@ -440,6 +469,7 @@ def delete_post(request, id):
         post = Post.objects.get(id=id)
         post.delete()
         messages.success(request, 'Post was successfully deleted!')
+        return redirect('home')
     else:
         messages.error(
             request, 'Unable to delete the post at this time. Try again later.'

@@ -70,6 +70,7 @@ email address for Logging in to the website.
 
 ## User Profile Page
 
+NOTE: Name removed in production version, due to it not being used/visible anywhere else on the site.
 ![Profile Page](./static/images/readme-images/wireframe-profile-info.png)
 
 ## Edit Profile Page 
@@ -280,13 +281,14 @@ Space for image here: #######################
 
 ![Contact Form Page](/static/images/readme-images/contact-page.png)
 
-9. A User Profile Page, where Users can view stats about their likes and comments, or their info such as name and username on file.
+9. A User Profile Page, where Users can view stats about their likes and comments, or their info such as their email address and username on file.
 
 ![User Profile Page](/static/images/readme-images/user-profile-page.png)
 
-10. An Edit Profile Page, where users can alter their Name, Username, Email. 
+10. An Edit Profile Page, where users can alter their Email Address, orginially you could change the username and first+second names as well, however, these were removed either due to conflict in the database or because the information wasn't relevant in the case of adding first and second names, since it is not visible anywhere else.
+You can also delete your account from this page.
 
-![Edit Profile Page](/static/images/readme-images/edit-my-profile.png)
+![Edit Profile Page](/static/images/readme-images/edit-my-profile-page.png)
 
 The Delete Account Modal:
 ![Delete Account Modal](/static/images/readme-images/delete-account-modal.png)
@@ -557,6 +559,8 @@ I decided to paginate the comments section to keep the comments section shorter.
 - Modal Code came from Bootstrap's documentation: [Bootstrap Static modal](https://getbootstrap.com/docs/5.0/components/modal/)
 
 - This site helped me to customise my messages on the front end, by walking through how to use the Django Messages framework in conjunction with Bootstrap: [Ordinary Coders](https://ordinarycoders.com/blog/article/django-messages-framework)
+
+- Crispy forms for Bootstrap 5 handled the layout of my management page forms for posts: [Crispy forms for Bootstrap 5](https://pypi.org/project/crispy-bootstrap5/)
 
 
 ## Personal Credits

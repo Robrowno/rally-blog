@@ -33,4 +33,16 @@
     #delete-account {
         padding-left: 0;
     }
+
+    #sub_butt {
+        margin-bottom: 10px;
+    }
+}
+
+/* Adjust the margin of delete-account button on larger screens */
+@media all and (min-width:1400px) {
+
+    #delete-account {
+        margin-left: 60px;
+    }
 }
