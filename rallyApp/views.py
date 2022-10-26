@@ -7,10 +7,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.paginator import Paginator
+from django.utils.text import slugify
+import cloudinary.uploader
 from . import models
 from .models import Contact, Comment, Post, Like
 from .helpers import send_forget_password_mail
-from .forms import AddPostForm, EditPostForm
+from .forms import AddPostForm, UpdatePostForm
 
 
 @csrf_exempt
@@ -413,44 +415,79 @@ def add_post(request):
     """
     Function for adding a post from the management page.
     """
+    if request.method == "POST":
+        author = request.user
 
-    if request.method == 'POST':
+        # look for a featured image in the multifile imports
+        file = request.FILES.get('featured_image', None)
 
-        form = AddPostForm(request.POST)
-        if form.is_valid():
-            messages.success(request, "The post has successfully been added.")
-            form.save()
+        new_post = AddPostForm(request.POST, request.FILES)
+        post_save = new_post.save(commit=False)
+        post_save.slug = slugify(request.POST['title'])
+        post_save.author = author
+        post_save.status = 1
+        #(1, "Published")
 
-    else:
-        form = AddPostForm()
+        # add features_image
+        if not file:
+            post_save.featured_image = cloudinary.uploader.upload_resource(file)
 
-    context = {
-        "form": form
-    }
+        post_save.save()
+        messages.success(request, 'Successfully created!')
+        return redirect('/' + post_save.slug + '?new-post=true')
+    if request.method == "GET":
+        context = {
+            'form': AddPostForm,
+            'message': ''
+        }
+        return render(request, "pages/add-post.html", context)
 
-    return render(request, 'pages/add-post.html', context)
 
-
-def edit_post(request, slug):
+def edit_post(request, id):
 
     """
     Function for editing a post from the management page.
     """
-
-    post_details = get_object_or_404(Post, slug=slug)
-    form = EditPostForm(instance=post_details)
-
-    if request.method == 'POST':
-
-        form = EditPostForm(request.POST, instance=post_details)
-        if form.is_valid():
-            messages.success(request, "The post has successfully been added.")
-            form.save()
-
     context = {
-        "post": post_details,
-        "form": form
+        "message": ""
     }
+    if request.method == "GET":
+        existing_post = get_object_or_404(Post, id=id)
+        form = UpdatePostForm(instance=existing_post)
+        context = {
+            'form': form,
+            'message': ''
+        }
+        return render(request, "pages/manage-post.html", context)
+    if request.method == "POST":
+        existing_post = get_object_or_404(Post, id=id)
+        # look for a featured image in the multifile imports
+        file = request.FILES.get(
+            'featured_image', 'https://deconova.eu/wp-content/uploads/2016/02/default-placeholder.png'
+            )
+
+        form = UpdatePostForm(
+            request.POST, request.FILES, instance=existing_post
+            )
+
+        if form.is_valid():
+            # update slug
+            form.instance.slug = slugify(request.POST['title'])
+
+            # update features_image
+            print(file)
+            if not file:
+                form.instance.featured_image = cloudinary.uploader.upload_resource(file)
+
+            form.save()
+            messages.success(request, 'Successfully edited!')
+            return HttpResponseRedirect('/' + form.instance.slug)
+
+        else:
+            print('Post is invalid.')
+            print(form.errors)
+            messages.error(request, 'Something went wrong!')
+            return HttpResponseRedirect('/')
     return render(request, 'pages/manage-post.html', context)
 
 

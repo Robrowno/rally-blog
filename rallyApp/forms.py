@@ -7,21 +7,15 @@ class AddPostForm(forms.ModelForm):
     content = forms.CharField(widget=forms.Textarea(attrs={
         'class': 'form-control',
         'rows': 3
-    }))
+    }), required=True)
 
     class Meta:
         model = Post
         fields = '__all__'
         widgets = {'likes': forms.HiddenInput(), 'comments': forms.HiddenInput()}
 
-class EditPostForm(forms.ModelForm):
 
-    content = forms.CharField(widget=forms.Textarea(attrs={
-        'class': 'form-control',
-        'rows': 3
-    }))
-
+class UpdatePostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = '__all__'
-        widgets = {'likes': forms.HiddenInput(), 'comments': forms.HiddenInput()}
+        exclude = ['author', 'updated_on', 'created_on', 'likes', 'slug', 'status', 'comments']
