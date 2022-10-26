@@ -2,10 +2,18 @@ from django.test import TestCase, SimpleTestCase
 from django.urls import reverse, resolve
 
 # Imported from rallyApp.views multiple times to reduce line length
-from rallyApp.views import home_page, post_detail, like_post, contact_page, register, login_func
-from rallyApp.views import profile_page, edit_profile, delete_profile, logout_func, follow_page
-from rallyApp.views import change_password, forget_password, delete_comment, update_comment
-from rallyApp.views import manage_posts, add_post, edit_post, delete_post
+from rallyApp.views import (
+    home_page, post_detail, like_post, contact_page, register, login_func
+    )
+from rallyApp.views import (
+    profile_page, edit_profile, delete_profile, logout_func, follow_page
+    )
+from rallyApp.views import (
+    change_password, forget_password, delete_comment, update_comment
+    )
+from rallyApp.views import (
+    manage_posts, add_post, edit_post, delete_post
+    )
 
 # Testing NOT complete - all URLs pass, continue refactoring where appropriate
 
@@ -178,8 +186,9 @@ class TestRallyAppUrls(SimpleTestCase):
         """
         For testing the resolution of the edit post page url
         """
+        id_x = int()
 
-        url = reverse('edit', args=["example-slug"])
+        url = reverse('edit', args=[id_x])
         self.assertEquals(resolve(url).func, edit_post)
 
     def test_delete_posts_url_is_resolved(self):

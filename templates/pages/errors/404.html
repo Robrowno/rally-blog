@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+
+<div class="container d-flex justify-content-center mt-5">
+
+    <div class="row">
+
+        <div class="col text-center">
+            <h1>
+                <bold>Error <span style="color: red;">404</span> - Page Not Found</bold>
+            </h1>
+            <p>The page you were looking for could not be found.<br> Click the button below to return home.</p>
+
+            <div>
+                <button class="btn btn-success btn-lg rounded-1 mt-3">
+                    <a href="{% url 'home' %}">Return to Home</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

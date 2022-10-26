@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+
+<div class="container d-flex justify-content-center mt-5">
+
+    <div class="row">
+
+        <div class="col text-center">
+            <h1>
+                <bold>Error <span style="color: yellow;">403</span> - Access Denied</bold>
+            </h1>
+            <p>You do not have permission to access this page.<br> Click the button below to return home.</p>
+
+            <div>
+                <button class="btn btn-info btn-lg rounded-1 mt-3">
+                    <a href="{% url 'home' %}">Return to Home</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -21,3 +21,8 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include("rallyApp.urls")),
 ]
+
+# Custom 403/404/500 Error Page Handlers
+handler404 = 'rallyApp.views.handler_404'
+handler500 = 'rallyApp.views.handler_500'
+handler403 = 'rallyApp.views.handler_403'

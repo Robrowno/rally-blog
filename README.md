@@ -562,6 +562,15 @@ I decided to paginate the comments section to keep the comments section shorter.
 
 - Crispy forms for Bootstrap 5 handled the layout of my management page forms for posts: [Crispy forms for Bootstrap 5](https://pypi.org/project/crispy-bootstrap5/)
 
+- How to delete a user profile: [Delete User Stack Overflow](https://stackoverflow.com/questions/33715879/how-to-delete-user-in-django)
+
+- Error HTTP Status Code definitions: [HTTP Status Codes](https://www.easyname.com/en/support/hosting/158-what-do-the-http-status-codes-such-as-403-404-500-mean)
+
+- I read the Django 3.2 Documentation on how to implement custom HTTP Status codes in Django: [Django HTTP Status codes Docs](https://docs.djangoproject.com/en/3.2/topics/http/views/)
+
+- A default image, incase an uploaded file doesn't render from the management pages: [Default image](https://deconova.eu/wp-content/uploads/2016/02/default-placeholder.png)
+
+
 
 ## Personal Credits
 

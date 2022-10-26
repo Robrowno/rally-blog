@@ -7,6 +7,7 @@ from . import views
 admin.site.site_header = "RallyBlog Admin Panel"
 admin.site.site_title = "RallyBlog Admin Dashboard"
 
+
 urlpatterns = [
     path('', views.home_page, name='home'),
     path('post-management/', views.manage_posts, name="manage"),

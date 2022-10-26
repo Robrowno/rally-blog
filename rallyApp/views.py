@@ -182,7 +182,6 @@ def login_func(request):
                     )
                 return redirect('login')
         except Exception as e:
-            pass
             messages.error(request, ("Server error, Please try Again!"))
             return redirect('login')
 
@@ -414,11 +413,11 @@ def add_post(request):
 
     """
     Function for adding a post from the management page.
+    Adds uploaded image to cloudinary.
     """
     if request.method == "POST":
         author = request.user
 
-        # look for a featured image in the multifile imports
         file = request.FILES.get('featured_image', None)
 
         new_post = AddPostForm(request.POST, request.FILES)
@@ -426,15 +425,14 @@ def add_post(request):
         post_save.slug = slugify(request.POST['title'])
         post_save.author = author
         post_save.status = 1
-        #(1, "Published")
 
-        # add features_image
         if not file:
             post_save.featured_image = cloudinary.uploader.upload_resource(file)
 
         post_save.save()
         messages.success(request, 'Successfully created!')
         return redirect('/' + post_save.slug + '?new-post=true')
+
     if request.method == "GET":
         context = {
             'form': AddPostForm,
@@ -447,6 +445,7 @@ def edit_post(request, id):
 
     """
     Function for editing a post from the management page.
+    Slug and Image are updated as well if changed.
     """
     context = {
         "message": ""
@@ -461,7 +460,6 @@ def edit_post(request, id):
         return render(request, "pages/manage-post.html", context)
     if request.method == "POST":
         existing_post = get_object_or_404(Post, id=id)
-        # look for a featured image in the multifile imports
         file = request.FILES.get(
             'featured_image', 'https://deconova.eu/wp-content/uploads/2016/02/default-placeholder.png'
             )
@@ -471,10 +469,8 @@ def edit_post(request, id):
             )
 
         if form.is_valid():
-            # update slug
             form.instance.slug = slugify(request.POST['title'])
 
-            # update features_image
             print(file)
             if not file:
                 form.instance.featured_image = cloudinary.uploader.upload_resource(file)
@@ -507,3 +503,30 @@ def delete_post(request, id):
             )
 
     return HttpResponseRedirect(reverse('home'))
+
+
+def handler_404(request, exception):
+    """
+    Function for rendering 404 Error view.
+    HTTP status 404 - Not Found
+    """
+
+    return render(request, 'pages/errors/404.html')
+
+
+def handler_500(request):
+    """
+    Function for rendering 500 Error view.
+    HTTP status 500 - Internal Server Error
+    """
+
+    return render(request, 'pages/errors/500.html')
+
+
+def handler_403(request, exception):
+    """
+    Function for rendering 403 Error view.
+    HTTP status 403 - Forbidden
+    """
+
+    return render(request, 'pages/errors/403.html')
