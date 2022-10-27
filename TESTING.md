@@ -8,8 +8,6 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 - Testing URL Resolution: All tests passed
 - 
-- 
-
 
 
 ---
@@ -225,7 +223,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 ### Current Errors/Issues/Explanations"
 
 - 
-
+- 
 
 ---
 ## CSS Validation:
@@ -241,7 +239,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 ### Current Errors/Issues/Explanations"
 
 - 
-
+- 
 
 ---
 ## JS Validation:
@@ -255,6 +253,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 ### Current Errors/Issues/Explanations"
 
+- 
 - 
 
 
@@ -272,6 +271,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 ### Current Errors/Issues/Explanations"
 
+- 
 - 
 
 
@@ -292,6 +292,16 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 
 ---
+
+## Current Issues known but not yet resolved:
+
+- The responsiveness of the like and and comment icons on the blog cards in the post list aren't quite perfect. They will move inwards if a title is shorter than a certain number of characters. This will be addressed in a future update.
+- The like counter can take some time to load occasionally. However, I believe this is more of a connection issue rather than anything to do with my code.
+- 
+- 
+- 
+- 
+
 ### Return to README: 
 
 [README.md](README.md)

@@ -185,7 +185,10 @@ Link to the board below:
     - As a Developer I want to Document the development process in order to Show my design thinking, show how features work and show bugs and issues and whether they were resolved. 
 - [User Story: Delete Account](https://github.com/Robrowno/rally-blog/issues/31)
     - As a Site User I can delete my account in order to remove myself from the website database if I no longer use the site.
-- 
+- [ Automated Testing](https://github.com/Robrowno/rally-blog/issues/32)
+    - As a Developer I can write code for automated tests in order to accurately test my main code for bugs/issues and test criteria in order to refactor and test again. 
+- [Error Handlers](https://github.com/Robrowno/rally-blog/issues/33)
+    - As a Developer I can Create custom error pages in order to allow site users to easily navigate back home from an incorrect page. 
 
 
 
@@ -295,19 +298,19 @@ The Delete Account Modal:
 
 11. Only accessible to the site admin/superuser, is the management home page, which is the same as the regular home page except it allows for CRUD functionality by the Admin on the front end for quick and easy changes/updates.
 
-Space for image here: #######################
+![Manage Page Index](/static/images/readme-images/manage-page-index.png)
 
 12. Within the management section, there is an edit post page where the admin can ammend each post and update it.
 
-Space for image here: #######################
+![Edit Post Page](/static/images/readme-images/edit-post.png)
 
 13. There is also an add post page, where the admin can publish a post from the front end.
 
-Space for image here: #######################
+![Add Post Page](/static/images/readme-images/add-post.png)
 
-14. Being a Django site, there is also an admin page just for the site Admin/Author, where the admin can edit, create, delete and draft/publish content. The Admin page allows me to see more than just the content, I can view comments, user registration and contact forms sent to me from the admin panel.
+14. Being a Django site, there is also an admin page just for the site Admin/Author, where the admin can edit, create, delete and draft/publish content. The Admin page allows me to see more than just the content, I can view comments, user registration and contact forms sent to me from the admin panel. I also have a custom title for my admin page, just to make it look a built more purposeful than the standard title.
 
-Space for image here: #######################
+![Admin Page](/static/images/readme-images/rallyblog-admin-page.png)
 
 
 ## Colours:
@@ -351,13 +354,15 @@ Fonts used in the project include the following:
 
 
 
-# Features to implement
+# Features to implement in future
 
-- 
-- 
-- 
-- 
-- 
+- A more robust profile page - given more time, I would add profile pictures to the profile page that would also render above the comments that the user makes, to add a more personal connection for the site user when engaging in comments. I would also likely add the ability for the user to add a mini about section for themselves. I will go into this in more detail below.
+- A search bar on the front end to filter/search posts - I would love to give the option to the site user to filter by season or year as well as the site grows with more content/blog posts
+- An About section - I think I would add this only once I have a lot more rally and racing experience under my belt. It was something I had been pondering about implementing around the midpoint of the project, but ultimately it was left as an idea for future implementation.
+- Viewing User profiles: much like the way it is implemented on slack, I'd make the usernames of the Users that comment act like links that will take people to a seperate publicly visible profile page that will display how long they've been a member for, profile picture, name, username, a mini about section of that user and perhaps a small contact information section that users can toggle in privacy settings should they wish to make it so.
+- As my rally experience grows, I'd add another couple of links to the page in the footer and follow-me pages, namely a link to my e-wrc profile. A bit like the about section, though, I'll wait until I get more experience under my belt before implementing this.
+- I would also like to implements a 'news' section, perhaps through an email newsletter that users can opt-in and opt-out of at any time. This way I could share short and quick information with my users for them to quickly read inbetween their own schedules.
+- I will add the share icon back in, in a future update. I removed it due to wanting to focus more on likes and comments in the time I had, however, I would like to be able to give site users a means to share specific articles through a share link that will display different media platforms for them to choose where they want to share it. i would likely add a share counter too at the top the post detail pages and in the post list cards.
 
 
 # Django Models:
