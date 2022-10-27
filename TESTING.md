@@ -6,7 +6,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 ## Automated Tests
 
-- 
+- Testing URL Resolution: All tests passed
 - 
 - 
 
@@ -81,11 +81,11 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Attempt to submit form without changing anything | Content | Content | Content |
-| Attempt to enter an invalid email | Content | Content | Content |
-| Attempt to enter an email that already exists | Content | Content | Content |
-| Check updated field in the database | Content | Content | Content |
-| Go back button | Content | Content | Content |
+| Attempt to submit form without changing anything | Submit form without making any changes | Profile will still save | Pass |
+| Attempt to enter an invalid email | Enter an invalid email eg. 1234, abcd etc | Field will be invalid and form will not submit | Pass |
+| Attempt to enter an email that already exists | Submit form with another user's email address | "Email is already taken" message will appear and form will not submit | Pass |
+| Check updated field in the database | Visit admin page and check User section | Data will be updated in the database | Pass |
+| Go back button | Click the "Go Back" Button | Return to the My-User Profile Page | Pass |
 
 
 
@@ -94,10 +94,10 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Edit Button | Content | Content | Content |
-| Edit input display | Content | Content | Content |
-| Update Button | Content | Content | Content |
-| Read Editted comment | Content | Content | Content |
+| Edit Button | Click Edit Button | Input field and Update button will appear for User's comment | Pass |
+| Edit input display | Check layout and input renders current comment | Layout is responsive and shows existing comment in the input field | Pass |
+| Update Button | Click Update Button | Page Redirects with comment updated and success message | Pass |
+| Read Edited comment | Check comment after update | Comment is now updated for all readers to see | Pass |
 
 
 &nbsp;
@@ -119,25 +119,25 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Click Delete Button | Content | Content | Content |
-| Confirm Delete Button | Content | Content | Content |
-| Close Modal | Content | Content | Content |
-| Database Check | Content | Content | Content |
+| Delete Button | Click on Delete Button | Warning Modal will appear | Pass |
+| Confirm Delete Button | Click on Confirm Delete Button | Account will delete, redirects to Home Page | Pass |
+| Close Modal | Click Close Button or 'x' | Modal will close | Pass |
+| Database Check | Check Admin Page to see if User is removed | User is deleted from the database | Pass |
 
 &nbsp;
 ---
 ## Posts and Post-Details
 
-### Post-List
+### Post-List // Manage Page Post-List
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Add Post | Content | Content | Content |
-| Delete Post | Content | Content | Content |
-| Edit Post | Content | Content | Content |
-| Draft Post | Content | Content | Content |
-| Post Shows when set to "Published" | Content | Content | Content |
-| Post hidden when set to "Draft" | Content | Content | Content |
+| Add Post (Site Owner Specific) | Add post from Admin page and/or Manage Page | Post is added to database and shows if post_status=1 | Pass |
+| Delete Post (Site Owner Specific) | Click delete on Manage or delete from admin page | Post is removed from front end post list and database | Pass |
+| Edit Post (Site Owner Specific) | Click edit and update from Manage Page or Edit post from Admin Page | Post updates on frontend and database | Pass |
+| Draft Post | Select post_status=0 or draft in Manage Page | Post is saved but not published so you can work on it later | Pass |
+| Post Shows when set to "Published" | Set post_status = 1 | When post_status = 1, post is set to "published" | Pass |
+| Post hidden when set to "Draft" | Set post_status = 0 | When post_status = 0, post is set to "draft" | Pass |
 
 &nbsp;
 ### Pagination
@@ -153,8 +153,8 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Content | Content | Content | Content |
-| Content | Content | Content | Content |
+| Open Specific Post | Click on a Blog Post out of the Post List | Blog post will open  | Pass |
+| Check Post details | Read Post Details | Specific Post details of the blog clicked-on will render on the page | Pass |
 &nbsp;
 
 ## Social Media Page and Footer Links:
@@ -186,6 +186,45 @@ This section comprises of Automated and Manual tests conducted towards the end o
 - HTML Validation by W3C was used to check my HTML code: [W3C Markup Validation Link](https://validator.w3.org/)
 - Testing conducted across all HTML Templates. Results below:
 
+### /templates and /templates/pages:
+
+| File | Result |
+| -------- | ------ |
+| base.html  | Content |
+| index.html  | Content |
+| add-post.html  | Content |
+| contact.html  | Content |
+| edit-profile.html  | Content |
+| follow-me.html  | Content |
+| login.html  | Content |
+| manage-index.html  | Content |
+| manage-post.html  | Content |
+| my-profile.html  | Content |
+| post-detail.html  | Content |
+| Content  | Content |
+
+
+### /templates/pages/accounts:
+
+| File | Result |
+| -------- | ------ |
+| password_change.html  | Content |
+| password_reset.html  | Content |
+
+
+### /templates/pages/errors:
+
+| File | Result |
+| -------- | ------ |
+| 403.html  | Content |
+| 404.html  | Content |
+| 405.html  | Content |
+
+
+
+### Current Errors/Issues/Explanations"
+
+- 
 
 
 ---
@@ -193,12 +232,30 @@ This section comprises of Automated and Manual tests conducted towards the end o
 - CSS Validation by W3C was used to check my CSS: [W3C CSS Validation Link](https://jigsaw.w3.org/css-validator/)
 - Testing conducted across all CSS files. Results below:
 
+| File | Result |
+| -------- | ------ |
+| Content  | Content |
+| Content  | Content |
+
+
+### Current Errors/Issues/Explanations"
+
+- 
 
 
 ---
 ## JS Validation:
 - JS validation by JSHint was used to check my Javascript code: [JSHint Validation Link](https://jshint.com/)
 - Results on Javascript code below:
+
+| File | Result |
+| -------- | ------ |
+| Content  | Content |
+| Content  | Content |
+
+### Current Errors/Issues/Explanations"
+
+- 
 
 
 
@@ -207,12 +264,22 @@ This section comprises of Automated and Manual tests conducted towards the end o
 - At the time of writing/development of this project, the tried and tested PEP8 Python Validator was down. I mainly had to rely on the Linter that came with the Code Institute workspace that we use to start the portfolio projects.
 - Results across all pages with Python code below:
 
+| File | Result |
+| -------- | ------ |
+| Content  | Content |
+| Content  | Content |
+
+
+### Current Errors/Issues/Explanations"
+
+- 
 
 
 ---
 ## Lighthouse Performance Testing:
 - 
 - 
+
 
 ## Tests on mulitple devices and browsers:
 - Browsers tested:
