@@ -13,7 +13,7 @@ The aims of this website are:
 
 As a full stack project, my personal aims out of this are to test my abilities in implementing Django in my fourth portfolio project for Code Institute, and to create a site which I will be eager to maintain and continue posting content on in future.
 
-The website is deployed through Heroku, and the live link can be found here: ##################### 
+The website is deployed through Heroku, and the live link can be found here: [RallyBlog](https://rally-blog.herokuapp.com/) 
 
 
 ---

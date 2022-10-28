@@ -219,11 +219,17 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | 405.html  | Content |
 
 
+<details><summary>CLICK TO OPEN/HIDE HTML VALIDATION IMAGES</summary>
 
-### Current Errors/Issues/Explanations"
+
+
+
+### Current HTML Errors/Issues/Explanations"
 
 - 
 - 
+
+</details>
 
 ---
 ## CSS Validation:
@@ -232,31 +238,61 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 | File | Result |
 | -------- | ------ |
-| Content  | Content |
-| Content  | Content |
+| base.css  | Pass |
+| contact.css  | Pass |
+| follow.css  | Pass |
+| index.css  | Pass |
+| login.css  | Pass |
+| post-detail.css  | Pass |
 
+<details><summary>CLICK TO OPEN/HIDE CSS VALIDATION IMAGES</summary>
 
-### Current Errors/Issues/Explanations"
+### base.css
+![base.css validation](/static/images/readme-images/validation/base-css-validation.png)
+---
+### contact.css
+![contact.css validation](/static/images/readme-images/validation/contact-css-validation.png)
+---
+### follow.css
+![follow.css validation](/static/images/readme-images/validation/followme-css-validation.png)
+---
+### index.css
+![index.css validation](/static/images/readme-images/validation/index-css-validation.png)
+---
+### login.css
+![login.css validation](/static/images/readme-images/validation/login-css-validation.png)
+---
+### post-detail.css
+![post-detail.css validation](/static/images/readme-images/validation/post-detail-css-validation.png)
 
-- 
-- 
 
 ---
+### Current CSS Errors/Issues/Explanations"
+
+- None to report.
+
+</details>
+
+---
+
+
 ## JS Validation:
 - JS validation by JSHint was used to check my Javascript code: [JSHint Validation Link](https://jshint.com/)
 - Results on Javascript code below:
 
 | File | Result |
 | -------- | ------ |
-| Content  | Content |
-| Content  | Content |
+| base.js  | Pass* |
+| index.js  | Pass |
 
-### Current Errors/Issues/Explanations"
+<details><summary>CLICK TO OPEN/HIDE JS VALIDATION IMAGES</summary>
 
-- 
-- 
+### Current JS Errors/Issues/Explanations"
 
+- JSHint found an 'Undefinded Variable' in the form of 'e' in the base.js file, however, this is standard practice and I have found a supporting link to demonstrate this below.
+- [W3 Schools: preventDefault() Event Method](https://www.w3schools.com/jsref/event_preventdefault.asp#:~:text=The%20preventDefault()%20method%20cancels,link%20from%20following%20the%20URL)
 
+</details>
 
 ---
 ## Python Validation:
@@ -269,10 +305,16 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Content  | Content |
 
 
-### Current Errors/Issues/Explanations"
+<details><summary>CLICK TO OPEN/HIDE PYTHON VALIDATION IMAGES</summary>
+
+
+
+### Current Python Errors/Issues/Explanations"
 
 - 
 - 
+
+</details>
 
 
 ---
