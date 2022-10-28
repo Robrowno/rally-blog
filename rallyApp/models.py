@@ -23,7 +23,9 @@ class Post(models.Model):
     entry_fee = models.FloatField(null=True, blank=True)
     location = models.CharField(max_length=220, blank=True)
     content = models.TextField()
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField(
+        'image', default='placeholder', null=False
+        )
     car = models.CharField(max_length=150)
     finish = models.BooleanField(choices=FINISH, default=0)
     class_result = models.PositiveIntegerField(null=True, blank=True)

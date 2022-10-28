@@ -363,6 +363,7 @@ Fonts used in the project include the following:
 - As my rally experience grows, I'd add another couple of links to the page in the footer and follow-me pages, namely a link to my e-wrc profile. A bit like the about section, though, I'll wait until I get more experience under my belt before implementing this.
 - I would also like to implements a 'news' section, perhaps through an email newsletter that users can opt-in and opt-out of at any time. This way I could share short and quick information with my users for them to quickly read inbetween their own schedules.
 - I will add the share icon back in, in a future update. I removed it due to wanting to focus more on likes and comments in the time I had, however, I would like to be able to give site users a means to share specific articles through a share link that will display different media platforms for them to choose where they want to share it. i would likely add a share counter too at the top the post detail pages and in the post list cards.
+- I added an entry_fee field in my Post Model and I chose not to display that information on the front end at this time. However, it is something I plan to add to the Rally stats that are highlighted by the blue and black stripes underneath the featured image. I believe it will be a good addition to the site to give the reader an understanding of the cost of entry into grassroots motorsport.
 
 
 # Django Models:
@@ -407,6 +408,13 @@ I decided to paginate the comments section to keep the comments section shorter.
 - Whilst testing for the TESTING.md file, I realised that emails were being accepted in the form submission, even if the input value wasn't an email. When I went back to my Contact page html file to check what was going on, I realised I had put `type=text` in the input field rather than `type=email`. Once corrected this fixed the issue.
 
 - Found out while testing that there was a way for users already logged in, to be able to log in again through a link in the profile page. I fixed this by adding an if/endif statement like so: `{% if not user.is_authenticated %}.....{% endif %}`.
+- I was unsuccessful in early attempts to upload images in the add-post manage page on the front end, I was advised to add an image using `some_variable = request.FILES.get('some_image', None)` and that did the trick. I hadn't used request.FILES before until needing to do this, so it was a great piece of information to find out.
+
+- When adding the HTTP Status code handlers, I was unable to understand why they could be made to appear in a live server (deployed link). I only realised after trying to alter the variables and names and play about with the functions, that I had used the incorrect urls.py file to load host the handlers (Should have been Project level urls and not App level).
+
+- The delete_post view was causing me Integrity and Reverse-Match issues when deleting posts passing a slug as an argument. However, when I switched to identifying by id (indentifying posts by `post = Post.objects.get(id=id)`) instead, it seemed to work fine. I also redirected/reversed to 'home' instead which was a more reliable return method.
+
+- I added a password length requirement for registering and changing passwords as I realised the passwords could be any length at all which would go against good practice.
 
 
 # Peer Reviews 

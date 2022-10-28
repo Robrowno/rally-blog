@@ -33,7 +33,7 @@
         <!-- Featured image -->
         {% if "placeholder" in item.featured_image.url %}
         <img class="card-img-top"
-        src="/static/images/mini-fast-pic.JPG">
+        src="{% static 'images/mini-fast-pic.JPG' %}">
         {% else %}
         <img src="{{ item.featured_image.url }}" class="card-img-top" alt="" style="max-height: 254px;">
         {% endif %}
