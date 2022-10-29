@@ -233,6 +233,32 @@ Technologies and Frameworks used to make this website include the following:
 - SendGrid API - a RESTful Application Programming Interface, used for sending emails and password resetting functionality.
 
 
+## Python Packages installed:
+
+- asgiref==3.5.2
+- cloudinary==1.29.0
+- crispy-bootstrap5==0.7
+- dj-database-url==1.0.0
+- dj3-cloudinary-storage==0.0.6
+- Django==3.2.15
+- django-crispy-forms==1.14.0
+- django-extensions==3.2.1
+- django-summernote==0.8.20.0
+- gunicorn==20.1.0
+- Pillow==9.2.0
+- psycopg2==2.9.3
+- python-http-client==3.3.7
+- pytz==2022.2.1
+- sendgrid==6.9.7
+- sqlparse==0.4.2
+- starkbank-ecdsa==2.1.0
+- uuid==1.30
+
+
+## The SendGrid API:
+
+- [SendGrid Site](https://docs.sendgrid.com/)
+- [SendGrid Quickstart Docs for Python](https://docs.sendgrid.com/for-developers/sending-email/quickstart-python)
 
 ---
 
@@ -379,7 +405,6 @@ These five models are:
 All of these models were housed within one app, the rallyApp. I could very well have seperated some of these out in to seperate apps but due to the relatively small scale of the site, I deemed it fine to keep them all within one app.
 
 
-
 # Testing and Validation
 
 I've created a seperate testing-related file due to the amount of information I need to display.
@@ -415,6 +440,8 @@ I decided to paginate the comments section to keep the comments section shorter.
 - The delete_post view was causing me Integrity and Reverse-Match issues when deleting posts passing a slug as an argument. However, when I switched to identifying by id (indentifying posts by `post = Post.objects.get(id=id)`) instead, it seemed to work fine. I also redirected/reversed to 'home' instead which was a more reliable return method.
 
 - I added a password length requirement for registering and changing passwords as I realised the passwords could be any length at all which would go against good practice.
+
+- On a few occasion I forgot to update the requirements.txt after installing packages. However, when testing between both VSCode and Gitpod IDE, I didn't realise VSCode has Pillow pre-installed, whereas Gitpod didn't. I fixed an issue on the add post page which was working locally but not on gitpod. I looked up the error code online for a ModuleNotFoundError: No module named 'PIL' - Through this site I realised the issue and used `pip3 install Pillow` to resolve the issue.
 
 
 # Peer Reviews 

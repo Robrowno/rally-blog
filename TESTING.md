@@ -47,7 +47,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
 | Form Submit | Test with false username | Return to Reset page with No user found message | Pass |
-| Form Submit | Submit form with Username on file | Redirects with message stating an email has been sent  |   |
+| Form Submit | Submit form with Username on file | Redirects with message stating an email has been sent  | Pass |
 | Login link | Click on link | User is redirected to Login Page | Pass |
 | Register link | Click on link | User is redirected to Register Page | Pass |
 
@@ -130,10 +130,11 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 | Test | Method | Expected Outcome | Result |
 | ---- | ------ | ---------------- | ------ |
-| Add Post (Site Owner Specific) | Add post from Admin page and/or Manage Page | Post is added to database and shows if post_status=1 | Pass |
-| Delete Post (Site Owner Specific) | Click delete on Manage or delete from admin page | Post is removed from front end post list and database | Pass |
-| Edit Post (Site Owner Specific) | Click edit and update from Manage Page or Edit post from Admin Page | Post updates on frontend and database | Pass |
+| Add Post (Add Post) | Add post from Admin page and/or Manage Page | Post is added to database and shows if post_status=1 | Pass |
+| Delete Post (Manage Index) | Click delete on Manage or delete from admin page | Post is removed from front end post list and database | Pass |
+| Edit Post (Edit Post Page) | Click edit and update from Manage Page or Edit post from Admin Page | Post updates on frontend and database | Pass |
 | Draft Post | Select post_status=0 or draft in Manage Page | Post is saved but not published so you can work on it later | Pass |
+| Required fields (Add Post) | Attempt to submit form various times without filling in required fields | Form will not submit and will point to the field not filled in | Pass |
 | Post Shows when set to "Published" | Set post_status = 1 | When post_status = 1, post is set to "published" | Pass |
 | Post hidden when set to "Draft" | Set post_status = 0 | When post_status = 0, post is set to "draft" | Pass |
 

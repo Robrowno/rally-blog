@@ -461,7 +461,8 @@ def edit_post(request, id):
     if request.method == "POST":
         existing_post = get_object_or_404(Post, id=id)
         file = request.FILES.get(
-            'featured_image', 'https://deconova.eu/wp-content/uploads/2016/02/default-placeholder.png'
+            'featured_image',
+            'https://deconova.eu/wp-content/uploads/2016/02/default-placeholder.png'
             )
 
         form = UpdatePostForm(
