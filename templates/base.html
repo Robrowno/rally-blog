@@ -49,7 +49,7 @@
                         <ul class="navbar-nav text-center ms-auto">
                             {% if user.is_superuser %}
                             <li class="nav-item ms-2">
-                                <a id="manage" class="nav-link active" href="/post-management/">Manage</a>
+                                <a id="manage" class="nav-link active" href="{% url 'manage' %}">Manage</a>
                             </li>
                             {% endif %}
                             <li class="nav-item ms-2">
