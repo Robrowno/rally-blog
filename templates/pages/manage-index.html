@@ -14,7 +14,7 @@
   {% endfor %} {% endif %}
 </div>
 
-<!-- Home Page Post Cards -->
+<!-- Management Home Page Post Cards -->
 <div class="container-fluid my-5 d-flex flex-wrap justify-content-center">
   {% for item in posts %}
   <div class="card m-3" style="width:24rem;">
@@ -103,9 +103,10 @@
 </div>
 <!-- End of Pagination -->
 
+<!-- If site visitor is not an admin, this is display -->
 {% else %}
 
-<h1 class="text-center mt-5"> Sorry, you can't view this page! Click <a class="link-primary text-decoration-underline" href="/">Here</a> to go back!</h1>
+<h1 class="text-center mt-5"> Sorry, you can't view this page! Click <a class="link-primary text-decoration-underline" href="{% url 'home' %}">Here</a> to go back!</h1>
 
 {% endif %}
 
@@ -114,4 +115,4 @@
 
 {% endblock %}
 
-<!-- End of Home Page content section -->
+<!-- End of Management Home Page content section -->

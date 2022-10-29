@@ -3,9 +3,11 @@
 
 {% if user.is_superuser %}
 
+<!-- Management Edit Post section -->
 <div class="container-fluid mt-3">
     <div class="row">
         <div class="col-lg-3">
+            <!-- Return home -->
             <button class="btn btn-primary"><a href="{% url 'manage' %}">Go Back</a></button>
         </div>
 
@@ -21,6 +23,7 @@
         </div>
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">
+                <!-- Edit Post Crispy Form here -->
                 <form enctype="multipart/form-data" method="POST" class="post" id="add_post_form">
                     {% csrf_token %}
                     <div class="col {{ field_class }}">
@@ -30,6 +33,7 @@
                         <button class="btn btn-primary" type="submit" value="submit">Update Post</button>
                     </div>
                 </form>
+                <!-- End of form -->
             </div>
         </div>
     </div>
@@ -39,14 +43,13 @@
 </div>
 <script src="{% static 'script/base.js' %}"></script>
 
+<!-- If site visitor is not an admin, this is display -->
 {% else %}
 
 <h1 class="text-center mt-5"> Sorry, you can't view this page! Click <a class="link-primary text-decoration-underline"
-        href="/">Here</a> to go back!</h1>
+        href="{% url 'home' %}">Here</a> to go back!</h1>
 
 {% endif %}
 
-
-
-
 {% endblock %}
+<!-- End of Management Edit Post content section -->

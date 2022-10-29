@@ -42,7 +42,7 @@
 
             <div class="col">
                 <!-- Simple link -->
-                <a class="links" href="/forget-password">Forgot password?</a>
+                <a class="links" href="{% url 'forget_password' %}">Forgot password?</a>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
 
         <!-- Register buttons -->
         <div class="text-center">
-            <p>Already a member? <a class="links mx-3" href="/login"> Login</a></p>
+            <p>Already a member? <a class="links mx-3" href="{% url 'logout' %}"> Login</a></p>
         </div>
     </form>
 </div>

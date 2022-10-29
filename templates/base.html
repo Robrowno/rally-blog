@@ -37,7 +37,7 @@
         <div class="container-fluid sticky-top nav-colour">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a href="/" class="navbar-brand"><span class="fs-2 brand-name">RallyBlog</span><span class="ms-1"><i
+                    <a href="{% url 'home' %}" class="navbar-brand"><span class="fs-2 brand-name">RallyBlog</span><span class="ms-1"><i
                                 class="fas fa-car fa-lg"></i></span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#toggle-mobile-menu" aria-controls="toggle-mobile-menu" aria-expanded="false"
@@ -53,30 +53,30 @@
                             </li>
                             {% endif %}
                             <li class="nav-item ms-2">
-                                <a class="nav-link active" href="/">Home</a>
+                                <a class="nav-link active" href="{% url 'home' %}">Home</a>
                             </li>
                             {% if user.is_authenticated %}
                             <li class="nav-item ms-2">
-                                <a class="nav-link" href="/logout">
+                                <a class="nav-link" href="{% url 'logout' %}">
                                     Logout</a>
                             </li>
                             {% else %}
                             <li class="nav-item ms-2">
-                                <a class="nav-link" href="/login">
+                                <a class="nav-link" href="{% url 'login' %}">
                                     Register/Login</a>
                             </li>
                             {% endif %}
                             {% if user.is_authenticated %}
                             <li class="nav-item ms-2">
-                                <a class="nav-link" href="/profile">
+                                <a class="nav-link" href="{% url 'profile' %}">
                                     Profile</a>
                             </li>
                             {% endif %}
                             <li class="nav-item ms-2">
-                                <a class="nav-link" href="/follow">Follow Me</a>
+                                <a class="nav-link" href="{% url 'follow' %}">Follow Me</a>
                             </li>
                             <li class="nav-item ms-2 d-md-inline">
-                                <a href="/contact" class="nav-link">Contact</a>
+                                <a href="{% url 'contact' %}" class="nav-link">Contact</a>
                             </li>
                         </ul>
                     </div>

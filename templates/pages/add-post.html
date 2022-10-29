@@ -2,6 +2,8 @@
 
 {% if user.is_superuser %}
 
+<!-- Management Add post section -->
+
 <div class="container">
     {% if messages %} {% for message in messages %}
     <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
@@ -20,7 +22,7 @@
         <h1 class="text-center">Add Post</h1>
     </div class="container">
 
-
+    <!-- Add post crispy form here -->
     <div class="row">
         <form action="{% url 'add' %}" enctype="multipart/form-data" method="post" accept="image/*">
             {% csrf_token %}
@@ -31,27 +33,20 @@
                 <button class="btn btn-primary" type="submit" value="submit">Upload Post</button>
             </div>
         </form>
+        <!-- Form ends here -->
     </div>
 </div>
 
-
 </div>
 
-
-
-
-
+<!-- If site visitor is not an admin, this is display -->
 {% else %}
 
 <h1 class="text-center mt-5"> Sorry, you can't view this page! Click <a class="link-primary text-decoration-underline"
-        href="/">Here</a> to go back!</h1>
+        href="{% url 'home' %}">Here</a> to go back!</h1>
 
 {% endif %}
 
 
-
-
-
-
-
 {% endblock %}
+<!-- End of Management Add post section -->
