@@ -23,7 +23,7 @@
 }
 
 /* Badge styling */
-#comment-badge {
+.comment-badge {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@
     text-align: center;
   }
 
-  #like-badge {
+  .like-badge {
     display: flex;
     justify-content: center;
     align-items: center;

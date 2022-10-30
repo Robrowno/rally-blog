@@ -40,16 +40,16 @@
       </div>
       <div class="card-body d-flex justify-content-around">
         <div class="heading">
-          <h5 class="card-title" id="title">{{item.title}}</h5>
+          <h5 class="card-title px-2" id="title">{{item.title}}</h5>
         </div>
 <div class="stats">
   <div class="thumbs-up">
-    <i class="fal fa-thumbs-up"></i><span id="like-badge"
-    class="px-2 fs-5 p-2 badge">{{ item.likes.count }}</span>
+    <i class="fal fa-thumbs-up"></i><span
+    class="px-2 fs-5 p-2 badge like-badge">{{ item.likes.count }}</span>
   </div>
   <div class="comment">
-    <i class="fal fa-comment-dots"></i><span id="comment-badge"
-    class="px-2 fs-5 p-2 badge">{{ item.comments_section.count }}</span>
+    <i class="fal fa-comment-dots"></i><span
+    class="px-2 fs-5 p-2 badge comment-badge">{{ item.comments_section.count }}</span>
   </div>
 </div>
       </div>
