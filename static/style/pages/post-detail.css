@@ -51,12 +51,16 @@
     border-radius: 5px;
   }
 
+/* h5 margin top - this is for the content section */
+h5 {
+  margin-top: 18px;
+}
+
 /* Length adjustments for edit comment input*/
   .edit-comment {
 
     width: calc(100% - 300px);
   }
-
 
 
 /* Media Queries for badge icons above screensize 1010px */
@@ -81,6 +85,5 @@
       width: calc(100% - 100px);
     }
   
-
 
   }

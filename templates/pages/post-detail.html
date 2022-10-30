@@ -17,12 +17,12 @@
         <div class="col-lg-8 mx-auto card">
             <!-- Blog Title -->
             <h1 class="text-center card-title">{{ post.title }}</h1>
-            <div class="col-lg-3 col-sm-2 d-flex"><button class="btn btn-primary submit-button">
-                    <a href="{% url 'home' %}">Go Back</a></button>
+            <div class="col-lg-3 col-sm-2 d-flex">
+                    <a class="btn btn-primary submit-button" href="{% url 'home' %}">Go Back</a>
             </div>
 
             <!-- Blog Like/Comment Fontawesome Icons -->
-            <div class="col justify-content-end d-flex ">
+            <div class="col justify-content-end d-flex">
                 <div class="icon-container">
                     <i class="fas fa-thumbs-up p-2 icon-class"></i><span id="like-badge"
                         class="p-2 badge">{{ post.likes.count }}</span>
@@ -51,7 +51,7 @@
             {% endif %}
 
             <!-- Blog Text Content goes here -->
-            <p class="text-center card-text">{{ post.content|safe }}</p>
+            <h5 class="text-center card-text">{{ post.content|safe }}</h5>
 
             <hr>
             {% if user.is_authenticated %}
@@ -198,7 +198,7 @@
     </div>
 
 </div>
-<script type="text/javascript"> 
+<script> 
     function showField(commentId){
         let type=document.getElementById(commentId+'_comment_edit_content').type;
         if(type=="hidden"){
