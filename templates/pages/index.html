@@ -4,8 +4,8 @@
 <div class="container">
   {% if messages %} {% for message in messages %}
   <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
-      {{message}}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
   {% endfor %} {% endif %}
 </div>
@@ -20,27 +20,26 @@
       <div class="img-container">
         <!-- Featured image -->
         {% if "placeholder" in item.featured_image.url %}
-        <img class="card-img-top"
-        src="{% static 'images/mini-fast-pic.JPG' %}">
+        <img class="card-img-top" src="{% static 'images/mini-fast-pic.JPG' %}">
         {% else %}
         <img src="{{ item.featured_image.url }}" class="card-img-top" alt="" style="max-height: 254px;">
         {% endif %}
       </div>
-      
+
       <div class="card-body d-flex justify-content-around">
         <div class="heading">
           <h5 class="card-title" id="title">{{item.title}}</h5>
         </div>
-<div class="stats">
-  <div class="thumbs-up">
-    <i class="fal fa-thumbs-up"></i><span id="like-badge"
-    class="px-2 fs-5 p-2 badge">{{ item.likes.count }}</span>
-  </div>
-  <div class="comment">
-    <i class="fal fa-comment-dots"></i><span id="comment-badge"
-    class="px-2 fs-5 p-2 badge">{{ item.comments_section.count }}</span>
-  </div>
-</div>
+        <div class="stats">
+          <div class="thumbs-up">
+            <i class="fal fa-thumbs-up"></i><span id="like-badge"
+              class="px-2 fs-5 p-2 badge">{{ item.likes.count }}</span>
+          </div>
+          <div class="comment">
+            <i class="fal fa-comment-dots"></i><span id="comment-badge"
+              class="px-2 fs-5 p-2 badge">{{ item.comments_section.count }}</span>
+          </div>
+        </div>
       </div>
     </a>
   </div>
@@ -89,7 +88,7 @@
   </ul>
 </nav>
 {% endif %}
-</div>
+
 <!-- End of Pagination -->
 
 <script src="{% static 'script/pages/index.js' %}"></script>

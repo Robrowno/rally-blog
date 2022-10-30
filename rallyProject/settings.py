@@ -39,9 +39,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['rally-blog.herokuapp.com', 'localhost', "*"]
+ALLOWED_HOSTS = ['rally-blog.herokuapp.com', 'localhost',
+                 'localhost:8000', '127.0.0.1', '127.0.0.1:8000']
 
 
 # Application definition

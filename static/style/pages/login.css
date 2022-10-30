@@ -39,6 +39,17 @@
     }
 }
 
+/* Handles max form width for registration/login/password reset pages on smaller screens */
+
+@media all and (max-width:425px) {
+
+    .form-sm-screens {
+        max-width: 75vw;
+    }
+
+}
+
+
 /* Adjust the margin of delete-account button on larger screens */
 @media all and (min-width:1400px) {
 
