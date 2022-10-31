@@ -21,11 +21,11 @@
     <div class="d-flex justify-content-between">
      <form>
         {% csrf_token %}
-        <button type="submit" class="btn btn-success mx-2 btn-sm float-sm-end mb-2 mt-2"><a href="{% url 'edit' item.id %}">Edit</a></button>
+        <div type="submit" class="btn btn-success mx-2 btn-sm float-sm-end mb-2 mt-2"><a href="{% url 'edit' item.id %}">Edit</a></div>
     </form>
     <form action="{% url 'delete_post' item.id %}" method="post">
         {% csrf_token %}
-        <button type="submit" name="delete-post" class="btn btn-danger mx-2 btn-sm float-sm-end mb-2 mt-2">Delete</button>
+        <div type="submit" name="delete-post" class="btn btn-danger mx-2 btn-sm float-sm-end mb-2 mt-2">Delete</div>
     </form>
     </div>
     <!-- Unique Post link -->
@@ -53,7 +53,6 @@
   </div>
 </div>
       </div>
-    </a>
   </div>
   {% endfor %}
 </div>
