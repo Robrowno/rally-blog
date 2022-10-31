@@ -10,7 +10,7 @@ def send_forget_password_mail(email, token):
     Contains unique token based on user profile object.
     """
     subject = 'Your forget password link'
-    content = f'Hi there, click on the link to reset your password https://8000-robrowno-rallyblog-wu7fqfmqzhv.ws-eu73.gitpod.io/change-password/{token}/'
+    content = f'Hi there, click on the link to reset your password https://rally-blog.herokuapp.com//change-password/{token}/'
     message = Mail(
         from_email='robrowno@icloud.com',
         to_emails=email,
