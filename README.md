@@ -19,16 +19,13 @@ The website is deployed through Heroku, and the live link can be found here: [Ra
 ---
 ## Website across different platforms
 
-
-
-
-
+![Am I Responsive? Image](/static/images/readme-images/am-i-responsive-img.png)
 
 ---
 
 ## Table of Contents
 1. [Wireframes](#wireframes)
-2. [User-Stories and Epics](#)
+2. [User-Stories and Epics](#user-stories-and-epics)
 3. [UX Description](#ux-description)
 4. [Technologies used](#technologies-used)
 5. [Features](#features)
@@ -397,10 +394,53 @@ Fonts used in the project include the following:
 In this project, 5 main models were created to be used in conjunction with the database.
 These five models are:
 - Post 
+    - title
+    - slug
+    - author
+    - created_on
+    - updated_on
+    - event_name
+    - associated_club
+    - entry_fee
+    - location
+    - content
+    - featured_image
+    - car
+    - finish
+    - class_result
+    - overall_result
+    - championship_result
+    - likes
+    - comments
+    - post_status
+    
+
 - Comment
+    - post
+    - name
+    - email
+    - body 
+    - posted_on
+
 - Like
+    - user
+    - post
+    - reaction
+    - reacted_on
+
 - Contact
+    - first_name
+    - last_name
+    - email_address
+    - query_type
+    - textbox
+    - contacted_on
+
 - Profile
+    - user
+    - forget_password_token
+    - created_on
+
 
 All of these models were housed within one app, the rallyApp. I could very well have seperated some of these out in to seperate apps but due to the relatively small scale of the site, I deemed it fine to keep them all within one app.
 
@@ -443,14 +483,16 @@ I decided to paginate the comments section to keep the comments section shorter.
 
 - On a few occasion I forgot to update the requirements.txt after installing packages. However, when testing between both VSCode and Gitpod IDE, I didn't realise VSCode has Pillow pre-installed, whereas Gitpod didn't. I fixed an issue on the add post page which was working locally but not on gitpod. I looked up the error code online for a ModuleNotFoundError: No module named 'PIL' - Through this site I realised the issue and used `pip3 install Pillow` to resolve the issue.
 
+- As many Linting Validator issues were resolved with continuous testing to ensure best-practises were used and any mistakes ironed out.
+
 
 # Peer Reviews 
 
-- Peer Reviews from the C.I Slack Community:
-
-- Thoughts on the project from my mentor:
+- Thoughts on the project from my mentor: xxxxxxxxx
 
 - Peer Reviews from the C.I London Community:
+    - When asked to review the site, all were very impressed with the design and said they found the site very intuitive and easy to use. They really enjoyed reading the content I'd written and overall thought I'd done a good job of the site.
+    I asked if the community would mind testing on different devices, and so I had a few windows devices added to the list of tested devices as a result, which I wouldn't have been able to do otherwise.
 
 
 # Deployment
@@ -610,6 +652,10 @@ I decided to paginate the comments section to keep the comments section shorter.
 
 - A default image, incase an uploaded file doesn't render from the management pages: [Default image](https://deconova.eu/wp-content/uploads/2016/02/default-placeholder.png)
 
+- Am I responsive used for creating the image at the top of the README.md file:[Am I Responsive?](https://ui.dev/amiresponsive)
+
+- TempMail used for testing the password reset link by creating 'disposable' email accounts: [TempMail](https://temp-mail.org/en/)
+
 
 
 ## Personal Credits
@@ -626,7 +672,10 @@ A special thanks to:
 
 - Abubakar Shafique: Abubakar has been an incredible teacher of Django concepts to me. Through his lessons, I have picked up a much better confidence using the Django framework, and when I'm stuck he always sends me resources to look at online that could help with a particular issue I'm stuck on, which has helped me nine times out of ten when trying to solve a problem. Abubakar also introduced me to the SendGrid API for handling emails and resetting passwords, and taught me how to use it in conjunction with a project. Without Django lessons with Abubakar, I simply would not have progressed and developed as well as I have.
 
+- Chris Williams for assisting me in advice regarding config vars before deployment, showing me a nifty trick to replace `DEBUG = True` or `DEBUG = False` with `DEBUG = DEVELOPMENT in os.environ` to prevent me from having to reset it each time I wanted to deploy or go back into development. He also sent me some great resources for html validation tips and gave great advice for Django projects in general!
+
 - C.I Tutor support, for their guidance in resolving bugs in development. I'd particularly like to extend my thanks to Ed from Tutor support for his kindness and patience!
+
 
 ---
 ## Final Thoughts:

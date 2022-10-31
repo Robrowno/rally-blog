@@ -2,6 +2,15 @@
 
 This section comprises of Automated and Manual tests conducted towards the end of development of the website.
 
+## Table of Contents:
+1. [Manual Tests](#manual-tests)
+2. [HTML Validation](#html-validation)
+3. [CSS Validation](#css-validation)
+4. [JS Validation](#js-validation)
+5. [Python Validation](#python-validation)
+6. [Lighthouse Performance](#lighthouse-performance-testing)
+7. [Unresolved Issues](#current-issues-known-but-not-yet-resolved)
+
 ---
 
 ## Automated Tests
@@ -189,46 +198,92 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 | File | Result |
 | -------- | ------ |
-| base.html  | Content |
-| index.html  | Content |
-| add-post.html  | Content |
-| contact.html  | Content |
-| edit-profile.html  | Content |
-| follow-me.html  | Content |
-| login.html  | Content |
-| manage-index.html  | Content |
-| manage-post.html  | Content |
-| my-profile.html  | Content |
-| post-detail.html  | Content |
-| Content  | Content |
+| base.html  | Pass |
+| index.html  | Pass |
+| add-post.html  | Pass |
+| contact.html  | Pass |
+| edit-profile.html  | Pass |
+| follow-me.html  | Pass |
+| login.html  | Pass |
+| manage-index.html  | Pass |
+| manage-post.html  | Pass |
+| my-profile.html  | Pass |
+| post-detail.html  | Pass |
+| register.html  | Pass |
 
 
 ### /templates/pages/accounts:
 
 | File | Result |
 | -------- | ------ |
-| password_change.html  | Content |
-| password_reset.html  | Content |
+| password_change.html  | Pass |
+| password_reset.html  | Pass |
 
 
 ### /templates/pages/errors:
 
 | File | Result |
 | -------- | ------ |
-| 403.html  | Content |
-| 404.html  | Content |
-| 405.html  | Content |
+| 403.html  | Pass |
+| 404.html  | Pass |
+| 405.html  | Pass |
 
 
 <details><summary>CLICK TO OPEN/HIDE HTML VALIDATION IMAGES</summary>
 
-
+### base.html and index.html
+![Base and Index](/static/images/readme-images/validation/base-and-index-validation.png)
+---
+### post-detail.html
+![Post Detail](/static/images/readme-images/validation/post-detail-validation.png)
+---
+### add-post.html
+![Add Post](/static/images/readme-images/validation/add-post-validation.png)
+---
+### manage-post.html
+![Manage/Edit Post](/static/images/readme-images/validation/edit-post-validation.png)
+---
+### manage-index.html
+![Manage Index](/static/images/readme-images/validation/manage-index-validation.png)
+---
+### contact.html
+![Contact](/static/images/readme-images/validation/contact-validation.png)
+---
+### my-profile.html
+![My User Profile](/static/images/readme-images/validation/profile-validation.png)
+---
+### edit-profile.html
+![Edit Profile](/static/images/readme-images/validation/edit-profile-validation.png)
+---
+### follow-me.html
+![Follow Me](/static/images/readme-images/validation/follow-me-validation.png)
+---
+### login.html
+![Login](/static/images/readme-images/validation/login-validation.png)
+---
+### register.html
+![Register](/static/images/readme-images/validation/register-validation.png)
+---
+### password_change.html
+![Password Change](/static/images/readme-images/validation/change_password-validation.png)
+---
+### password_reset.html
+![Password Reset](/static/images/readme-images/validation/password-reset-validation.png)
+---
+### 403.html
+![Error 403](/static/images/readme-images/validation/403-validation.png)
+---
+### 404.html
+![Error 404](/static/images/readme-images/validation/404-validation.png)
+---
+### 500.html
+![Error 500](/static/images/readme-images/validation/500-validation.png)
+---
 
 
 ### Current HTML Errors/Issues/Explanations"
 
-- 
-- 
+- None to report.
 
 </details>
 
@@ -288,6 +343,13 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 <details><summary>CLICK TO OPEN/HIDE JS VALIDATION IMAGES</summary>
 
+### base.js
+![base js](/static/images/readme-images/validation/jshint-base-js.png)
+---
+### index.js
+![index js](/static/images/readme-images/validation/jshint-index-js.png)
+---
+
 ### Current JS Errors/Issues/Explanations"
 
 - JSHint found an 'Undefinded Variable' in the form of 'e' in the base.js file, however, this is standard practice and I have found a supporting link to demonstrate this below.
@@ -320,8 +382,10 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 ---
 ## Lighthouse Performance Testing:
-- 
-- 
+- Lighthouse Testing was performed in an incognito tab to ensure no external chrome add-ons were affecting the test.
+- Results of the Lighthouse Performance testing below:
+
+![Lighthouse Performance Test](/static/images/readme-images/validation/lighthouse-performance.png)
 
 
 ## Tests on mulitple devices and browsers:
@@ -332,6 +396,9 @@ This section comprises of Automated and Manual tests conducted towards the end o
 - Devices Tested on:
     - Apple Macbook Pro
     - Apple iPhone 12 Pro
+    - Iphone X
+    - HP laptop w/ Windows 11 installed
+    - IPad Pro
 
 
 ---
