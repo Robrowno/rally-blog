@@ -53,11 +53,9 @@
                             data-bs-target="#staticBackdrop">
                             Delete Account
                         </button>
-                        </form>
                     </div>
                 </div>
             </div>
-
 
         </div>
     </div>
@@ -82,6 +80,7 @@
                 <form action="{% url 'delete_profile' %}" method="post">
                     {% csrf_token %}
                     <button class="btn btn-danger">Delete Account</button>
+                </form>
             </div>
         </div>
     </div>
