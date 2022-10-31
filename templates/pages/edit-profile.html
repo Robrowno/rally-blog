@@ -18,18 +18,18 @@
         <div class="col-lg-8 mx-auto card">
             <h1 class="card-title text-center"> Edit My Profile </h1>
             <!-- Form to edit profile information from Profile page -->
-            <form action="" method="post">
+            <form method="post">
                 {% csrf_token %}
                <label class="form-label" for="edit-username">Username: </label>
                 <input disabled class="form-control mb-2" id="edit-username" name="edit-username" type="text"
                     value="{{ user.username }}">
                 <label class="form-label" for="edit-email">Email: </label>
                 <input class="form-control" id="edit-email" name="edit-email" type="email" value="{{ user.email }}">
-                <input type="hidden" name="edit_user_id" value="{{ user.id }}"/>
+                <input type="hidden" name="edit_user_id" value="{{ user.id }}">
                 <button id="sub_butt" class="btn btn-info col-sm-4 offset-sm-4 submit-button mt-3" type="submit" value="submit">Save</button>
             </form>
             <div class="col-sm-2">
-                <button class="btn btn-primary"><a href="{% url 'profile' %}">Go Back</a></button>
+                <div class="btn btn-primary"><a href="{% url 'profile' %}">Go Back</a></div>
             </div>
             
 
@@ -82,7 +82,6 @@
                 <form action="{% url 'delete_profile' %}" method="post">
                     {% csrf_token %}
                     <button class="btn btn-danger">Delete Account</button>
-                </form>
             </div>
         </div>
     </div>

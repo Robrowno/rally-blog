@@ -16,7 +16,7 @@
 
 <div class="container mt-3">
   <!-- Contact form -->
-  <form action="" method="post" class="row g-3">
+  <form method="post" class="row g-3">
     {% csrf_token %}
     <div class="col-md-6">
       <label for="fname" class="form-label contact-form-labels">First Name :</label>
@@ -29,7 +29,7 @@
     <div class="col-md-8">
       <label class="contact-form-labels form-label" for="validationDefaultEmail">Email Address</label>
       <input type="email" class="form-control" id="validationDefaultEmail" name="validationDefaultEmail"
-        aria-describedby="inputGroupPrepend2" required>
+        aria-describedby="validationDefaultEmail" required>
     </div>
     <div class="col-md-4">
       <select class="form-select select-dropdown" aria-label="Query contact subject" id="select-query" name="select-query" required>
