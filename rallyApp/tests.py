@@ -1,4 +1,4 @@
-from django.test import TestCase, SimpleTestCase
+from django.test import SimpleTestCase
 from django.urls import reverse, resolve
 
 # Imported from rallyApp.views multiple times to reduce line length

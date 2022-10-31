@@ -26,7 +26,7 @@ The website is deployed through Heroku, and the live link can be found here: [Ra
 ## Table of Contents
 1. [Wireframes](#wireframes)
 2. [User-Stories and Epics](#user-stories-and-epics)
-3. [UX Description](#ux-description)
+3. [UX Description](#features-and-uxui)
 4. [Technologies used](#technologies-used)
 5. [Features](#features)
 6. [Features to implement](#other-features-to-implement)
@@ -257,6 +257,22 @@ Technologies and Frameworks used to make this website include the following:
 - [SendGrid Site](https://docs.sendgrid.com/)
 - [SendGrid Quickstart Docs for Python](https://docs.sendgrid.com/for-developers/sending-email/quickstart-python)
 
+### What is SendGrid
+- For mailing purposes, we use need to use an SMTP Server. 
+- SendGrid is a cloud-based SMTP provider that allows you to send email without having to maintain email servers. SendGrid manages all of the technical details, from scaling the infrastructure to ISP outreach and reputation monitoring to whitelist services and real time analytics - **Definition from SendGrid itself.**
+
+### Why to use SendGrid
+- SendGrid is a free mailing server
+- It provides 100 emails per day included in the free account
+
+
+### How does SendGrid work
+- After creating an account, and following the documentation, SendGrid provides an API key to use in our env.py file.
+- We create a function where we write the logic that is provided in the documentation. 
+- SendGrid is able to send emails to and from the specific email addresses of the client and user. 
+
+
+
 ---
 
 # Features and UX/UI:
@@ -392,55 +408,9 @@ Fonts used in the project include the following:
 # Django Models:
 
 In this project, 5 main models were created to be used in conjunction with the database.
-These five models are:
-- Post 
-    - title
-    - slug
-    - author
-    - created_on
-    - updated_on
-    - event_name
-    - associated_club
-    - entry_fee
-    - location
-    - content
-    - featured_image
-    - car
-    - finish
-    - class_result
-    - overall_result
-    - championship_result
-    - likes
-    - comments
-    - post_status
-    
+These models are:
 
-- Comment
-    - post
-    - name
-    - email
-    - body 
-    - posted_on
-
-- Like
-    - user
-    - post
-    - reaction
-    - reacted_on
-
-- Contact
-    - first_name
-    - last_name
-    - email_address
-    - query_type
-    - textbox
-    - contacted_on
-
-- Profile
-    - user
-    - forget_password_token
-    - created_on
-
+![Database Schema](/static/images/readme-images/database-schema.jpg)
 
 All of these models were housed within one app, the rallyApp. I could very well have seperated some of these out in to seperate apps but due to the relatively small scale of the site, I deemed it fine to keep them all within one app.
 

@@ -408,7 +408,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 - The responsiveness of the like and and comment icons on the blog cards in the post list aren't quite perfect. They will move inwards if a title is shorter than a certain number of characters. This will be addressed in a future update.
 - The like counter can take some time to load occasionally. However, I believe this is more of a connection issue rather than anything to do with my code.
 - In the Edit Post Management page, whilst using crisy forms, I am currently unable to render the current image link to the front end. When using `{{ form.as_p }}`, it seems to work perfectly, but then you lose the formatting that crispy forms provides. I will aim to address this in an update in future.
-- 
+- Titles cannot be too long at the moment, because it disrupts the css on some screen sizes - this will be fixed in future updates
 - 
 - 
 

@@ -148,7 +148,7 @@ def register(request):
                 messages.info(request, e)
                 return redirect('register')
     except Exception as e:
-        pass
+        messages.error(request, 'Unable to create an account at this time')
     return render(request, "pages/register.html")
 
 
@@ -182,7 +182,7 @@ def login_func(request):
                     )
                 return redirect('login')
         except Exception as e:
-            messages.error(request, ("Server error, Please try Again!"))
+            messages.error(request, ("Server error, Please try Again!" + e))
             return redirect('login')
 
 
@@ -227,7 +227,8 @@ def edit_profile(request):
         id = 0
         exist = False
         if User.objects.filter(email=email).exists():
-            id = User.objects.filter(email=email).values_list('id', flat=True)[0]
+            id = User.objects.filter(
+                email=email).values_list('id', flat=True)[0]
             exist = True
         else:
             id = None
@@ -238,11 +239,15 @@ def edit_profile(request):
                 return redirect('edit_profile')
 
             if not exist:
-                if User.objects.filter(username=username).exists() and user_id == id:
+                if (
+                    User.objects.filter(username=username).exists()
+                ) and user_id == id:
                     messages.error(request, 'This Username already exists.')
                     return redirect('edit_profile')
             else:
-                if User.objects.filter(username=username).exists() and user_id != id:
+                if (
+                    User.objects.filter(username=username).exists()
+                ) and user_id != id:
                     messages.error(request, 'This Email already exists.')
                     return redirect('edit_profile')
         if User.objects.filter(email=email).exists() and user_id != id:
@@ -268,7 +273,7 @@ def delete_profile(request):
             profile.delete()
         except Exception as e:
             return render(
-                request, 'pages/edit-profile.html', {'error': e.message}
+                request, 'pages/edit-profile.html', {'error': e}
                 )
 
     return redirect('home')
@@ -322,7 +327,7 @@ def change_password(request, token):
             user_obj.save()
             return redirect('login')
     except Exception as e:
-        pass
+        messages.error(request, 'Profile Object not found')
     return render(request, 'pages/accounts/password_change.html', context)
 
 
@@ -348,7 +353,7 @@ def forget_password(request):
             messages.success(request, 'An email has been sent.')
             return redirect('forget-password')
     except Exception as e:
-        pass
+        messages.error(request, 'Internal Server Error.')
     return render(request, 'pages/accounts/password_reset.html')
 
 
@@ -366,7 +371,7 @@ def delete_comment(request, pk):
             messages.success(
                 request, 'You have successfully deleted the comment'
                 )
-        except:
+        except Exception:
             messages.warning(request, 'The comment could not be deleted.')
 
     return redirect('home')
@@ -427,7 +432,9 @@ def add_post(request):
         post_save.status = 1
 
         if not file:
-            post_save.featured_image = cloudinary.uploader.upload_resource(file)
+            post_save.featured_image = (
+                cloudinary.uploader.upload_resource(file)
+                )
 
         post_save.save()
         messages.success(request, 'Successfully created!')
@@ -462,7 +469,8 @@ def edit_post(request, id):
         existing_post = get_object_or_404(Post, id=id)
         file = request.FILES.get(
             'featured_image',
-            'https://deconova.eu/wp-content/uploads/2016/02/default-placeholder.png'
+            'https://deconova.eu/wp-content/uploads'
+            '/2016/02/default-placeholder.png'
             )
 
         form = UpdatePostForm(
@@ -474,7 +482,9 @@ def edit_post(request, id):
 
             print(file)
             if not file:
-                form.instance.featured_image = cloudinary.uploader.upload_resource(file)
+                form.instance.featured_image = (
+                    cloudinary.uploader.upload_resource(file)
+                    )
 
             form.save()
             messages.success(request, 'Successfully edited!')
