@@ -15,8 +15,6 @@ from rallyApp.views import (
     manage_posts, add_post, edit_post, delete_post
     )
 
-# Testing NOT complete - all URLs pass, continue refactoring where appropriate
-
 
 class TestRallyAppUrls(SimpleTestCase):
     """

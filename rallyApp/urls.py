@@ -13,7 +13,10 @@ urlpatterns = [
     path('post-management/', views.manage_posts, name="manage"),
     path('post-management/add-post/', views.add_post, name="add"),
     path('post-management/edit-post/<int:id>/', views.edit_post, name="edit"),
-    path('post-management/delete_post/<int:id>/', views.delete_post, name='delete_post'),
+    path(
+        'post-management/delete_post/<int:id>/',
+        views.delete_post, name='delete_post'
+        ),
     path('<slug:slug>/', views.post_detail, name='post_detail'),
     path('delete/<slug:pk>', views.delete_comment, name='delete_comment'),
     path('update/<slug:pk>', views.update_comment, name='update_comment'),
@@ -27,6 +30,9 @@ urlpatterns = [
     path('login', views.login_func, name="login"),
     path('logout', views.logout_func, name="logout"),
     path('forget-password', views.forget_password, name="forget_password"),
-    path('change-password/<token>/', views.change_password, name="change_password"),
+    path(
+        'change-password/<token>/',
+        views.change_password, name="change_password"
+        ),
 
 ]

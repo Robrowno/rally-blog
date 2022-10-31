@@ -1,9 +1,10 @@
 import os
+from django.contrib import messages
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
 
-def send_forget_password_mail(email, token):
+def send_forget_password_mail(request, email, token):
 
     """
     Sends email with link to reset password.
@@ -27,5 +28,5 @@ def send_forget_password_mail(email, token):
         print(response.status_code)
         print(response.body)
         print(response.headers)
-    except Exception as e:
-        print(e)
+    except Exception:
+        messages.error(request, 'API Error - message not sent')
