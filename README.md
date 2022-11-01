@@ -55,7 +55,7 @@ NOTE: Changed layout of the stats in production version, and as above, removed n
 ![Different Devices Wireframe](./static/images/readme-images/wireframe-devices.png)
 
 ## Create Account
-
+NOTE: Forgot password link added to this page in production.
 ![Account Registration Page](./static/images/readme-images/wireframe-create-account.png)
 
 ## Login
@@ -66,12 +66,12 @@ email address for Logging in to the website.
 
 ## User Profile Page
 
-NOTE: Name removed in production version, due to it not being used/visible anywhere else on the site.
+NOTE: Name removed in production version, due to it not being used/visible anywhere else on the site. Also, forget password link is now changed to the contact page link instead
 ![Profile Page](./static/images/readme-images/wireframe-profile-info.png)
 
 ## Edit Profile Page 
 
-NOTE: Changed to having seperate inputs for First Name and Last Name. Also added a delete button should users wish to delete their account.
+NOTE: Changed to having seperate inputs for First Name and Last Name, then removing altogether and just showing the user's username and email. Also added a delete button should users wish to delete their account. The forget password link is now changed to the contact page link instead
 
 ![Edit Profile](./static/images/readme-images/wireframe-profile-edit.png)
 
@@ -205,6 +205,21 @@ Link to the board below:
 - [EPIC: Testing](https://github.com/Robrowno/rally-blog/issues/20)
     - As a Developer I would like to write and perform manual or automated tests so that I can demonstrate that my code is working as expected.
 
+
+## A note on L.O 1.11:
+
+I want to make clear I understand I potentially made a mistake in the development of this project, in naming the root project directory and the app name in camel case - I have seen this in the Learning Objective relating to consistent file names, and I did make an attempt to alter it, however, it became apparent that it was too risky to change late in the development cycle as a lot of settings would need to be adjusted, and there is no guarantee I would get them all correct and that the site would still run properly.
+
+![L.O 1.11](./static/images/readme-images/learning-objective-explanation.png)
+
+## A note on Acceptance Criteria:
+
+In my User Stories, I decided to go with "Desired/Ideal Features" in the place of "Acceptance Criteria".
+My reasons for this were to allow for flexibility in adjusting my designs and features as I implemented and tested them, but also due to my confidence at the time of making User Stories, in feeling I could certainly implement them, as I am still relatively new to the Django framework, this being my first FullStack project.
+
+I think now that I am a lot more confident in the framework, one thing I would do differently in my Agile methodologies, is be more confident in setting Acceptance Criteria for features at the onset and trying to follow through on that criteria. 
+
+There are certainly lessons I can take away from this project to implement and improve on in my next projects.
 
 ---
 
@@ -419,6 +434,7 @@ Colours used in the site are as follows:
 - Stats on the Profile page and Post detail pages are standard Bootstrap (Primary) Blue and (Dark) Black
 - The delete comment buttons are Bootstrap (Danger) Red and Edit comment buttons are Bootstrap (Success) Green
 - The Like Button is Bootstrap (Primary) Blue and the Unlike is Bootstrap (Warning) Yellow
+- Save Buttons in the Profile pages are in Bootstrap (Info) Blue
 
 ### Main Colour Palette (Visualised):
 
@@ -430,6 +446,12 @@ Fonts used in the project include the following:
 
 - `font-family: 'Poppins', sans-serif;` as the default font for the site
 - `font-family: 'Rubik Dirt', cursive;` for the main heading title and my name in the footer
+
+## Favicons:
+
+I used a car favicon that suits with the theme of the site and also helps users identify where the page tab is if they have many tabs open:
+
+![Car Favicon](./static/images/favicon_io/android-chrome-512x512.png)
 
 
 
@@ -462,7 +484,7 @@ Fonts used in the project include the following:
 # Django Models:
 
 In this project, 5 main models were created to be used in conjunction with the database.
-The schema is visually represented here thanks to [DbVisualizer](https://www.dbvis.com/download/)
+The schema is visually represented as a diagram here thanks to [DbVisualizer](https://www.dbvis.com/download/)
 These models are:
 
 ![Database Schema](/static/images/readme-images/database-schema.jpg)

@@ -390,7 +390,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | forms.py  | Pass |
 | tests.py  | Pass |
 
-"*" -  This acknowledges and takes into account the known errors that come with the Gitpod Linter.
+"*" -  This acknowledges and takes into account the known errors/warnings that come with the Gitpod Linter.
 
 <details><summary>CLICK TO OPEN/HIDE PYTHON VALIDATION IMAGES</summary>
 
@@ -405,6 +405,8 @@ This section comprises of Automated and Manual tests conducted towards the end o
 - Import env issue in settings.py can be ignored
 - Several docstring warnings for imports, which can be ignored
 - The Password reset and change function's exceptions have to be passed with ``pass`` - otherwise the email password reset will not work. This is the same in helpers.py, where I have opted to ``print(e)`` instead. I trialled using message errors but it failed.
+- The only flake8 issues in the site now are relating to the settings.py standard settings, which I have not changed as it came from the django installation:
+- ![settings.py flake8](./static/images/readme-images/validation/django-settings-warnings.png)
 
 </details>
 
@@ -429,7 +431,9 @@ This section comprises of Automated and Manual tests conducted towards the end o
     - HP laptop w/ Windows 11 installed
     - IPad Pro
 
-
+## Responsiveness:
+- The site has been tested down to screen widths of 300px up to screen sizes of 2560px
+- The site is fully responsive between these widths
 ---
 
 ## Current Issues known but not yet resolved:
@@ -438,8 +442,11 @@ This section comprises of Automated and Manual tests conducted towards the end o
 - The like counter can take some time to load occasionally. However, I believe this is more of a connection issue rather than anything to do with my code.
 - In the Edit Post Management page, whilst using crisy forms, I am currently unable to render the current image link to the front end. When using `{{ form.as_p }}`, it seems to work perfectly, but then you lose the formatting that crispy forms provides. I will aim to address this in an update in future.
 - Titles cannot be too long at the moment, because it disrupts the css on some screen sizes - this will be fixed in future updates
-- Depending on resolution of images and wifi connectivity, speed of site loading can vary greatly.
+- Depending on resolution of images and wifi connectivity, speed of site loading can vary greatly. No known or scheduled fix for this.
+- As per above in the explanations for the python validation, I will find a new way if possible to implement a different way of using the Exception in the functions relating to sending emails and password resets in relation to the SendGrid API. Because the emailing system works exactly as it is now, and any alterations break this feature, I have decided the best way forward for now is to either use the Pass of Print(e) option in the exception. I reiterate though that I will try to implement a better means of the error handling if it's possible.
+- I did repeat myself a lot with the messages code at the top of most html templates - I did this as originally I considered doing the messages slightly differently of certain pages. In the end, I only made the messages slightly different on the Contact page. I will aim to make sure I don't repeat myself in the code in future updates.
 
+---
 
 ### Return to README: 
 
