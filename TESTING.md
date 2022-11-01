@@ -13,10 +13,13 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 ---
 
-## Automated Tests
+## Automated Tests:
+
+`` USER STORY: As a Developer I can write code for automated tests in order to **accurately test my main code for bugs/issues and test criteria in order to refactor and test again.  ``
 
 - Testing URL Resolution: All tests passed
-- 
+- Due to time constraints and complexity of the project, I did not complete any further automated tests
+
 
 
 ---
@@ -359,23 +362,30 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 ---
 ## Python Validation:
-- At the time of writing/development of this project, the tried and tested PEP8 Python Validator was down. I mainly had to rely on the Linter that came with the Code Institute workspace that we use to start the portfolio projects.
+- At the time of writing/development of this project, the tried and tested PEP8 Python Validator was down. I mainly had to rely on the Linter that came with the Code Institute workspace that we use to start the portfolio projects. I did also use the https://www.pythonchecker.com/ site to test my code.
 - Results across all pages with Python code below:
 
 | File | Result |
 | -------- | ------ |
-| Content  | Content |
-| Content  | Content |
+| views.py  | Pass* |
+| models.py  | Pass* |
+| urls.py  | Pass |
+| helpers.py  | Pass |
+| forms.py  | Pass |
+| tests.py  | Pass |
 
+"*" -  This acknowledges and takes into account the known errors that come with the Gitpod Linter.
 
 <details><summary>CLICK TO OPEN/HIDE PYTHON VALIDATION IMAGES</summary>
 
-
+![Python Checker for views.py](./static/images/readme-images/validation/views-python-checker.png)
 
 ### Current Python Errors/Issues/Explanations"
 
-- 
-- 
+- The Pylint and PEP8 checker on Gitpod is notoriously sensitive and flags warnings where they aren't necessary, see example below:
+- ![X has no objects](./static/images/readme-images/validation/has-no-objects-issue.png)
+- Pylint flags the 'token' argument as having no value, this is to be ignored as well, as per the SendGrid Documentation.
+- Ignoring any errors caused by using keywords such as id, pk, e, etc, which flags due to either warning about not being in snake case, or being reassigned a new value.
 
 </details>
 
@@ -409,8 +419,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 - The like counter can take some time to load occasionally. However, I believe this is more of a connection issue rather than anything to do with my code.
 - In the Edit Post Management page, whilst using crisy forms, I am currently unable to render the current image link to the front end. When using `{{ form.as_p }}`, it seems to work perfectly, but then you lose the formatting that crispy forms provides. I will aim to address this in an update in future.
 - Titles cannot be too long at the moment, because it disrupts the css on some screen sizes - this will be fixed in future updates
-- 
-- 
+- Depending on resolution of images and wifi connectivity, speed of site loading can vary greatly.
 
 ### Return to README: 
 

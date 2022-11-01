@@ -47,8 +47,7 @@ def post_detail(request, slug):
     post_view = get_object_or_404(Post, slug=slug)
     comments = Comment.objects.filter(post=post_view)
     comment_counter = comments.count()
-    # Increase paginator for production version
-    paginator = Paginator(comments, 3)
+    paginator = Paginator(comments, 4)
     comment_page_number = request.GET.get('page')
     comments = paginator.get_page(comment_page_number)
 
@@ -147,7 +146,7 @@ def register(request):
             except Exception as e:
                 messages.info(request, e)
                 return redirect('register')
-    except Exception as e:
+    except Exception:
         messages.error(request, 'Unable to create an account at this time')
     return render(request, "pages/register.html")
 
@@ -218,8 +217,6 @@ def edit_profile(request):
     """
 
     if request.method == "POST":
-
-        # Data from the form
         username = request.POST.get('edit-username')
         email = request.POST.get('edit-email')
         user_id = request.POST.get('edit_user_id')
@@ -326,7 +323,7 @@ def change_password(request, token):
             user_obj.set_password(new_password)
             user_obj.save()
             return redirect('login')
-    except Exception as e:
+    except Exception:
         messages.error(request, 'Profile Object not found')
     return render(request, 'pages/accounts/password_change.html', context)
 
@@ -352,7 +349,7 @@ def forget_password(request):
             send_forget_password_mail(user_obj.email, token)
             messages.success(request, 'An email has been sent.')
             return redirect('forget-password')
-    except Exception as e:
+    except Exception:
         messages.error(request, 'Internal Server Error.')
     return render(request, 'pages/accounts/password_reset.html')
 

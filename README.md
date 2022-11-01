@@ -26,15 +26,14 @@ The website is deployed through Heroku, and the live link can be found here: [Ra
 ## Table of Contents
 1. [Wireframes](#wireframes)
 2. [User-Stories and Epics](#user-stories-and-epics)
-3. [UX Description](#features-and-uxui)
+3. [Features & UX Description](#features-and-uxui)
 4. [Technologies used](#technologies-used)
-5. [Features](#features)
-6. [Features to implement](#other-features-to-implement)
-7. [Testing and Validation](#testing-and-validation)
-8. [Bugs and Issues](#bugs-and-issues)
-9. [Peer Reviews](#peer-reviews)
-10. [Deployment](#deployment)
-11. [Credits](#credits)
+5. [Features to implement](#features-to-implement-in-future)
+6. [Testing and Validation](#testing-and-validation)
+7. [Bugs and Issues](#bugs-and-issues)
+8. [Peer Reviews](#peer-reviews)
+9. [Deployment](#deployment)
+10. [Credits](#credits)
 
 # Wireframes
 
@@ -148,6 +147,8 @@ Link to the board below:
     - As a Site Admin I can save posts as drafts in order to continue editing or post content at a later date. 
 - [User Story: Post Replication](https://github.com/Robrowno/rally-blog/issues/3)
     - As a Site Admin I have a post template in order to make new posts quickly under the same format.
+- [User Story: Navigation](https://github.com/Robrowno/rally-blog/issues/34)
+    - As a Site User I can User a Nav Bar in order to Select where I want to go on the site. **Acknowledged that this User Story was added late to the Kanban board**
 - [User Story: Pagination](https://github.com/Robrowno/rally-blog/issues/4)
     - As a Site User I can view a selection of paginated posts so that I can decide which posts I want to read. 
 - [User Story: Social Media](https://github.com/Robrowno/rally-blog/issues/5)
@@ -272,7 +273,6 @@ Technologies and Frameworks used to make this website include the following:
 - SendGrid is able to send emails to and from the specific email addresses of the client and user. 
 
 
-
 ---
 
 # Features and UX/UI:
@@ -287,6 +287,8 @@ My Rally Blog website consists of many features, that allow the user to interact
     - If the user has an account, they will also have access to a Profile page in the nav
     - Superusers/Admins will have a Manage link, which is exclusive to Superusers/Admins
 
+    `` USER STORY: As a Site User I can User a Nav Bar in order to Select where I want to go on the site. ``
+
 For demonstration purposes I am using the Nav Bar that an admin would see. If not an admin, the blue manage button would not be there and if not logged in, the Logout link would become the link to the Register/Login page.
 ![Navigation](/static/images/readme-images/navigation.png)
 
@@ -297,45 +299,71 @@ For demonstration purposes I am using the Nav Bar that an admin would see. If no
     - Github
     - My name on the bottom right (when viewed screens 992px wide and above)
 
+    `` USER STORY: As a Site User I would like to see links to social media in order to follow the Site Owner on a desired Media platform. ``
+
 ![Footer](/static/images/readme-images/footer.png)
 
-3. A Home Page that displays Blog post content which can be individually clicked on to open posts. When opened they display unique content to that specific blog post/article.
+3. A Home Page that displays Blog post content which can be individually clicked on to open posts. When opened they display unique content to that specific blog post/article. Pagination occurs when a post list exceeds 6 posts per page.
 
-Space for image here: #######################
+`` USER STORY: As a Site Admin I have a post template in order to make new posts quickly under the same format. ``
+
+`` USER STORY: As a Site User I can view a selection of paginated posts so that I can decide which posts I want to read. ``
+
+![Index (Home) Page](./static/images/readme-images/home-page.png)
 
 4. A Login Page, where users can log into their account. It also gives options to create an account if you don't have one or if you forget your password you can follow a link to reset it.
+
+`` USER STORY: As a Site User I can Log in or Log out in order to keep my account secure. ``
 
 ![Login Page](/static/images/readme-images/login-page.png)
 
 5. A Register Page, where users can create an account.
 
+`` USER STORY: As a Site User I can create an account in order to have access to features that I wouldn't have otherwise. ``
+
 ![Register Page](/static/images/readme-images/register-page.png)
 
 6. A Reset-Password Page, where users can reset their password. Also gives you options to go back to the Login or Registration pages.
+
+`` USER STORY: As a Site User I can reset my password incase my account password us compromised. ``
 
 ![Reset Password Page](/static/images/readme-images/reset-password-page.png)
 
 7. A Follow Me page, with cards displaying social media links for the site user to visit and follow me on different social media platforms.
 
+`` USER STORY: As a Site User I can open a dedicated social media page in order to view social media links from one location. ``
+
 ![Follow-Me Page](/static/images/readme-images/follow-me-page.png)
 
 8. A Contact form page, where the site user can fill out a form to get in touch with a particular query they have in mind. The form asks for a name & surname, email, query-type and displays a text area to type out your message.
 
+`` USER STORY: As a Site User I can Contact the Site owner directly in order to ask questions or discuss opportunities. ``
+
 ![Contact Form Page](/static/images/readme-images/contact-page.png)
 
 9. A User Profile Page, where Users can view stats about their likes and comments, or their info such as their email address and username on file.
+
+`` USER STORY: As a Site User I can Access a Profile Page in order to View/Update my information. ``
+
 
 ![User Profile Page](/static/images/readme-images/user-profile-page.png)
 
 10. An Edit Profile Page, where users can alter their Email Address, orginially you could change the username and first+second names as well, however, these were removed either due to conflict in the database or because the information wasn't relevant in the case of adding first and second names, since it is not visible anywhere else.
 You can also delete your account from this page.
 
+`` USER STORY: As a Site User I can click an edit button on my profile in order to Edit/change information about me. ``
+
 ![Edit Profile Page](/static/images/readme-images/edit-my-profile-page.png)
 
 The Delete Account Modal:
+
+`` USER STORY: As a Site User I can delete my account in order to remove myself from the website database if I no longer use the site. ``
+
 ![Delete Account Modal](/static/images/readme-images/delete-account-modal.png)
 
 11. Only accessible to the site admin/superuser, is the management home page, which is the same as the regular home page except it allows for CRUD functionality by the Admin on the front end for quick and easy changes/updates.
+
+`` USER STORY: As a Site Owner/Admin I can open a manage link in the navbar in order to create and edit posts on the front end. ``
 
 ![Manage Page Index](/static/images/readme-images/manage-page-index.png)
 
@@ -347,9 +375,35 @@ The Delete Account Modal:
 
 ![Add Post Page](/static/images/readme-images/add-post.png)
 
-14. Being a Django site, there is also an admin page just for the site Admin/Author, where the admin can edit, create, delete and draft/publish content. The Admin page allows me to see more than just the content, I can view comments, user registration and contact forms sent to me from the admin panel. I also have a custom title for my admin page, just to make it look a built more purposeful than the standard title.
+14. There is a Post detail Page, where Users can read and interact with content by liking and commenting (once they are logged in):
+
+`` USER STORY: As a Site User I can click on a post in order to read the content from the post I selected. ``
+
+![Post Detail](./static/images/readme-images/post-detail.png)
+
+`` USER STORY: As a Site User I can comment on blog posts in order to interact with other site users and the site owner. ``
+`` USER STORY: As a Site User I can like a post in order to show that I enjoyed the content. ``
+
+![Comments and Likes](./static/images/readme-images/content-comments-likes.png)
+
+`` USER STORY: As a Site User I can click on a delete button in order to Remove comments I have made. ``
+![CRUD for Comments](./static/images/readme-images/crud-func-comments.png)
+
+`` USER STORY: As a Site User I can Click an edit button in order to Update/correct/edit comments that I've made. ``
+![Update Comments](./static/images/readme-images/update-comment.png)
+
+15. Being a Django site, there is also an admin page just for the site Admin/Author, where the admin can edit, create, delete and draft/publish content. The Admin page allows me to see more than just the content, I can view comments, user registration and contact forms sent to me from the admin panel. I also have a custom title for my admin page, just to make it look a built more purposeful than the standard title.
+
+`` USER STORY: As a Site Admin I can save posts as drafts in order to continue editing or post content at a later date. ``
+`` USER STORY: As a Site Admin I can open an admin page in order to write my own new content and publish them. ``
 
 ![Admin Page](/static/images/readme-images/rallyblog-admin-page.png)
+
+16. I also have custom HTTP Status error handlers. Here is an example of an Error 404 on the site:
+
+`` USER STORY: As a Developer I can Create custom error pages in order to allow site users to easily navigate back home from an incorrect page.``
+
+![Error 404 Example](./static/images/readme-images/http-status-404.png)
 
 
 ## Colours:
@@ -408,6 +462,7 @@ Fonts used in the project include the following:
 # Django Models:
 
 In this project, 5 main models were created to be used in conjunction with the database.
+The schema is visually represented here thanks to [DbVisualizer](https://www.dbvis.com/download/)
 These models are:
 
 ![Database Schema](/static/images/readme-images/database-schema.jpg)
@@ -455,10 +510,13 @@ I decided to paginate the comments section to keep the comments section shorter.
 
 - As many Linting Validator issues were resolved with continuous testing to ensure best-practises were used and any mistakes ironed out.
 
+- The pylint Linter in Gitpod has a known issue with posting warnings in the problems section of the terminal - Whilst I have rectified as much as I can, and addressed issues as I've been going along, warnings do still persist. Nothing Site-Breaking, I am happy to inform.
+
 
 # Peer Reviews 
 
-- Thoughts on the project from my mentor: xxxxxxxxx
+- Thoughts on the project from my mentor: 
+    - Daisy was impressed with my project and how far I'd come. She thought the styling and layout of the site was great, and she did give me some constructive criticism regarding my code to push me in the right direction. 
 
 - Peer Reviews from the C.I London Community:
     - When asked to review the site, all were very impressed with the design and said they found the site very intuitive and easy to use. They really enjoyed reading the content I'd written and overall thought I'd done a good job of the site.
