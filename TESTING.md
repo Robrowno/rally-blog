@@ -17,9 +17,8 @@ This section comprises of Automated and Manual tests conducted towards the end o
 
 `` USER STORY: As a Developer I can write code for automated tests in order to **accurately test my main code for bugs/issues and test criteria in order to refactor and test again.  ``
 
-- Testing URL Resolution: All tests passed
+- Testing URL Resolution: All tests passed - see tests.py and run python3 manage.py test to run tests for yourself
 - Due to time constraints and complexity of the project, I did not complete any further automated tests
-
 
 
 ---
@@ -36,7 +35,8 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Email input | Try to enter an invalid email address or random numbers, words etc. | Email invalid message appears | Pass |
 | Forget Password Link | Click on link | User is redirected to Reset Password page | Pass |
 | Login link | Click on link | User is redirected to Login Page | Pass |
-| Registration Form | Create a new user | Success message displays as user is redirected to Login Page | Pass |
+| Registration Form | Create a new user | Success message displays as user is redirected to Login Page | Pass | 
+- [User Story: Account Registration](https://github.com/Robrowno/rally-blog/issues/7)
 
 &nbsp;
 
@@ -47,11 +47,13 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | ---- | ------ | ---------------- | ------ |
 | Login Form | Submit empty form | Form doesn't submit, and points to first field not filled in | Pass |
 | Login Form | Enter invalid Username | Return to login page with User not found message | Pass |
-| Login Form | Enter User login credentials | Redirect to Home Page, logged in | Pass |
+| Login Form | Enter User login credentials | Redirect to Home Page, logged in | Pass | 
 | Remember me check box | Click on check box more than once | Blue tick shows when it is selected | Pass |
 | Remember me check box | Remember me check box selected, close site and revisit | User is kept signed in on return | Pass |
 | Forget Password Link | Click on link | User is redirected to Reset Password page | Pass |
-| Login link | Click on link | User is redirected to Login Page | Pass |
+| Login link | Click on link | User is redirected to Login Page | Pass | 
+- [User Story: Login](https://github.com/Robrowno/rally-blog/issues/8)
+
 
 &nbsp;
 ### Password Reset Form Submission
@@ -61,7 +63,8 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Form Submit | Test with false username | Return to Reset page with No user found message | Pass |
 | Form Submit | Submit form with Username on file | Redirects with message stating an email has been sent  | Pass |
 | Login link | Click on link | User is redirected to Login Page | Pass |
-| Register link | Click on link | User is redirected to Register Page | Pass |
+| Register link | Click on link | User is redirected to Register Page | Pass | 
+- [User Story: Reset Password](https://github.com/Robrowno/rally-blog/issues/9)
 
 &nbsp;
 ### Contact Form Submission
@@ -71,7 +74,8 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Form Submit | Attempt to submit empty form | Doesn't submit, points to first field not filled in | Pass |
 | Form Submit | Attempt to submit with some but not all fields filled in | Specific fields not filled in inform the user that they are required | Pass |
 | Form Submit | Submit a complete contact form | Form is sent and shows success message | Pass |
-| Email input | Try to enter an invalid email address or random numbers, words etc. | Email invalid message appears | Pass |
+| Email input | Try to enter an invalid email address or random numbers, words etc. | Email invalid message appears | Pass | 
+- [User Story: Contact Form](https://github.com/Robrowno/rally-blog/issues/13)
 
 &nbsp;
 ### Comment Form Submission
@@ -81,7 +85,9 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Submit a Comment | Write a comment and click 'Submit' | When submit button is clicked, the post detail page reloads with new comment at the top of the comments section | Pass |
 | Comments render | Read comments in comment section when post is submitted | Comment content should display, along with the user who posted and the date the comment was posted. | Pass |
 | Comments Pagination | Create comment to test pagination number | When the pagination number is exceded, panigation will occur | Pass |
-| Pagination Buttons | Click on all pagination buttons | Can traverse between pages to follow along with the conversation history | Pass |
+| Pagination Buttons | Click on all pagination buttons | Can traverse between pages to follow along with the conversation history | Pass | 
+- [User Story: Comment](https://github.com/Robrowno/rally-blog/issues/12)
+
 
 &nbsp;
 ---
@@ -96,6 +102,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Attempt to enter an email that already exists | Submit form with another user's email address | "Email is already taken" message will appear and form will not submit | Pass |
 | Check updated field in the database | Visit admin page and check User section | Data will be updated in the database | Pass |
 | Go back button | Click the "Go Back" Button | Return to the My-User Profile Page | Pass |
+- [User Story: Update Profile](https://github.com/Robrowno/rally-blog/issues/27)
 
 
 
@@ -108,6 +115,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Edit input display | Check layout and input renders current comment | Layout is responsive and shows existing comment in the input field | Pass |
 | Update Button | Click Update Button | Page Redirects with comment updated and success message | Pass |
 | Read Edited comment | Check comment after update | Comment is now updated for all readers to see | Pass |
+- [User Story: Edit Comment](https://github.com/Robrowno/rally-blog/issues/25)
 
 
 &nbsp;
@@ -122,6 +130,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Delete Comment | Try to delete another user's comment | Not possible to delete another user's comment | Pass |
 | Delete Comment | Delete your own comment | User Comment is removed | Pass |
 | Comment counter (Delete) | Delete comment and view counter | Counter should subtract each time a comment is deleted | Pass |
+- [User Story: Delete Comments](https://github.com/Robrowno/rally-blog/issues/26)
 
 &nbsp;
 
@@ -133,6 +142,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Confirm Delete Button | Click on Confirm Delete Button | Account will delete, redirects to Home Page | Pass |
 | Close Modal | Click Close Button or 'x' | Modal will close | Pass |
 | Database Check | Check Admin Page to see if User is removed | User is deleted from the database | Pass |
+- [User Story: Delete Account](https://github.com/Robrowno/rally-blog/issues/31)
 
 &nbsp;
 ---
@@ -149,6 +159,9 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Required fields (Add Post) | Attempt to submit form various times without filling in required fields | Form will not submit and will point to the field not filled in | Pass |
 | Post Shows when set to "Published" | Set post_status = 1 | When post_status = 1, post is set to "published" | Pass |
 | Post hidden when set to "Draft" | Set post_status = 0 | When post_status = 0, post is set to "draft" | Pass |
+- [User Story: Post Replication](https://github.com/Robrowno/rally-blog/issues/3)
+- [User Story: Manage Panel](https://github.com/Robrowno/rally-blog/issues/28)
+- [User Story: Create Drafts](https://github.com/Robrowno/rally-blog/issues/2)
 
 &nbsp;
 ### Pagination
@@ -158,7 +171,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Pagination | Create 7 Blog Posts (Pagination number set to 6) | When number of Posts exceeds 6, pagination will occur | Pass |
 | Left-Right Buttons | Click Left and Right Buttons on Paginator | Left button will move back one page, where as right button will move forward one page | Pass |
 | Page Number Buttons | Click Page number buttons | Shows specific page number matching the number in the paginator | Pass |
-
+- [User Story: Pagination](https://github.com/Robrowno/rally-blog/issues/4)
 &nbsp;
 ### Post-Detail
 
@@ -166,6 +179,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | ---- | ------ | ---------------- | ------ |
 | Open Specific Post | Click on a Blog Post out of the Post List | Blog post will open  | Pass |
 | Check Post details | Read Post Details | Specific Post details of the blog clicked-on will render on the page | Pass |
+- [User Story: Open Post](https://github.com/Robrowno/rally-blog/issues/6)
 &nbsp;
 
 ## Social Media Page and Footer Links:
@@ -178,6 +192,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Instagram Link/Icon | Click Link/Icon | Opens my Instagram Page in a new tab  | Pass |
 | Github Link/Icon | Click Link/Icon | Opens my Github Page in a new tab  | Pass |
 | Linkedin Link/Icon | Click Link/Icon | Opens my Linkedin Page in a new tab  | Pass |
+- [User Story: Follow Page](https://github.com/Robrowno/rally-blog/issues/14)
 
 &nbsp;
 
@@ -189,6 +204,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 | Instagram Link/Icon | Click Link/Icon | Opens my Instagram Page in a new tab  | Pass |
 | Github Link/Icon | Click Link/Icon | Opens my Github Page in a new tab  | Pass |
 | Linkedin Link/Icon | Click Link/Icon | Opens my Linkedin Page in a new tab  | Pass |
+- [User Story: Social Media](https://github.com/Robrowno/rally-blog/issues/5)
 
 &nbsp;
 
@@ -386,6 +402,9 @@ This section comprises of Automated and Manual tests conducted towards the end o
 - ![X has no objects](./static/images/readme-images/validation/has-no-objects-issue.png)
 - Pylint flags the 'token' argument as having no value, this is to be ignored as well, as per the SendGrid Documentation.
 - Ignoring any errors caused by using keywords such as id, pk, e, etc, which flags due to either warning about not being in snake case, or being reassigned a new value.
+- Import env issue in settings.py can be ignored
+- Several docstring warnings for imports, which can be ignored
+- The Password reset and change function's exceptions have to be passed with ``pass`` - otherwise the email password reset will not work. This is the same in helpers.py, where I have opted to ``print(e)`` instead. I trialled using message errors but it failed.
 
 </details>
 
@@ -420,6 +439,7 @@ This section comprises of Automated and Manual tests conducted towards the end o
 - In the Edit Post Management page, whilst using crisy forms, I am currently unable to render the current image link to the front end. When using `{{ form.as_p }}`, it seems to work perfectly, but then you lose the formatting that crispy forms provides. I will aim to address this in an update in future.
 - Titles cannot be too long at the moment, because it disrupts the css on some screen sizes - this will be fixed in future updates
 - Depending on resolution of images and wifi connectivity, speed of site loading can vary greatly.
+
 
 ### Return to README: 
 
