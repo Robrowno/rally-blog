@@ -324,7 +324,7 @@ def change_password(request, token):
             user_obj.save()
             return redirect('login')
     except Exception:
-        messages.error(request, 'Profile Object not found')
+        pass
     return render(request, 'pages/accounts/password_change.html', context)
 
 
@@ -350,7 +350,7 @@ def forget_password(request):
             messages.success(request, 'An email has been sent.')
             return redirect('forget-password')
     except Exception:
-        messages.error(request, 'Internal Server Error.')
+        pass
     return render(request, 'pages/accounts/password_reset.html')
 
 
